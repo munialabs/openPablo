@@ -26,12 +26,6 @@ Boost_FILESYSTEM_LIBRARY_DEBUG:FILEPATH=/usr/lib/libboost_filesystem.so
 //Boost filesystem library (release)
 Boost_FILESYSTEM_LIBRARY_RELEASE:FILEPATH=/usr/lib/libboost_filesystem.so
 
-//Boost foreach library (debug)
-Boost_FOREACH_LIBRARY_DEBUG:FILEPATH=Boost_FOREACH_LIBRARY_DEBUG-NOTFOUND
-
-//Boost foreach library (release)
-Boost_FOREACH_LIBRARY_RELEASE:FILEPATH=Boost_FOREACH_LIBRARY_RELEASE-NOTFOUND
-
 //Path to a file.
 Boost_INCLUDE_DIR:PATH=/usr/include
 
@@ -49,10 +43,6 @@ Boost_SYSTEM_LIBRARY_RELEASE:FILEPATH=/usr/lib/libboost_system.so
 
 //Path to a program.
 CMAKE_AR:FILEPATH=/usr/bin/ar
-
-//For backwards compatibility, what version of CMake commands and
-// syntax should this version of CMake try to support.
-CMAKE_BACKWARDS_COMPATIBILITY:STRING=2.4
 
 //Choose the type of build, options are: None(CMAKE_CXX_FLAGS or
 // CMAKE_C_FLAGS used) Debug Release RelWithDebInfo MinSizeRel.
@@ -221,101 +211,8 @@ CPACK_SOURCE_TZ:BOOL=ON
 //Enable to build ZIP source packages
 CPACK_SOURCE_ZIP:BOOL=OFF
 
-//Path to a file.
-CURL_INCLUDE_DIR:PATH=/usr/include
-
-//Path to a library.
-CURL_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libcurl.so
-
-//The directory containing a CMake configuration file for Cairo.
-Cairo_DIR:PATH=Cairo_DIR-NOTFOUND
-
 //Pick a version of QT to use: 3 or 4
 DESIRED_QT_VERSION:STRING=4
-
-//Single output directory for building all executables.
-EXECUTABLE_OUTPUT_PATH:PATH=
-
-//The directory containing a CMake configuration file for Exiv2.
-Exiv2_DIR:PATH=Exiv2_DIR-NOTFOUND
-
-//Path to a file.
-FREETYPE_INCLUDE_DIR_freetype2:PATH=/usr/include/freetype2
-
-//Path to a file.
-FREETYPE_INCLUDE_DIR_ft2build:PATH=/usr/include
-
-//Path to a library.
-FREETYPE_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libfreetype.so
-
-//The directory containing a CMake configuration file for GDK-PixBuf.
-GDK-PixBuf_DIR:PATH=GDK-PixBuf_DIR-NOTFOUND
-
-//The directory containing a CMake configuration file for GIO.
-GIO_DIR:PATH=GIO_DIR-NOTFOUND
-
-//The directory containing a CMake configuration file for GModule.
-GModule_DIR:PATH=GModule_DIR-NOTFOUND
-
-//Path to a file.
-GTK2_ATK_INCLUDE_DIR:PATH=/usr/include/atk-1.0
-
-//Path to a library.
-GTK2_ATK_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libatk-1.0.so
-
-//Path to a file.
-GTK2_CAIRO_INCLUDE_DIR:PATH=/usr/include/cairo
-
-//Path to a library.
-GTK2_CAIRO_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libcairo.so
-
-//Path to a file.
-GTK2_FONTCONFIG_INCLUDE_DIR:PATH=/usr/include
-
-//Path to a file.
-GTK2_GDKCONFIG_INCLUDE_DIR:PATH=/usr/lib/x86_64-linux-gnu/gtk-2.0/include
-
-//Path to a file.
-GTK2_GDK_INCLUDE_DIR:PATH=/usr/include/gtk-2.0
-
-//Path to a library.
-GTK2_GDK_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so
-
-//Path to a file.
-GTK2_GDK_PIXBUF_INCLUDE_DIR:PATH=/usr/include/gdk-pixbuf-2.0
-
-//Path to a library.
-GTK2_GDK_PIXBUF_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so
-
-//Path to a file.
-GTK2_GLIBCONFIG_INCLUDE_DIR:PATH=/usr/lib/x86_64-linux-gnu/glib-2.0/include
-
-//Path to a file.
-GTK2_GLIB_INCLUDE_DIR:PATH=/usr/include/glib-2.0
-
-//Path to a library.
-GTK2_GLIB_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libglib-2.0.so
-
-//Path to a file.
-GTK2_GOBJECT_INCLUDE_DIR:PATH=/usr/include/glib-2.0
-
-//Path to a library.
-GTK2_GOBJECT_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libgobject-2.0.so
-
-//Path to a file.
-GTK2_GTK_INCLUDE_DIR:PATH=/usr/include/gtk-2.0
-
-//Path to a library.
-GTK2_GTK_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so
-
-//Path to a file.
-GTK2_PANGO_INCLUDE_DIR:PATH=/usr/include/pango-1.0
-
-//Path to a library.
-GTK2_PANGO_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libpango-1.0.so
-
-//The directory containing a CMake configuration file for GThread.
-GThread_DIR:PATH=GThread_DIR-NOTFOUND
 
 //Path to the ImageMagick binary directory.
 IMAGEMAGICK_BINARY_PATH:PATH=/usr/local/bin
@@ -335,9 +232,6 @@ IMAGEMAGICK_MOGRIFY_EXECUTABLE:FILEPATH=/usr/local/bin/mogrify
 //Path to ImageMagick's montage executable.
 IMAGEMAGICK_MONTAGE_EXECUTABLE:FILEPATH=/usr/local/bin/montage
 
-//The directory containing a CMake configuration file for INotify.
-INotify_DIR:PATH=INotify_DIR-NOTFOUND
-
 //Path to the ImageMagick binary directory.
 ImageMagick_EXECUTABLE_DIR:PATH=/usr/local/bin
 
@@ -352,18 +246,6 @@ ImageMagick_MagickCore_INCLUDE_DIR:PATH=/usr/local/include/ImageMagick
 
 //Path to the ImageMagick Magick++ library.
 ImageMagick_MagickCore_LIBRARY:FILEPATH=/usr/local/lib/libMagickCore.so
-
-//Path to a file.
-JPEG_INCLUDE_DIR:PATH=/usr/include
-
-//Path to a library.
-JPEG_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libjpeg.so
-
-//Dependencies for target
-JsonSpirit_LIB_DEPENDS:STATIC=
-
-//The directory containing a CMake configuration file for LCMS2.
-LCMS2_DIR:PATH=LCMS2_DIR-NOTFOUND
 
 //Path to a file.
 LCMS2_INCLUDE_DIR:PATH=/usr/local/include
@@ -383,47 +265,44 @@ LIBPODOFO_INCLUDE_DIR:PATH=/usr/include
 //Path to a library.
 LIBPODOFO_LIBRARY:FILEPATH=/usr/lib/libpodofo.so
 
-//Single output directory for building all libraries.
-LIBRARY_OUTPUT_PATH:PATH=
+//Do you want to link against libhighgui?
+LINK_LIB_HIGHGUI:BOOL=TRUE
+
+//Location of the cvaux lib
+OPENCV_CVAUX_LIBRARY:FILEPATH=OPENCV_CVAUX_LIBRARY-NOTFOUND
+
+//Location of the cvcam lib
+OPENCV_CVCAM_LIBRARY:FILEPATH=OPENCV_CVCAM_LIBRARY-NOTFOUND
+
+//Location of the cvcore lib
+OPENCV_CXCORE_LIBRARY:FILEPATH=OPENCV_CXCORE_LIBRARY-NOTFOUND
+
+//Location of the highgui library
+OPENCV_HIGHGUI_LIBRARY:FILEPATH=OPENCV_HIGHGUI_LIBRARY-NOTFOUND
 
 //Path to a file.
-LIBXML2_INCLUDE_DIR:PATH=/usr/include/libxml2
+OPENCV_INCLUDE_DIR_CV:PATH=/usr/local/include/opencv
 
-//Path to a library.
-LIBXML2_LIBRARIES:FILEPATH=/usr/lib/x86_64-linux-gnu/libxml2.so
+//Path to a file.
+OPENCV_INCLUDE_DIR_CVAUX:PATH=/usr/local/include/opencv
 
-//Path to a program.
-LIBXML2_XMLLINT_EXECUTABLE:FILEPATH=/usr/bin/xmllint
+//Path to a file.
+OPENCV_INCLUDE_DIR_CVCAM:PATH=OPENCV_INCLUDE_DIR_CVCAM-NOTFOUND
 
-//The directory containing a CMake configuration file for LensFun.
-LensFun_DIR:PATH=LensFun_DIR-NOTFOUND
+//Path to a file.
+OPENCV_INCLUDE_DIR_CXCORE:PATH=/usr/local/include/opencv
+
+//Path to a file.
+OPENCV_INCLUDE_DIR_HIGHGUI:PATH=/usr/local/include/opencv
+
+//Location of the opencv lib
+OPENCV_LIBRARY:FILEPATH=OPENCV_LIBRARY-NOTFOUND
 
 //The directory containing a CMake configuration file for OpenCV.
 OpenCV_DIR:PATH=/usr/local/share/OpenCV
 
-//The directory containing a CMake configuration file for OpenEXR.
-OpenEXR_DIR:PATH=OpenEXR_DIR-NOTFOUND
-
-//C++ compiler flags for OpenMP parallization
-OpenMP_CXX_FLAGS:STRING=-fopenmp
-
-//C compiler flags for OpenMP parallization
-OpenMP_C_FLAGS:STRING=-fopenmp
-
-//pkg-config executable
-PKG_CONFIG_EXECUTABLE:FILEPATH=/usr/bin/pkg-config
-
-//Path to a library.
-PNG_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libpng.so
-
-//Path to a file.
-PNG_PNG_INCLUDE_DIR:PATH=/usr/include
-
-//The directory containing a CMake configuration file for PThread.
-PThread_DIR:PATH=PThread_DIR-NOTFOUND
-
-//The directory containing a CMake configuration file for PangoCairo.
-PangoCairo_DIR:PATH=PangoCairo_DIR-NOTFOUND
+//No help, variable specified on the command line.
+OpenCV_Dir:UNINITIALIZED=~/Downloads/CODE/opencvBETA/opencv/opencv2/
 
 //Path to a file.
 QT3_QGLOBAL_H_FILE:FILEPATH=QT3_QGLOBAL_H_FILE-NOTFOUND
@@ -1037,168 +916,6 @@ QT_WORLDTIMECLOCKPLUGIN_PLUGIN_DEBUG:FILEPATH=QT_WORLDTIMECLOCKPLUGIN_PLUGIN_DEB
 //Path to a library.
 QT_WORLDTIMECLOCKPLUGIN_PLUGIN_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/qt4/plugins/designer/libworldtimeclockplugin.so
 
-//The directory containing a CMake configuration file for Rsvg2.
-Rsvg2_DIR:PATH=Rsvg2_DIR-NOTFOUND
-
-//The directory containing a CMake configuration file for Sqlite3.
-Sqlite3_DIR:PATH=Sqlite3_DIR-NOTFOUND
-
-//Path to a file.
-TIFF_INCLUDE_DIR:PATH=/usr/include
-
-//Path to a library.
-TIFF_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libtiff.so
-
-//Path to a file.
-ZLIB_INCLUDE_DIR:PATH=/usr/include
-
-//Path to a library.
-ZLIB_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libz.so
-
-//Dependencies for the target
-atrous_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libfreetype.so;general;/usr/lib/x86_64-linux-gnu/libglib-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgobject-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libcairo.so;general;/usr/lib/x86_64-linux-gnu/libpango-1.0.so;general;/usr/lib/x86_64-linux-gnu/libatk-1.0.so;general;/usr/lib/x86_64-linux-gnu/libxml2.so;general;/usr/lib/x86_64-linux-gnu/libcurl.so;general;/usr/lib/x86_64-linux-gnu/libpng.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libjpeg.so;general;/usr/lib/x86_64-linux-gnu/libtiff.so;general;lib_darktable;
-
-//Dependencies for the target
-backgroundjobs_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libfreetype.so;general;/usr/lib/x86_64-linux-gnu/libglib-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgobject-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libcairo.so;general;/usr/lib/x86_64-linux-gnu/libpango-1.0.so;general;/usr/lib/x86_64-linux-gnu/libatk-1.0.so;general;/usr/lib/x86_64-linux-gnu/libxml2.so;general;/usr/lib/x86_64-linux-gnu/libcurl.so;general;/usr/lib/x86_64-linux-gnu/libpng.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libjpeg.so;general;/usr/lib/x86_64-linux-gnu/libtiff.so;general;lib_darktable;
-
-//Dependencies for the target
-basecurve_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libfreetype.so;general;/usr/lib/x86_64-linux-gnu/libglib-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgobject-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libcairo.so;general;/usr/lib/x86_64-linux-gnu/libpango-1.0.so;general;/usr/lib/x86_64-linux-gnu/libatk-1.0.so;general;/usr/lib/x86_64-linux-gnu/libxml2.so;general;/usr/lib/x86_64-linux-gnu/libcurl.so;general;/usr/lib/x86_64-linux-gnu/libpng.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libjpeg.so;general;/usr/lib/x86_64-linux-gnu/libtiff.so;general;lib_darktable;general;/usr/lib/x86_64-linux-gnu/libfreetype.so;general;/usr/lib/x86_64-linux-gnu/libglib-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgobject-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libcairo.so;general;/usr/lib/x86_64-linux-gnu/libpango-1.0.so;general;/usr/lib/x86_64-linux-gnu/libatk-1.0.so;general;/usr/lib/x86_64-linux-gnu/libxml2.so;general;/usr/lib/x86_64-linux-gnu/libcurl.so;general;/usr/lib/x86_64-linux-gnu/libpng.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libjpeg.so;general;/usr/lib/x86_64-linux-gnu/libtiff.so;general;lib_darktable;
-
-//Dependencies for the target
-bilateral_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libfreetype.so;general;/usr/lib/x86_64-linux-gnu/libglib-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgobject-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libcairo.so;general;/usr/lib/x86_64-linux-gnu/libpango-1.0.so;general;/usr/lib/x86_64-linux-gnu/libatk-1.0.so;general;/usr/lib/x86_64-linux-gnu/libxml2.so;general;/usr/lib/x86_64-linux-gnu/libcurl.so;general;/usr/lib/x86_64-linux-gnu/libpng.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libjpeg.so;general;/usr/lib/x86_64-linux-gnu/libtiff.so;general;lib_darktable;
-
-//Dependencies for the target
-bloom_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libfreetype.so;general;/usr/lib/x86_64-linux-gnu/libglib-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgobject-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libcairo.so;general;/usr/lib/x86_64-linux-gnu/libpango-1.0.so;general;/usr/lib/x86_64-linux-gnu/libatk-1.0.so;general;/usr/lib/x86_64-linux-gnu/libxml2.so;general;/usr/lib/x86_64-linux-gnu/libcurl.so;general;/usr/lib/x86_64-linux-gnu/libpng.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libjpeg.so;general;/usr/lib/x86_64-linux-gnu/libtiff.so;general;lib_darktable;
-
-//Dependencies for the target
-borders_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libfreetype.so;general;/usr/lib/x86_64-linux-gnu/libglib-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgobject-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libcairo.so;general;/usr/lib/x86_64-linux-gnu/libpango-1.0.so;general;/usr/lib/x86_64-linux-gnu/libatk-1.0.so;general;/usr/lib/x86_64-linux-gnu/libxml2.so;general;/usr/lib/x86_64-linux-gnu/libcurl.so;general;/usr/lib/x86_64-linux-gnu/libpng.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libjpeg.so;general;/usr/lib/x86_64-linux-gnu/libtiff.so;general;lib_darktable;
-
-//Dependencies for the target
-cacorrect_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libfreetype.so;general;/usr/lib/x86_64-linux-gnu/libglib-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgobject-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libcairo.so;general;/usr/lib/x86_64-linux-gnu/libpango-1.0.so;general;/usr/lib/x86_64-linux-gnu/libatk-1.0.so;general;/usr/lib/x86_64-linux-gnu/libxml2.so;general;/usr/lib/x86_64-linux-gnu/libcurl.so;general;/usr/lib/x86_64-linux-gnu/libpng.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libjpeg.so;general;/usr/lib/x86_64-linux-gnu/libtiff.so;general;lib_darktable;
-
-//Dependencies for the target
-channelmixer_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libfreetype.so;general;/usr/lib/x86_64-linux-gnu/libglib-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgobject-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libcairo.so;general;/usr/lib/x86_64-linux-gnu/libpango-1.0.so;general;/usr/lib/x86_64-linux-gnu/libatk-1.0.so;general;/usr/lib/x86_64-linux-gnu/libxml2.so;general;/usr/lib/x86_64-linux-gnu/libcurl.so;general;/usr/lib/x86_64-linux-gnu/libpng.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libjpeg.so;general;/usr/lib/x86_64-linux-gnu/libtiff.so;general;lib_darktable;
-
-//Dependencies for the target
-clahe_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libfreetype.so;general;/usr/lib/x86_64-linux-gnu/libglib-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgobject-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libcairo.so;general;/usr/lib/x86_64-linux-gnu/libpango-1.0.so;general;/usr/lib/x86_64-linux-gnu/libatk-1.0.so;general;/usr/lib/x86_64-linux-gnu/libxml2.so;general;/usr/lib/x86_64-linux-gnu/libcurl.so;general;/usr/lib/x86_64-linux-gnu/libpng.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libjpeg.so;general;/usr/lib/x86_64-linux-gnu/libtiff.so;general;lib_darktable;
-
-//Dependencies for the target
-clipping_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libfreetype.so;general;/usr/lib/x86_64-linux-gnu/libglib-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgobject-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libcairo.so;general;/usr/lib/x86_64-linux-gnu/libpango-1.0.so;general;/usr/lib/x86_64-linux-gnu/libatk-1.0.so;general;/usr/lib/x86_64-linux-gnu/libxml2.so;general;/usr/lib/x86_64-linux-gnu/libcurl.so;general;/usr/lib/x86_64-linux-gnu/libpng.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libjpeg.so;general;/usr/lib/x86_64-linux-gnu/libtiff.so;general;lib_darktable;
-
-//Dependencies for the target
-collect_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libfreetype.so;general;/usr/lib/x86_64-linux-gnu/libglib-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgobject-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libcairo.so;general;/usr/lib/x86_64-linux-gnu/libpango-1.0.so;general;/usr/lib/x86_64-linux-gnu/libatk-1.0.so;general;/usr/lib/x86_64-linux-gnu/libxml2.so;general;/usr/lib/x86_64-linux-gnu/libcurl.so;general;/usr/lib/x86_64-linux-gnu/libpng.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libjpeg.so;general;/usr/lib/x86_64-linux-gnu/libtiff.so;general;lib_darktable;
-
-//Dependencies for the target
-colorcontrast_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libfreetype.so;general;/usr/lib/x86_64-linux-gnu/libglib-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgobject-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libcairo.so;general;/usr/lib/x86_64-linux-gnu/libpango-1.0.so;general;/usr/lib/x86_64-linux-gnu/libatk-1.0.so;general;/usr/lib/x86_64-linux-gnu/libxml2.so;general;/usr/lib/x86_64-linux-gnu/libcurl.so;general;/usr/lib/x86_64-linux-gnu/libpng.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libjpeg.so;general;/usr/lib/x86_64-linux-gnu/libtiff.so;general;lib_darktable;
-
-//Dependencies for the target
-colorcorrection_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libfreetype.so;general;/usr/lib/x86_64-linux-gnu/libglib-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgobject-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libcairo.so;general;/usr/lib/x86_64-linux-gnu/libpango-1.0.so;general;/usr/lib/x86_64-linux-gnu/libatk-1.0.so;general;/usr/lib/x86_64-linux-gnu/libxml2.so;general;/usr/lib/x86_64-linux-gnu/libcurl.so;general;/usr/lib/x86_64-linux-gnu/libpng.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libjpeg.so;general;/usr/lib/x86_64-linux-gnu/libtiff.so;general;lib_darktable;
-
-//Dependencies for the target
-colorin_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libfreetype.so;general;/usr/lib/x86_64-linux-gnu/libglib-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgobject-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libcairo.so;general;/usr/lib/x86_64-linux-gnu/libpango-1.0.so;general;/usr/lib/x86_64-linux-gnu/libatk-1.0.so;general;/usr/lib/x86_64-linux-gnu/libxml2.so;general;/usr/lib/x86_64-linux-gnu/libcurl.so;general;/usr/lib/x86_64-linux-gnu/libpng.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libjpeg.so;general;/usr/lib/x86_64-linux-gnu/libtiff.so;general;lib_darktable;
-
-//Dependencies for the target
-colorize_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libfreetype.so;general;/usr/lib/x86_64-linux-gnu/libglib-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgobject-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libcairo.so;general;/usr/lib/x86_64-linux-gnu/libpango-1.0.so;general;/usr/lib/x86_64-linux-gnu/libatk-1.0.so;general;/usr/lib/x86_64-linux-gnu/libxml2.so;general;/usr/lib/x86_64-linux-gnu/libcurl.so;general;/usr/lib/x86_64-linux-gnu/libpng.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libjpeg.so;general;/usr/lib/x86_64-linux-gnu/libtiff.so;general;lib_darktable;
-
-//Dependencies for the target
-colorlabels_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libfreetype.so;general;/usr/lib/x86_64-linux-gnu/libglib-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgobject-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libcairo.so;general;/usr/lib/x86_64-linux-gnu/libpango-1.0.so;general;/usr/lib/x86_64-linux-gnu/libatk-1.0.so;general;/usr/lib/x86_64-linux-gnu/libxml2.so;general;/usr/lib/x86_64-linux-gnu/libcurl.so;general;/usr/lib/x86_64-linux-gnu/libpng.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libjpeg.so;general;/usr/lib/x86_64-linux-gnu/libtiff.so;general;lib_darktable;
-
-//Dependencies for the target
-colorout_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libfreetype.so;general;/usr/lib/x86_64-linux-gnu/libglib-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgobject-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libcairo.so;general;/usr/lib/x86_64-linux-gnu/libpango-1.0.so;general;/usr/lib/x86_64-linux-gnu/libatk-1.0.so;general;/usr/lib/x86_64-linux-gnu/libxml2.so;general;/usr/lib/x86_64-linux-gnu/libcurl.so;general;/usr/lib/x86_64-linux-gnu/libpng.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libjpeg.so;general;/usr/lib/x86_64-linux-gnu/libtiff.so;general;lib_darktable;
-
-//Dependencies for the target
-colorpicker_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libfreetype.so;general;/usr/lib/x86_64-linux-gnu/libglib-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgobject-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libcairo.so;general;/usr/lib/x86_64-linux-gnu/libpango-1.0.so;general;/usr/lib/x86_64-linux-gnu/libatk-1.0.so;general;/usr/lib/x86_64-linux-gnu/libxml2.so;general;/usr/lib/x86_64-linux-gnu/libcurl.so;general;/usr/lib/x86_64-linux-gnu/libpng.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libjpeg.so;general;/usr/lib/x86_64-linux-gnu/libtiff.so;general;lib_darktable;
-
-//Dependencies for the target
-colortransfer_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libfreetype.so;general;/usr/lib/x86_64-linux-gnu/libglib-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgobject-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libcairo.so;general;/usr/lib/x86_64-linux-gnu/libpango-1.0.so;general;/usr/lib/x86_64-linux-gnu/libatk-1.0.so;general;/usr/lib/x86_64-linux-gnu/libxml2.so;general;/usr/lib/x86_64-linux-gnu/libcurl.so;general;/usr/lib/x86_64-linux-gnu/libpng.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libjpeg.so;general;/usr/lib/x86_64-linux-gnu/libtiff.so;general;lib_darktable;
-
-//Dependencies for the target
-colorzones_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libfreetype.so;general;/usr/lib/x86_64-linux-gnu/libglib-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgobject-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libcairo.so;general;/usr/lib/x86_64-linux-gnu/libpango-1.0.so;general;/usr/lib/x86_64-linux-gnu/libatk-1.0.so;general;/usr/lib/x86_64-linux-gnu/libxml2.so;general;/usr/lib/x86_64-linux-gnu/libcurl.so;general;/usr/lib/x86_64-linux-gnu/libpng.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libjpeg.so;general;/usr/lib/x86_64-linux-gnu/libtiff.so;general;lib_darktable;
-
-//Dependencies for the target
-copy_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libfreetype.so;general;/usr/lib/x86_64-linux-gnu/libglib-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgobject-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libcairo.so;general;/usr/lib/x86_64-linux-gnu/libpango-1.0.so;general;/usr/lib/x86_64-linux-gnu/libatk-1.0.so;general;/usr/lib/x86_64-linux-gnu/libxml2.so;general;/usr/lib/x86_64-linux-gnu/libcurl.so;general;/usr/lib/x86_64-linux-gnu/libpng.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libjpeg.so;general;/usr/lib/x86_64-linux-gnu/libtiff.so;general;lib_darktable;
-
-//Dependencies for the target
-copy_history_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libfreetype.so;general;/usr/lib/x86_64-linux-gnu/libglib-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgobject-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libcairo.so;general;/usr/lib/x86_64-linux-gnu/libpango-1.0.so;general;/usr/lib/x86_64-linux-gnu/libatk-1.0.so;general;/usr/lib/x86_64-linux-gnu/libxml2.so;general;/usr/lib/x86_64-linux-gnu/libcurl.so;general;/usr/lib/x86_64-linux-gnu/libpng.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libjpeg.so;general;/usr/lib/x86_64-linux-gnu/libtiff.so;general;lib_darktable;
-
-//Dependencies for the target
-darkroom_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libfreetype.so;general;/usr/lib/x86_64-linux-gnu/libglib-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgobject-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libcairo.so;general;/usr/lib/x86_64-linux-gnu/libpango-1.0.so;general;/usr/lib/x86_64-linux-gnu/libatk-1.0.so;general;/usr/lib/x86_64-linux-gnu/libxml2.so;general;/usr/lib/x86_64-linux-gnu/libcurl.so;general;/usr/lib/x86_64-linux-gnu/libpng.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libjpeg.so;general;/usr/lib/x86_64-linux-gnu/libtiff.so;general;lib_darktable;
-
-//Dependencies for the target
-darktable_label_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libfreetype.so;general;/usr/lib/x86_64-linux-gnu/libglib-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgobject-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libcairo.so;general;/usr/lib/x86_64-linux-gnu/libpango-1.0.so;general;/usr/lib/x86_64-linux-gnu/libatk-1.0.so;general;/usr/lib/x86_64-linux-gnu/libxml2.so;general;/usr/lib/x86_64-linux-gnu/libcurl.so;general;/usr/lib/x86_64-linux-gnu/libpng.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libjpeg.so;general;/usr/lib/x86_64-linux-gnu/libtiff.so;general;lib_darktable;
-
-//Dependencies for the target
-demosaic_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libfreetype.so;general;/usr/lib/x86_64-linux-gnu/libglib-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgobject-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libcairo.so;general;/usr/lib/x86_64-linux-gnu/libpango-1.0.so;general;/usr/lib/x86_64-linux-gnu/libatk-1.0.so;general;/usr/lib/x86_64-linux-gnu/libxml2.so;general;/usr/lib/x86_64-linux-gnu/libcurl.so;general;/usr/lib/x86_64-linux-gnu/libpng.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libjpeg.so;general;/usr/lib/x86_64-linux-gnu/libtiff.so;general;lib_darktable;
-
-//Dependencies for the target
-disk_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libfreetype.so;general;/usr/lib/x86_64-linux-gnu/libglib-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgobject-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libcairo.so;general;/usr/lib/x86_64-linux-gnu/libpango-1.0.so;general;/usr/lib/x86_64-linux-gnu/libatk-1.0.so;general;/usr/lib/x86_64-linux-gnu/libxml2.so;general;/usr/lib/x86_64-linux-gnu/libcurl.so;general;/usr/lib/x86_64-linux-gnu/libpng.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libjpeg.so;general;/usr/lib/x86_64-linux-gnu/libtiff.so;general;lib_darktable;
-
-//Dependencies for the target
-email_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libfreetype.so;general;/usr/lib/x86_64-linux-gnu/libglib-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgobject-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libcairo.so;general;/usr/lib/x86_64-linux-gnu/libpango-1.0.so;general;/usr/lib/x86_64-linux-gnu/libatk-1.0.so;general;/usr/lib/x86_64-linux-gnu/libxml2.so;general;/usr/lib/x86_64-linux-gnu/libcurl.so;general;/usr/lib/x86_64-linux-gnu/libpng.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libjpeg.so;general;/usr/lib/x86_64-linux-gnu/libtiff.so;general;lib_darktable;
-
-//Dependencies for the target
-equalizer_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libfreetype.so;general;/usr/lib/x86_64-linux-gnu/libglib-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgobject-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libcairo.so;general;/usr/lib/x86_64-linux-gnu/libpango-1.0.so;general;/usr/lib/x86_64-linux-gnu/libatk-1.0.so;general;/usr/lib/x86_64-linux-gnu/libxml2.so;general;/usr/lib/x86_64-linux-gnu/libcurl.so;general;/usr/lib/x86_64-linux-gnu/libpng.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libjpeg.so;general;/usr/lib/x86_64-linux-gnu/libtiff.so;general;lib_darktable;
-
-//Dependencies for the target
-export_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libfreetype.so;general;/usr/lib/x86_64-linux-gnu/libglib-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgobject-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libcairo.so;general;/usr/lib/x86_64-linux-gnu/libpango-1.0.so;general;/usr/lib/x86_64-linux-gnu/libatk-1.0.so;general;/usr/lib/x86_64-linux-gnu/libxml2.so;general;/usr/lib/x86_64-linux-gnu/libcurl.so;general;/usr/lib/x86_64-linux-gnu/libpng.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libjpeg.so;general;/usr/lib/x86_64-linux-gnu/libtiff.so;general;lib_darktable;
-
-//Dependencies for the target
-exposure_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libfreetype.so;general;/usr/lib/x86_64-linux-gnu/libglib-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgobject-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libcairo.so;general;/usr/lib/x86_64-linux-gnu/libpango-1.0.so;general;/usr/lib/x86_64-linux-gnu/libatk-1.0.so;general;/usr/lib/x86_64-linux-gnu/libxml2.so;general;/usr/lib/x86_64-linux-gnu/libcurl.so;general;/usr/lib/x86_64-linux-gnu/libpng.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libjpeg.so;general;/usr/lib/x86_64-linux-gnu/libtiff.so;general;lib_darktable;
-
-//Dependencies for the target
-filmstrip_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libfreetype.so;general;/usr/lib/x86_64-linux-gnu/libglib-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgobject-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libcairo.so;general;/usr/lib/x86_64-linux-gnu/libpango-1.0.so;general;/usr/lib/x86_64-linux-gnu/libatk-1.0.so;general;/usr/lib/x86_64-linux-gnu/libxml2.so;general;/usr/lib/x86_64-linux-gnu/libcurl.so;general;/usr/lib/x86_64-linux-gnu/libpng.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libjpeg.so;general;/usr/lib/x86_64-linux-gnu/libtiff.so;general;lib_darktable;
-
-//Dependencies for the target
-filter_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libfreetype.so;general;/usr/lib/x86_64-linux-gnu/libglib-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgobject-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libcairo.so;general;/usr/lib/x86_64-linux-gnu/libpango-1.0.so;general;/usr/lib/x86_64-linux-gnu/libatk-1.0.so;general;/usr/lib/x86_64-linux-gnu/libxml2.so;general;/usr/lib/x86_64-linux-gnu/libcurl.so;general;/usr/lib/x86_64-linux-gnu/libpng.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libjpeg.so;general;/usr/lib/x86_64-linux-gnu/libtiff.so;general;lib_darktable;
-
-//Dependencies for the target
-flip_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libfreetype.so;general;/usr/lib/x86_64-linux-gnu/libglib-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgobject-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libcairo.so;general;/usr/lib/x86_64-linux-gnu/libpango-1.0.so;general;/usr/lib/x86_64-linux-gnu/libatk-1.0.so;general;/usr/lib/x86_64-linux-gnu/libxml2.so;general;/usr/lib/x86_64-linux-gnu/libcurl.so;general;/usr/lib/x86_64-linux-gnu/libpng.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libjpeg.so;general;/usr/lib/x86_64-linux-gnu/libtiff.so;general;lib_darktable;
-
-//Dependencies for the target
-gallery_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libfreetype.so;general;/usr/lib/x86_64-linux-gnu/libglib-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgobject-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libcairo.so;general;/usr/lib/x86_64-linux-gnu/libpango-1.0.so;general;/usr/lib/x86_64-linux-gnu/libatk-1.0.so;general;/usr/lib/x86_64-linux-gnu/libxml2.so;general;/usr/lib/x86_64-linux-gnu/libcurl.so;general;/usr/lib/x86_64-linux-gnu/libpng.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libjpeg.so;general;/usr/lib/x86_64-linux-gnu/libtiff.so;general;lib_darktable;
-
-//Dependencies for the target
-gamma_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libfreetype.so;general;/usr/lib/x86_64-linux-gnu/libglib-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgobject-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libcairo.so;general;/usr/lib/x86_64-linux-gnu/libpango-1.0.so;general;/usr/lib/x86_64-linux-gnu/libatk-1.0.so;general;/usr/lib/x86_64-linux-gnu/libxml2.so;general;/usr/lib/x86_64-linux-gnu/libcurl.so;general;/usr/lib/x86_64-linux-gnu/libpng.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libjpeg.so;general;/usr/lib/x86_64-linux-gnu/libtiff.so;general;lib_darktable;
-
-//Dependencies for the target
-global_toolbox_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libfreetype.so;general;/usr/lib/x86_64-linux-gnu/libglib-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgobject-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libcairo.so;general;/usr/lib/x86_64-linux-gnu/libpango-1.0.so;general;/usr/lib/x86_64-linux-gnu/libatk-1.0.so;general;/usr/lib/x86_64-linux-gnu/libxml2.so;general;/usr/lib/x86_64-linux-gnu/libcurl.so;general;/usr/lib/x86_64-linux-gnu/libpng.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libjpeg.so;general;/usr/lib/x86_64-linux-gnu/libtiff.so;general;lib_darktable;
-
-//Dependencies for the target
-graduatednd_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libfreetype.so;general;/usr/lib/x86_64-linux-gnu/libglib-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgobject-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libcairo.so;general;/usr/lib/x86_64-linux-gnu/libpango-1.0.so;general;/usr/lib/x86_64-linux-gnu/libatk-1.0.so;general;/usr/lib/x86_64-linux-gnu/libxml2.so;general;/usr/lib/x86_64-linux-gnu/libcurl.so;general;/usr/lib/x86_64-linux-gnu/libpng.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libjpeg.so;general;/usr/lib/x86_64-linux-gnu/libtiff.so;general;lib_darktable;
-
-//Dependencies for the target
-grain_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libfreetype.so;general;/usr/lib/x86_64-linux-gnu/libglib-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgobject-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libcairo.so;general;/usr/lib/x86_64-linux-gnu/libpango-1.0.so;general;/usr/lib/x86_64-linux-gnu/libatk-1.0.so;general;/usr/lib/x86_64-linux-gnu/libxml2.so;general;/usr/lib/x86_64-linux-gnu/libcurl.so;general;/usr/lib/x86_64-linux-gnu/libpng.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libjpeg.so;general;/usr/lib/x86_64-linux-gnu/libtiff.so;general;lib_darktable;
-
-//Dependencies for the target
-highlights_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libfreetype.so;general;/usr/lib/x86_64-linux-gnu/libglib-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgobject-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libcairo.so;general;/usr/lib/x86_64-linux-gnu/libpango-1.0.so;general;/usr/lib/x86_64-linux-gnu/libatk-1.0.so;general;/usr/lib/x86_64-linux-gnu/libxml2.so;general;/usr/lib/x86_64-linux-gnu/libcurl.so;general;/usr/lib/x86_64-linux-gnu/libpng.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libjpeg.so;general;/usr/lib/x86_64-linux-gnu/libtiff.so;general;lib_darktable;
-
-//Dependencies for the target
-highpass_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libfreetype.so;general;/usr/lib/x86_64-linux-gnu/libglib-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgobject-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libcairo.so;general;/usr/lib/x86_64-linux-gnu/libpango-1.0.so;general;/usr/lib/x86_64-linux-gnu/libatk-1.0.so;general;/usr/lib/x86_64-linux-gnu/libxml2.so;general;/usr/lib/x86_64-linux-gnu/libcurl.so;general;/usr/lib/x86_64-linux-gnu/libpng.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libjpeg.so;general;/usr/lib/x86_64-linux-gnu/libtiff.so;general;lib_darktable;
-
-//Dependencies for the target
-hinter_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libfreetype.so;general;/usr/lib/x86_64-linux-gnu/libglib-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgobject-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libcairo.so;general;/usr/lib/x86_64-linux-gnu/libpango-1.0.so;general;/usr/lib/x86_64-linux-gnu/libatk-1.0.so;general;/usr/lib/x86_64-linux-gnu/libxml2.so;general;/usr/lib/x86_64-linux-gnu/libcurl.so;general;/usr/lib/x86_64-linux-gnu/libpng.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libjpeg.so;general;/usr/lib/x86_64-linux-gnu/libtiff.so;general;lib_darktable;general;/usr/lib/x86_64-linux-gnu/libfreetype.so;general;/usr/lib/x86_64-linux-gnu/libglib-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgobject-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libcairo.so;general;/usr/lib/x86_64-linux-gnu/libpango-1.0.so;general;/usr/lib/x86_64-linux-gnu/libatk-1.0.so;general;/usr/lib/x86_64-linux-gnu/libxml2.so;general;/usr/lib/x86_64-linux-gnu/libcurl.so;general;/usr/lib/x86_64-linux-gnu/libpng.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libjpeg.so;general;/usr/lib/x86_64-linux-gnu/libtiff.so;general;lib_darktable;
-
-//Dependencies for the target
-histogram_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libfreetype.so;general;/usr/lib/x86_64-linux-gnu/libglib-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgobject-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libcairo.so;general;/usr/lib/x86_64-linux-gnu/libpango-1.0.so;general;/usr/lib/x86_64-linux-gnu/libatk-1.0.so;general;/usr/lib/x86_64-linux-gnu/libxml2.so;general;/usr/lib/x86_64-linux-gnu/libcurl.so;general;/usr/lib/x86_64-linux-gnu/libpng.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libjpeg.so;general;/usr/lib/x86_64-linux-gnu/libtiff.so;general;lib_darktable;
-
-//Dependencies for the target
-history_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libfreetype.so;general;/usr/lib/x86_64-linux-gnu/libglib-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgobject-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libcairo.so;general;/usr/lib/x86_64-linux-gnu/libpango-1.0.so;general;/usr/lib/x86_64-linux-gnu/libatk-1.0.so;general;/usr/lib/x86_64-linux-gnu/libxml2.so;general;/usr/lib/x86_64-linux-gnu/libcurl.so;general;/usr/lib/x86_64-linux-gnu/libpng.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libjpeg.so;general;/usr/lib/x86_64-linux-gnu/libtiff.so;general;lib_darktable;
-
-//Dependencies for the target
-hotpixels_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libfreetype.so;general;/usr/lib/x86_64-linux-gnu/libglib-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgobject-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libcairo.so;general;/usr/lib/x86_64-linux-gnu/libpango-1.0.so;general;/usr/lib/x86_64-linux-gnu/libatk-1.0.so;general;/usr/lib/x86_64-linux-gnu/libxml2.so;general;/usr/lib/x86_64-linux-gnu/libcurl.so;general;/usr/lib/x86_64-linux-gnu/libpng.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libjpeg.so;general;/usr/lib/x86_64-linux-gnu/libtiff.so;general;lib_darktable;
-
-//Dependencies for the target
-image_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libfreetype.so;general;/usr/lib/x86_64-linux-gnu/libglib-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgobject-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libcairo.so;general;/usr/lib/x86_64-linux-gnu/libpango-1.0.so;general;/usr/lib/x86_64-linux-gnu/libatk-1.0.so;general;/usr/lib/x86_64-linux-gnu/libxml2.so;general;/usr/lib/x86_64-linux-gnu/libcurl.so;general;/usr/lib/x86_64-linux-gnu/libpng.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libjpeg.so;general;/usr/lib/x86_64-linux-gnu/libtiff.so;general;lib_darktable;
-
-//Dependencies for the target
-import_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libfreetype.so;general;/usr/lib/x86_64-linux-gnu/libglib-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgobject-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libcairo.so;general;/usr/lib/x86_64-linux-gnu/libpango-1.0.so;general;/usr/lib/x86_64-linux-gnu/libatk-1.0.so;general;/usr/lib/x86_64-linux-gnu/libxml2.so;general;/usr/lib/x86_64-linux-gnu/libcurl.so;general;/usr/lib/x86_64-linux-gnu/libpng.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libjpeg.so;general;/usr/lib/x86_64-linux-gnu/libtiff.so;general;lib_darktable;
-
-//Dependencies for the target
-invert_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libfreetype.so;general;/usr/lib/x86_64-linux-gnu/libglib-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgobject-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libcairo.so;general;/usr/lib/x86_64-linux-gnu/libpango-1.0.so;general;/usr/lib/x86_64-linux-gnu/libatk-1.0.so;general;/usr/lib/x86_64-linux-gnu/libxml2.so;general;/usr/lib/x86_64-linux-gnu/libcurl.so;general;/usr/lib/x86_64-linux-gnu/libpng.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libjpeg.so;general;/usr/lib/x86_64-linux-gnu/libtiff.so;general;lib_darktable;
-
-//Dependencies for the target
-jpeg_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libfreetype.so;general;/usr/lib/x86_64-linux-gnu/libglib-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgobject-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libcairo.so;general;/usr/lib/x86_64-linux-gnu/libpango-1.0.so;general;/usr/lib/x86_64-linux-gnu/libatk-1.0.so;general;/usr/lib/x86_64-linux-gnu/libxml2.so;general;/usr/lib/x86_64-linux-gnu/libcurl.so;general;/usr/lib/x86_64-linux-gnu/libpng.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libjpeg.so;general;/usr/lib/x86_64-linux-gnu/libtiff.so;general;lib_darktable;
-
 //Value Computed by CMake
 json_spirit_BINARY_DIR:STATIC=/home/drunkeneye/Dropbox/openpablo/3rdparty/json_spirit
 
@@ -1208,152 +925,11 @@ json_spirit_LIB_DEPENDS:STATIC=
 //Value Computed by CMake
 json_spirit_SOURCE_DIR:STATIC=/home/drunkeneye/Dropbox/openpablo/3rdparty/json_spirit
 
-//Dependencies for the target
-keywords_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libfreetype.so;general;/usr/lib/x86_64-linux-gnu/libglib-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgobject-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libcairo.so;general;/usr/lib/x86_64-linux-gnu/libpango-1.0.so;general;/usr/lib/x86_64-linux-gnu/libatk-1.0.so;general;/usr/lib/x86_64-linux-gnu/libxml2.so;general;/usr/lib/x86_64-linux-gnu/libcurl.so;general;/usr/lib/x86_64-linux-gnu/libpng.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libjpeg.so;general;/usr/lib/x86_64-linux-gnu/libtiff.so;general;lib_darktable;
-
-//Dependencies for the target
-levels_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libfreetype.so;general;/usr/lib/x86_64-linux-gnu/libglib-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgobject-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libcairo.so;general;/usr/lib/x86_64-linux-gnu/libpango-1.0.so;general;/usr/lib/x86_64-linux-gnu/libatk-1.0.so;general;/usr/lib/x86_64-linux-gnu/libxml2.so;general;/usr/lib/x86_64-linux-gnu/libcurl.so;general;/usr/lib/x86_64-linux-gnu/libpng.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libjpeg.so;general;/usr/lib/x86_64-linux-gnu/libtiff.so;general;lib_darktable;
-
-//Dependencies for the target
-lib_darktable_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libfreetype.so;general;/usr/lib/x86_64-linux-gnu/libglib-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgobject-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libcairo.so;general;/usr/lib/x86_64-linux-gnu/libpango-1.0.so;general;/usr/lib/x86_64-linux-gnu/libatk-1.0.so;general;/usr/lib/x86_64-linux-gnu/libxml2.so;general;/usr/lib/x86_64-linux-gnu/libcurl.so;general;/usr/lib/x86_64-linux-gnu/libpng.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libjpeg.so;general;/usr/lib/x86_64-linux-gnu/libtiff.so;general;libraw_static;general;/usr/lib/x86_64-linux-gnu/libfreetype.so;general;/usr/lib/x86_64-linux-gnu/libglib-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgobject-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libcairo.so;general;/usr/lib/x86_64-linux-gnu/libpango-1.0.so;general;/usr/lib/x86_64-linux-gnu/libatk-1.0.so;general;/usr/lib/x86_64-linux-gnu/libxml2.so;general;/usr/lib/x86_64-linux-gnu/libcurl.so;general;/usr/lib/x86_64-linux-gnu/libpng.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libjpeg.so;general;/usr/lib/x86_64-linux-gnu/libtiff.so;general;rawspeed_static;
-
-//Dependencies for target
-libraw_r_LIB_DEPENDS:STATIC=
-
-//Dependencies for the target
-lighttable_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libfreetype.so;general;/usr/lib/x86_64-linux-gnu/libglib-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgobject-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libcairo.so;general;/usr/lib/x86_64-linux-gnu/libpango-1.0.so;general;/usr/lib/x86_64-linux-gnu/libatk-1.0.so;general;/usr/lib/x86_64-linux-gnu/libxml2.so;general;/usr/lib/x86_64-linux-gnu/libcurl.so;general;/usr/lib/x86_64-linux-gnu/libpng.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libjpeg.so;general;/usr/lib/x86_64-linux-gnu/libtiff.so;general;lib_darktable;
-
-//Dependencies for the target
-lighttable_mode_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libfreetype.so;general;/usr/lib/x86_64-linux-gnu/libglib-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgobject-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libcairo.so;general;/usr/lib/x86_64-linux-gnu/libpango-1.0.so;general;/usr/lib/x86_64-linux-gnu/libatk-1.0.so;general;/usr/lib/x86_64-linux-gnu/libxml2.so;general;/usr/lib/x86_64-linux-gnu/libcurl.so;general;/usr/lib/x86_64-linux-gnu/libpng.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libjpeg.so;general;/usr/lib/x86_64-linux-gnu/libtiff.so;general;lib_darktable;
-
-//Dependencies for the target
-lowlight_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libfreetype.so;general;/usr/lib/x86_64-linux-gnu/libglib-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgobject-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libcairo.so;general;/usr/lib/x86_64-linux-gnu/libpango-1.0.so;general;/usr/lib/x86_64-linux-gnu/libatk-1.0.so;general;/usr/lib/x86_64-linux-gnu/libxml2.so;general;/usr/lib/x86_64-linux-gnu/libcurl.so;general;/usr/lib/x86_64-linux-gnu/libpng.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libjpeg.so;general;/usr/lib/x86_64-linux-gnu/libtiff.so;general;lib_darktable;
-
-//Dependencies for the target
-lowpass_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libfreetype.so;general;/usr/lib/x86_64-linux-gnu/libglib-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgobject-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libcairo.so;general;/usr/lib/x86_64-linux-gnu/libpango-1.0.so;general;/usr/lib/x86_64-linux-gnu/libatk-1.0.so;general;/usr/lib/x86_64-linux-gnu/libxml2.so;general;/usr/lib/x86_64-linux-gnu/libcurl.so;general;/usr/lib/x86_64-linux-gnu/libpng.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libjpeg.so;general;/usr/lib/x86_64-linux-gnu/libtiff.so;general;lib_darktable;
-
-//Dependencies for the target
-metadata_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libfreetype.so;general;/usr/lib/x86_64-linux-gnu/libglib-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgobject-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libcairo.so;general;/usr/lib/x86_64-linux-gnu/libpango-1.0.so;general;/usr/lib/x86_64-linux-gnu/libatk-1.0.so;general;/usr/lib/x86_64-linux-gnu/libxml2.so;general;/usr/lib/x86_64-linux-gnu/libcurl.so;general;/usr/lib/x86_64-linux-gnu/libpng.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libjpeg.so;general;/usr/lib/x86_64-linux-gnu/libtiff.so;general;lib_darktable;
-
-//Dependencies for target
-metadata_dummy_LIB_DEPENDS:STATIC=
-
-//Dependencies for the target
-metadata_view_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libfreetype.so;general;/usr/lib/x86_64-linux-gnu/libglib-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgobject-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libcairo.so;general;/usr/lib/x86_64-linux-gnu/libpango-1.0.so;general;/usr/lib/x86_64-linux-gnu/libatk-1.0.so;general;/usr/lib/x86_64-linux-gnu/libxml2.so;general;/usr/lib/x86_64-linux-gnu/libcurl.so;general;/usr/lib/x86_64-linux-gnu/libpng.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libjpeg.so;general;/usr/lib/x86_64-linux-gnu/libtiff.so;general;lib_darktable;
-
-//Dependencies for the target
-module_toolbox_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libfreetype.so;general;/usr/lib/x86_64-linux-gnu/libglib-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgobject-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libcairo.so;general;/usr/lib/x86_64-linux-gnu/libpango-1.0.so;general;/usr/lib/x86_64-linux-gnu/libatk-1.0.so;general;/usr/lib/x86_64-linux-gnu/libxml2.so;general;/usr/lib/x86_64-linux-gnu/libcurl.so;general;/usr/lib/x86_64-linux-gnu/libpng.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libjpeg.so;general;/usr/lib/x86_64-linux-gnu/libtiff.so;general;lib_darktable;
-
-//Dependencies for the target
-modulegroups_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libfreetype.so;general;/usr/lib/x86_64-linux-gnu/libglib-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgobject-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libcairo.so;general;/usr/lib/x86_64-linux-gnu/libpango-1.0.so;general;/usr/lib/x86_64-linux-gnu/libatk-1.0.so;general;/usr/lib/x86_64-linux-gnu/libxml2.so;general;/usr/lib/x86_64-linux-gnu/libcurl.so;general;/usr/lib/x86_64-linux-gnu/libpng.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libjpeg.so;general;/usr/lib/x86_64-linux-gnu/libtiff.so;general;lib_darktable;
-
-//Dependencies for the target
-modulelist_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libfreetype.so;general;/usr/lib/x86_64-linux-gnu/libglib-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgobject-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libcairo.so;general;/usr/lib/x86_64-linux-gnu/libpango-1.0.so;general;/usr/lib/x86_64-linux-gnu/libatk-1.0.so;general;/usr/lib/x86_64-linux-gnu/libxml2.so;general;/usr/lib/x86_64-linux-gnu/libcurl.so;general;/usr/lib/x86_64-linux-gnu/libpng.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libjpeg.so;general;/usr/lib/x86_64-linux-gnu/libtiff.so;general;lib_darktable;
-
-//Dependencies for the target
-monochrome_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libfreetype.so;general;/usr/lib/x86_64-linux-gnu/libglib-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgobject-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libcairo.so;general;/usr/lib/x86_64-linux-gnu/libpango-1.0.so;general;/usr/lib/x86_64-linux-gnu/libatk-1.0.so;general;/usr/lib/x86_64-linux-gnu/libxml2.so;general;/usr/lib/x86_64-linux-gnu/libcurl.so;general;/usr/lib/x86_64-linux-gnu/libpng.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libjpeg.so;general;/usr/lib/x86_64-linux-gnu/libtiff.so;general;lib_darktable;
-
-//Dependencies for the target
-navigation_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libfreetype.so;general;/usr/lib/x86_64-linux-gnu/libglib-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgobject-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libcairo.so;general;/usr/lib/x86_64-linux-gnu/libpango-1.0.so;general;/usr/lib/x86_64-linux-gnu/libatk-1.0.so;general;/usr/lib/x86_64-linux-gnu/libxml2.so;general;/usr/lib/x86_64-linux-gnu/libcurl.so;general;/usr/lib/x86_64-linux-gnu/libpng.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libjpeg.so;general;/usr/lib/x86_64-linux-gnu/libtiff.so;general;lib_darktable;
-
-//Dependencies for the target
-nlmeans_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libfreetype.so;general;/usr/lib/x86_64-linux-gnu/libglib-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgobject-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libcairo.so;general;/usr/lib/x86_64-linux-gnu/libpango-1.0.so;general;/usr/lib/x86_64-linux-gnu/libatk-1.0.so;general;/usr/lib/x86_64-linux-gnu/libxml2.so;general;/usr/lib/x86_64-linux-gnu/libcurl.so;general;/usr/lib/x86_64-linux-gnu/libpng.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libjpeg.so;general;/usr/lib/x86_64-linux-gnu/libtiff.so;general;lib_darktable;
-
 //Value Computed by CMake
 openpablo_BINARY_DIR:STATIC=/home/drunkeneye/Dropbox/openpablo
 
 //Value Computed by CMake
 openpablo_SOURCE_DIR:STATIC=/home/drunkeneye/Dropbox/openpablo
-
-//Dependencies for the target
-overexposed_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libfreetype.so;general;/usr/lib/x86_64-linux-gnu/libglib-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgobject-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libcairo.so;general;/usr/lib/x86_64-linux-gnu/libpango-1.0.so;general;/usr/lib/x86_64-linux-gnu/libatk-1.0.so;general;/usr/lib/x86_64-linux-gnu/libxml2.so;general;/usr/lib/x86_64-linux-gnu/libcurl.so;general;/usr/lib/x86_64-linux-gnu/libpng.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libjpeg.so;general;/usr/lib/x86_64-linux-gnu/libtiff.so;general;lib_darktable;
-
-//Dependencies for the target
-pfm_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libfreetype.so;general;/usr/lib/x86_64-linux-gnu/libglib-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgobject-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libcairo.so;general;/usr/lib/x86_64-linux-gnu/libpango-1.0.so;general;/usr/lib/x86_64-linux-gnu/libatk-1.0.so;general;/usr/lib/x86_64-linux-gnu/libxml2.so;general;/usr/lib/x86_64-linux-gnu/libcurl.so;general;/usr/lib/x86_64-linux-gnu/libpng.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libjpeg.so;general;/usr/lib/x86_64-linux-gnu/libtiff.so;general;lib_darktable;
-
-//Dependencies for the target
-picasa_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libfreetype.so;general;/usr/lib/x86_64-linux-gnu/libglib-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgobject-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libcairo.so;general;/usr/lib/x86_64-linux-gnu/libpango-1.0.so;general;/usr/lib/x86_64-linux-gnu/libatk-1.0.so;general;/usr/lib/x86_64-linux-gnu/libxml2.so;general;/usr/lib/x86_64-linux-gnu/libcurl.so;general;/usr/lib/x86_64-linux-gnu/libpng.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libjpeg.so;general;/usr/lib/x86_64-linux-gnu/libtiff.so;general;lib_darktable;
-
-//Dependencies for the target
-png_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libfreetype.so;general;/usr/lib/x86_64-linux-gnu/libglib-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgobject-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libcairo.so;general;/usr/lib/x86_64-linux-gnu/libpango-1.0.so;general;/usr/lib/x86_64-linux-gnu/libatk-1.0.so;general;/usr/lib/x86_64-linux-gnu/libxml2.so;general;/usr/lib/x86_64-linux-gnu/libcurl.so;general;/usr/lib/x86_64-linux-gnu/libpng.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libjpeg.so;general;/usr/lib/x86_64-linux-gnu/libtiff.so;general;lib_darktable;
-
-//Dependencies for the target
-ppm_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libfreetype.so;general;/usr/lib/x86_64-linux-gnu/libglib-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgobject-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libcairo.so;general;/usr/lib/x86_64-linux-gnu/libpango-1.0.so;general;/usr/lib/x86_64-linux-gnu/libatk-1.0.so;general;/usr/lib/x86_64-linux-gnu/libxml2.so;general;/usr/lib/x86_64-linux-gnu/libcurl.so;general;/usr/lib/x86_64-linux-gnu/libpng.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libjpeg.so;general;/usr/lib/x86_64-linux-gnu/libtiff.so;general;lib_darktable;
-
-//Dependencies for the target
-profile_gamma_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libfreetype.so;general;/usr/lib/x86_64-linux-gnu/libglib-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgobject-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libcairo.so;general;/usr/lib/x86_64-linux-gnu/libpango-1.0.so;general;/usr/lib/x86_64-linux-gnu/libatk-1.0.so;general;/usr/lib/x86_64-linux-gnu/libxml2.so;general;/usr/lib/x86_64-linux-gnu/libcurl.so;general;/usr/lib/x86_64-linux-gnu/libpng.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libjpeg.so;general;/usr/lib/x86_64-linux-gnu/libtiff.so;general;lib_darktable;
-
-//Dependencies for the target
-ratings_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libfreetype.so;general;/usr/lib/x86_64-linux-gnu/libglib-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgobject-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libcairo.so;general;/usr/lib/x86_64-linux-gnu/libpango-1.0.so;general;/usr/lib/x86_64-linux-gnu/libatk-1.0.so;general;/usr/lib/x86_64-linux-gnu/libxml2.so;general;/usr/lib/x86_64-linux-gnu/libcurl.so;general;/usr/lib/x86_64-linux-gnu/libpng.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libjpeg.so;general;/usr/lib/x86_64-linux-gnu/libtiff.so;general;lib_darktable;
-
-//Dependencies for the target
-rawdenoise_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libfreetype.so;general;/usr/lib/x86_64-linux-gnu/libglib-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgobject-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libcairo.so;general;/usr/lib/x86_64-linux-gnu/libpango-1.0.so;general;/usr/lib/x86_64-linux-gnu/libatk-1.0.so;general;/usr/lib/x86_64-linux-gnu/libxml2.so;general;/usr/lib/x86_64-linux-gnu/libcurl.so;general;/usr/lib/x86_64-linux-gnu/libpng.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libjpeg.so;general;/usr/lib/x86_64-linux-gnu/libtiff.so;general;lib_darktable;
-
-//Dependencies for target
-rawspeed_LIB_DEPENDS:STATIC=
-
-//Dependencies for the target
-recentcollect_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libfreetype.so;general;/usr/lib/x86_64-linux-gnu/libglib-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgobject-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libcairo.so;general;/usr/lib/x86_64-linux-gnu/libpango-1.0.so;general;/usr/lib/x86_64-linux-gnu/libatk-1.0.so;general;/usr/lib/x86_64-linux-gnu/libxml2.so;general;/usr/lib/x86_64-linux-gnu/libcurl.so;general;/usr/lib/x86_64-linux-gnu/libpng.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libjpeg.so;general;/usr/lib/x86_64-linux-gnu/libtiff.so;general;lib_darktable;
-
-//Dependencies for the target
-relight_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libfreetype.so;general;/usr/lib/x86_64-linux-gnu/libglib-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgobject-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libcairo.so;general;/usr/lib/x86_64-linux-gnu/libpango-1.0.so;general;/usr/lib/x86_64-linux-gnu/libatk-1.0.so;general;/usr/lib/x86_64-linux-gnu/libxml2.so;general;/usr/lib/x86_64-linux-gnu/libcurl.so;general;/usr/lib/x86_64-linux-gnu/libpng.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libjpeg.so;general;/usr/lib/x86_64-linux-gnu/libtiff.so;general;lib_darktable;
-
-//Dependencies for the target
-select_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libfreetype.so;general;/usr/lib/x86_64-linux-gnu/libglib-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgobject-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libcairo.so;general;/usr/lib/x86_64-linux-gnu/libpango-1.0.so;general;/usr/lib/x86_64-linux-gnu/libatk-1.0.so;general;/usr/lib/x86_64-linux-gnu/libxml2.so;general;/usr/lib/x86_64-linux-gnu/libcurl.so;general;/usr/lib/x86_64-linux-gnu/libpng.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libjpeg.so;general;/usr/lib/x86_64-linux-gnu/libtiff.so;general;lib_darktable;
-
-//Dependencies for the target
-shadhi_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libfreetype.so;general;/usr/lib/x86_64-linux-gnu/libglib-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgobject-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libcairo.so;general;/usr/lib/x86_64-linux-gnu/libpango-1.0.so;general;/usr/lib/x86_64-linux-gnu/libatk-1.0.so;general;/usr/lib/x86_64-linux-gnu/libxml2.so;general;/usr/lib/x86_64-linux-gnu/libcurl.so;general;/usr/lib/x86_64-linux-gnu/libpng.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libjpeg.so;general;/usr/lib/x86_64-linux-gnu/libtiff.so;general;lib_darktable;
-
-//Dependencies for the target
-sharpen_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libfreetype.so;general;/usr/lib/x86_64-linux-gnu/libglib-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgobject-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libcairo.so;general;/usr/lib/x86_64-linux-gnu/libpango-1.0.so;general;/usr/lib/x86_64-linux-gnu/libatk-1.0.so;general;/usr/lib/x86_64-linux-gnu/libxml2.so;general;/usr/lib/x86_64-linux-gnu/libcurl.so;general;/usr/lib/x86_64-linux-gnu/libpng.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libjpeg.so;general;/usr/lib/x86_64-linux-gnu/libtiff.so;general;lib_darktable;
-
-//Dependencies for the target
-snapshots_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libfreetype.so;general;/usr/lib/x86_64-linux-gnu/libglib-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgobject-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libcairo.so;general;/usr/lib/x86_64-linux-gnu/libpango-1.0.so;general;/usr/lib/x86_64-linux-gnu/libatk-1.0.so;general;/usr/lib/x86_64-linux-gnu/libxml2.so;general;/usr/lib/x86_64-linux-gnu/libcurl.so;general;/usr/lib/x86_64-linux-gnu/libpng.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libjpeg.so;general;/usr/lib/x86_64-linux-gnu/libtiff.so;general;lib_darktable;
-
-//Dependencies for the target
-soften_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libfreetype.so;general;/usr/lib/x86_64-linux-gnu/libglib-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgobject-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libcairo.so;general;/usr/lib/x86_64-linux-gnu/libpango-1.0.so;general;/usr/lib/x86_64-linux-gnu/libatk-1.0.so;general;/usr/lib/x86_64-linux-gnu/libxml2.so;general;/usr/lib/x86_64-linux-gnu/libcurl.so;general;/usr/lib/x86_64-linux-gnu/libpng.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libjpeg.so;general;/usr/lib/x86_64-linux-gnu/libtiff.so;general;lib_darktable;
-
-//Dependencies for the target
-splittoning_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libfreetype.so;general;/usr/lib/x86_64-linux-gnu/libglib-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgobject-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libcairo.so;general;/usr/lib/x86_64-linux-gnu/libpango-1.0.so;general;/usr/lib/x86_64-linux-gnu/libatk-1.0.so;general;/usr/lib/x86_64-linux-gnu/libxml2.so;general;/usr/lib/x86_64-linux-gnu/libcurl.so;general;/usr/lib/x86_64-linux-gnu/libpng.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libjpeg.so;general;/usr/lib/x86_64-linux-gnu/libtiff.so;general;lib_darktable;
-
-//Dependencies for the target
-spots_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libfreetype.so;general;/usr/lib/x86_64-linux-gnu/libglib-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgobject-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libcairo.so;general;/usr/lib/x86_64-linux-gnu/libpango-1.0.so;general;/usr/lib/x86_64-linux-gnu/libatk-1.0.so;general;/usr/lib/x86_64-linux-gnu/libxml2.so;general;/usr/lib/x86_64-linux-gnu/libcurl.so;general;/usr/lib/x86_64-linux-gnu/libpng.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libjpeg.so;general;/usr/lib/x86_64-linux-gnu/libtiff.so;general;lib_darktable;
-
-//Dependencies for the target
-styles_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libfreetype.so;general;/usr/lib/x86_64-linux-gnu/libglib-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgobject-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libcairo.so;general;/usr/lib/x86_64-linux-gnu/libpango-1.0.so;general;/usr/lib/x86_64-linux-gnu/libatk-1.0.so;general;/usr/lib/x86_64-linux-gnu/libxml2.so;general;/usr/lib/x86_64-linux-gnu/libcurl.so;general;/usr/lib/x86_64-linux-gnu/libpng.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libjpeg.so;general;/usr/lib/x86_64-linux-gnu/libtiff.so;general;lib_darktable;
-
-//Dependencies for the target
-tagging_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libfreetype.so;general;/usr/lib/x86_64-linux-gnu/libglib-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgobject-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libcairo.so;general;/usr/lib/x86_64-linux-gnu/libpango-1.0.so;general;/usr/lib/x86_64-linux-gnu/libatk-1.0.so;general;/usr/lib/x86_64-linux-gnu/libxml2.so;general;/usr/lib/x86_64-linux-gnu/libcurl.so;general;/usr/lib/x86_64-linux-gnu/libpng.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libjpeg.so;general;/usr/lib/x86_64-linux-gnu/libtiff.so;general;lib_darktable;
-
-//Dependencies for the target
-temperature_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libfreetype.so;general;/usr/lib/x86_64-linux-gnu/libglib-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgobject-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libcairo.so;general;/usr/lib/x86_64-linux-gnu/libpango-1.0.so;general;/usr/lib/x86_64-linux-gnu/libatk-1.0.so;general;/usr/lib/x86_64-linux-gnu/libxml2.so;general;/usr/lib/x86_64-linux-gnu/libcurl.so;general;/usr/lib/x86_64-linux-gnu/libpng.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libjpeg.so;general;/usr/lib/x86_64-linux-gnu/libtiff.so;general;lib_darktable;
-
-//Dependencies for the target
-tiff_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libfreetype.so;general;/usr/lib/x86_64-linux-gnu/libglib-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgobject-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libcairo.so;general;/usr/lib/x86_64-linux-gnu/libpango-1.0.so;general;/usr/lib/x86_64-linux-gnu/libatk-1.0.so;general;/usr/lib/x86_64-linux-gnu/libxml2.so;general;/usr/lib/x86_64-linux-gnu/libcurl.so;general;/usr/lib/x86_64-linux-gnu/libpng.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libjpeg.so;general;/usr/lib/x86_64-linux-gnu/libtiff.so;general;lib_darktable;
-
-//Dependencies for the target
-tonecurve_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libfreetype.so;general;/usr/lib/x86_64-linux-gnu/libglib-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgobject-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libcairo.so;general;/usr/lib/x86_64-linux-gnu/libpango-1.0.so;general;/usr/lib/x86_64-linux-gnu/libatk-1.0.so;general;/usr/lib/x86_64-linux-gnu/libxml2.so;general;/usr/lib/x86_64-linux-gnu/libcurl.so;general;/usr/lib/x86_64-linux-gnu/libpng.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libjpeg.so;general;/usr/lib/x86_64-linux-gnu/libtiff.so;general;lib_darktable;
-
-//Dependencies for the target
-tonemap_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libfreetype.so;general;/usr/lib/x86_64-linux-gnu/libglib-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgobject-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libcairo.so;general;/usr/lib/x86_64-linux-gnu/libpango-1.0.so;general;/usr/lib/x86_64-linux-gnu/libatk-1.0.so;general;/usr/lib/x86_64-linux-gnu/libxml2.so;general;/usr/lib/x86_64-linux-gnu/libcurl.so;general;/usr/lib/x86_64-linux-gnu/libpng.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libjpeg.so;general;/usr/lib/x86_64-linux-gnu/libtiff.so;general;lib_darktable;
-
-//Dependencies for the target
-velvia_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libfreetype.so;general;/usr/lib/x86_64-linux-gnu/libglib-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgobject-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libcairo.so;general;/usr/lib/x86_64-linux-gnu/libpango-1.0.so;general;/usr/lib/x86_64-linux-gnu/libatk-1.0.so;general;/usr/lib/x86_64-linux-gnu/libxml2.so;general;/usr/lib/x86_64-linux-gnu/libcurl.so;general;/usr/lib/x86_64-linux-gnu/libpng.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libjpeg.so;general;/usr/lib/x86_64-linux-gnu/libtiff.so;general;lib_darktable;
-
-//Dependencies for the target
-vibrance_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libfreetype.so;general;/usr/lib/x86_64-linux-gnu/libglib-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgobject-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libcairo.so;general;/usr/lib/x86_64-linux-gnu/libpango-1.0.so;general;/usr/lib/x86_64-linux-gnu/libatk-1.0.so;general;/usr/lib/x86_64-linux-gnu/libxml2.so;general;/usr/lib/x86_64-linux-gnu/libcurl.so;general;/usr/lib/x86_64-linux-gnu/libpng.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libjpeg.so;general;/usr/lib/x86_64-linux-gnu/libtiff.so;general;lib_darktable;
-
-//Dependencies for the target
-view_toolbox_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libfreetype.so;general;/usr/lib/x86_64-linux-gnu/libglib-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgobject-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libcairo.so;general;/usr/lib/x86_64-linux-gnu/libpango-1.0.so;general;/usr/lib/x86_64-linux-gnu/libatk-1.0.so;general;/usr/lib/x86_64-linux-gnu/libxml2.so;general;/usr/lib/x86_64-linux-gnu/libcurl.so;general;/usr/lib/x86_64-linux-gnu/libpng.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libjpeg.so;general;/usr/lib/x86_64-linux-gnu/libtiff.so;general;lib_darktable;
-
-//Dependencies for the target
-viewswitcher_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libfreetype.so;general;/usr/lib/x86_64-linux-gnu/libglib-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgobject-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libcairo.so;general;/usr/lib/x86_64-linux-gnu/libpango-1.0.so;general;/usr/lib/x86_64-linux-gnu/libatk-1.0.so;general;/usr/lib/x86_64-linux-gnu/libxml2.so;general;/usr/lib/x86_64-linux-gnu/libcurl.so;general;/usr/lib/x86_64-linux-gnu/libpng.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libjpeg.so;general;/usr/lib/x86_64-linux-gnu/libtiff.so;general;lib_darktable;
-
-//Dependencies for the target
-vignette_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libfreetype.so;general;/usr/lib/x86_64-linux-gnu/libglib-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgobject-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libcairo.so;general;/usr/lib/x86_64-linux-gnu/libpango-1.0.so;general;/usr/lib/x86_64-linux-gnu/libatk-1.0.so;general;/usr/lib/x86_64-linux-gnu/libxml2.so;general;/usr/lib/x86_64-linux-gnu/libcurl.so;general;/usr/lib/x86_64-linux-gnu/libpng.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libjpeg.so;general;/usr/lib/x86_64-linux-gnu/libtiff.so;general;lib_darktable;
-
-//Dependencies for the target
-zonesystem_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libfreetype.so;general;/usr/lib/x86_64-linux-gnu/libglib-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgobject-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so;general;/usr/lib/x86_64-linux-gnu/libcairo.so;general;/usr/lib/x86_64-linux-gnu/libpango-1.0.so;general;/usr/lib/x86_64-linux-gnu/libatk-1.0.so;general;/usr/lib/x86_64-linux-gnu/libxml2.so;general;/usr/lib/x86_64-linux-gnu/libcurl.so;general;/usr/lib/x86_64-linux-gnu/libpng.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libjpeg.so;general;/usr/lib/x86_64-linux-gnu/libtiff.so;general;lib_darktable;
 
 
 ########################
@@ -1368,10 +944,6 @@ Boost_FILESYSTEM_LIBRARY-ADVANCED:INTERNAL=1
 Boost_FILESYSTEM_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: Boost_FILESYSTEM_LIBRARY_RELEASE
 Boost_FILESYSTEM_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: Boost_FOREACH_LIBRARY_DEBUG
-Boost_FOREACH_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: Boost_FOREACH_LIBRARY_RELEASE
-Boost_FOREACH_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: Boost_INCLUDE_DIR
 Boost_INCLUDE_DIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: Boost_LIBRARY_DIRS
@@ -1531,78 +1103,12 @@ CPACK_SOURCE_TGZ-ADVANCED:INTERNAL=1
 CPACK_SOURCE_TZ-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CPACK_SOURCE_ZIP
 CPACK_SOURCE_ZIP-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: CURL_INCLUDE_DIR
-CURL_INCLUDE_DIR-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: CURL_LIBRARY
-CURL_LIBRARY-ADVANCED:INTERNAL=1
-//Details about finding CURL
-FIND_PACKAGE_MESSAGE_DETAILS_CURL:INTERNAL=[/usr/lib/x86_64-linux-gnu/libcurl.so][/usr/include][v()]
-//Details about finding Freetype
-FIND_PACKAGE_MESSAGE_DETAILS_Freetype:INTERNAL=[/usr/lib/x86_64-linux-gnu/libfreetype.so][/usr/include;/usr/include/freetype2][v()]
-//Details about finding GTK2_GTK
-FIND_PACKAGE_MESSAGE_DETAILS_GTK2_GTK:INTERNAL=[/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so][/usr/include/gtk-2.0][/usr/include/glib-2.0][/usr/lib/x86_64-linux-gnu/glib-2.0/include][/usr/lib/x86_64-linux-gnu/libglib-2.0.so][/usr/include/gtk-2.0][/usr/lib/x86_64-linux-gnu/gtk-2.0/include][/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so][v()]
 //Details about finding ImageMagick
 FIND_PACKAGE_MESSAGE_DETAILS_ImageMagick:INTERNAL=[TRUE][v()]
-//Details about finding JPEG
-FIND_PACKAGE_MESSAGE_DETAILS_JPEG:INTERNAL=[/usr/lib/x86_64-linux-gnu/libjpeg.so][/usr/include][v()]
 //Details about finding LCMS2
 FIND_PACKAGE_MESSAGE_DETAILS_LCMS2:INTERNAL=[/usr/local/lib/liblcms2.so][/usr/local/include][v()]
-//Details about finding LibXml2
-FIND_PACKAGE_MESSAGE_DETAILS_LibXml2:INTERNAL=[/usr/lib/x86_64-linux-gnu/libxml2.so][/usr/include/libxml2][v()]
-//Details about finding OpenMP
-FIND_PACKAGE_MESSAGE_DETAILS_OpenMP:INTERNAL=[-fopenmp][-fopenmp][v()]
-//Details about finding PNG
-FIND_PACKAGE_MESSAGE_DETAILS_PNG:INTERNAL=[/usr/lib/x86_64-linux-gnu/libpng.so][/usr/include][v()]
 //Details about finding Qt4
 FIND_PACKAGE_MESSAGE_DETAILS_Qt4:INTERNAL=[/usr/bin/qmake][/usr/bin/moc-qt4][/usr/bin/rcc][/usr/include/qt4][/usr/lib/x86_64-linux-gnu][/usr/include/qt4/QtCore][/usr/lib/x86_64-linux-gnu/libQtCore.so][/usr/include/qt4/QtGui][/usr/lib/x86_64-linux-gnu/libQtGui.so][/usr/include/qt4/QtXml][/usr/lib/x86_64-linux-gnu/libQtXml.so][/usr/bin/uic-qt4][v4.8.0(4.7)]
-//Details about finding TIFF
-FIND_PACKAGE_MESSAGE_DETAILS_TIFF:INTERNAL=[/usr/lib/x86_64-linux-gnu/libtiff.so][/usr/include][v()]
-//Details about finding ZLIB
-FIND_PACKAGE_MESSAGE_DETAILS_ZLIB:INTERNAL=[/usr/lib/x86_64-linux-gnu/libz.so][/usr/include][v1.2.3.4()]
-//ADVANCED property for variable: FREETYPE_INCLUDE_DIR_freetype2
-FREETYPE_INCLUDE_DIR_freetype2-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: FREETYPE_INCLUDE_DIR_ft2build
-FREETYPE_INCLUDE_DIR_ft2build-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: FREETYPE_LIBRARY
-FREETYPE_LIBRARY-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: GTK2_ATK_INCLUDE_DIR
-GTK2_ATK_INCLUDE_DIR-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: GTK2_ATK_LIBRARY
-GTK2_ATK_LIBRARY-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: GTK2_CAIRO_INCLUDE_DIR
-GTK2_CAIRO_INCLUDE_DIR-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: GTK2_CAIRO_LIBRARY
-GTK2_CAIRO_LIBRARY-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: GTK2_FONTCONFIG_INCLUDE_DIR
-GTK2_FONTCONFIG_INCLUDE_DIR-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: GTK2_GDKCONFIG_INCLUDE_DIR
-GTK2_GDKCONFIG_INCLUDE_DIR-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: GTK2_GDK_INCLUDE_DIR
-GTK2_GDK_INCLUDE_DIR-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: GTK2_GDK_LIBRARY
-GTK2_GDK_LIBRARY-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: GTK2_GDK_PIXBUF_INCLUDE_DIR
-GTK2_GDK_PIXBUF_INCLUDE_DIR-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: GTK2_GDK_PIXBUF_LIBRARY
-GTK2_GDK_PIXBUF_LIBRARY-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: GTK2_GLIBCONFIG_INCLUDE_DIR
-GTK2_GLIBCONFIG_INCLUDE_DIR-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: GTK2_GLIB_INCLUDE_DIR
-GTK2_GLIB_INCLUDE_DIR-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: GTK2_GLIB_LIBRARY
-GTK2_GLIB_LIBRARY-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: GTK2_GOBJECT_INCLUDE_DIR
-GTK2_GOBJECT_INCLUDE_DIR-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: GTK2_GOBJECT_LIBRARY
-GTK2_GOBJECT_LIBRARY-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: GTK2_GTK_INCLUDE_DIR
-GTK2_GTK_INCLUDE_DIR-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: GTK2_GTK_LIBRARY
-GTK2_GTK_LIBRARY-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: GTK2_PANGO_INCLUDE_DIR
-GTK2_PANGO_INCLUDE_DIR-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: GTK2_PANGO_LIBRARY
-GTK2_PANGO_LIBRARY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: IMAGEMAGICK_BINARY_PATH
 IMAGEMAGICK_BINARY_PATH-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: IMAGEMAGICK_COMPOSITE_EXECUTABLE
@@ -1615,64 +1121,26 @@ IMAGEMAGICK_IMPORT_EXECUTABLE-ADVANCED:INTERNAL=1
 IMAGEMAGICK_MOGRIFY_EXECUTABLE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: IMAGEMAGICK_MONTAGE_EXECUTABLE
 IMAGEMAGICK_MONTAGE_EXECUTABLE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: JPEG_INCLUDE_DIR
-JPEG_INCLUDE_DIR-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: JPEG_LIBRARY
-JPEG_LIBRARY-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: LIBXML2_INCLUDE_DIR
-LIBXML2_INCLUDE_DIR-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: LIBXML2_LIBRARIES
-LIBXML2_LIBRARIES-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: LIBXML2_XMLLINT_EXECUTABLE
-LIBXML2_XMLLINT_EXECUTABLE-ADVANCED:INTERNAL=1
-//Test MARCHNATIVE
-MARCHNATIVE:INTERNAL=1
-//ADVANCED property for variable: OpenMP_CXX_FLAGS
-OpenMP_CXX_FLAGS-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: OpenMP_C_FLAGS
-OpenMP_C_FLAGS-ADVANCED:INTERNAL=1
-//Test OpenMP_FLAG_DETECTED
-OpenMP_FLAG_DETECTED:INTERNAL=1
-PC_LIBXML_CFLAGS:INTERNAL=-I/usr/include/libxml2
-PC_LIBXML_CFLAGS_I:INTERNAL=
-PC_LIBXML_CFLAGS_OTHER:INTERNAL=
-PC_LIBXML_FOUND:INTERNAL=1
-PC_LIBXML_INCLUDEDIR:INTERNAL=/usr/include
-PC_LIBXML_INCLUDE_DIRS:INTERNAL=/usr/include/libxml2
-PC_LIBXML_LDFLAGS:INTERNAL=-lxml2
-PC_LIBXML_LDFLAGS_OTHER:INTERNAL=
-PC_LIBXML_LIBDIR:INTERNAL=/usr/lib/x86_64-linux-gnu
-PC_LIBXML_LIBRARIES:INTERNAL=xml2
-PC_LIBXML_LIBRARY_DIRS:INTERNAL=
-PC_LIBXML_LIBS:INTERNAL=
-PC_LIBXML_LIBS_L:INTERNAL=
-PC_LIBXML_LIBS_OTHER:INTERNAL=
-PC_LIBXML_LIBS_PATHS:INTERNAL=
-PC_LIBXML_PREFIX:INTERNAL=/usr
-PC_LIBXML_STATIC_CFLAGS:INTERNAL=-I/usr/include/libxml2
-PC_LIBXML_STATIC_CFLAGS_I:INTERNAL=
-PC_LIBXML_STATIC_CFLAGS_OTHER:INTERNAL=
-PC_LIBXML_STATIC_INCLUDE_DIRS:INTERNAL=/usr/include/libxml2
-PC_LIBXML_STATIC_LDFLAGS:INTERNAL=-lxml2;-lz;-lm
-PC_LIBXML_STATIC_LDFLAGS_OTHER:INTERNAL=
-PC_LIBXML_STATIC_LIBDIR:INTERNAL=
-PC_LIBXML_STATIC_LIBRARIES:INTERNAL=xml2;z;m
-PC_LIBXML_STATIC_LIBRARY_DIRS:INTERNAL=
-PC_LIBXML_STATIC_LIBS:INTERNAL=
-PC_LIBXML_STATIC_LIBS_L:INTERNAL=
-PC_LIBXML_STATIC_LIBS_OTHER:INTERNAL=
-PC_LIBXML_STATIC_LIBS_PATHS:INTERNAL=
-PC_LIBXML_VERSION:INTERNAL=2.7.8
-PC_LIBXML_libxml-2.0_INCLUDEDIR:INTERNAL=
-PC_LIBXML_libxml-2.0_LIBDIR:INTERNAL=
-PC_LIBXML_libxml-2.0_PREFIX:INTERNAL=
-PC_LIBXML_libxml-2.0_VERSION:INTERNAL=
-//ADVANCED property for variable: PKG_CONFIG_EXECUTABLE
-PKG_CONFIG_EXECUTABLE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: PNG_LIBRARY
-PNG_LIBRARY-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: PNG_PNG_INCLUDE_DIR
-PNG_PNG_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: OPENCV_CVAUX_LIBRARY
+OPENCV_CVAUX_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: OPENCV_CVCAM_LIBRARY
+OPENCV_CVCAM_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: OPENCV_CXCORE_LIBRARY
+OPENCV_CXCORE_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: OPENCV_HIGHGUI_LIBRARY
+OPENCV_HIGHGUI_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: OPENCV_INCLUDE_DIR_CV
+OPENCV_INCLUDE_DIR_CV-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: OPENCV_INCLUDE_DIR_CVAUX
+OPENCV_INCLUDE_DIR_CVAUX-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: OPENCV_INCLUDE_DIR_CVCAM
+OPENCV_INCLUDE_DIR_CVCAM-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: OPENCV_INCLUDE_DIR_CXCORE
+OPENCV_INCLUDE_DIR_CXCORE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: OPENCV_INCLUDE_DIR_HIGHGUI
+OPENCV_INCLUDE_DIR_HIGHGUI-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: OPENCV_LIBRARY
+OPENCV_LIBRARY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: QT3_QGLOBAL_H_FILE
 QT3_QGLOBAL_H_FILE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: QT4_QGLOBAL_H_FILE
@@ -2094,13 +1562,4 @@ Q_WS_QWS:INTERNAL=
 Q_WS_WIN:INTERNAL=
 //Have symbol Q_WS_X11
 Q_WS_X11:INTERNAL=1
-//ADVANCED property for variable: TIFF_INCLUDE_DIR
-TIFF_INCLUDE_DIR-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: TIFF_LIBRARY
-TIFF_LIBRARY-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: ZLIB_INCLUDE_DIR
-ZLIB_INCLUDE_DIR-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: ZLIB_LIBRARY
-ZLIB_LIBRARY-ADVANCED:INTERNAL=1
-__pkg_config_checked_PC_LIBXML:INTERNAL=1
 

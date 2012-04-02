@@ -1182,12 +1182,6 @@ opencv2/legacy/compat.hpp
 opencv2/core/internal.hpp
 /usr/local/include/opencv/opencv2/core/internal.hpp
 
-/usr/local/include/opencv/cxcore.h
-opencv2/core/core_c.h
-/usr/local/include/opencv/opencv2/core/core_c.h
-opencv2/core/core.hpp
-/usr/local/include/opencv/opencv2/core/core.hpp
-
 /usr/local/include/opencv/highgui.h
 opencv2/core/core_c.h
 /usr/local/include/opencv/opencv2/core/core_c.h
@@ -1227,6 +1221,8 @@ string
 -
 vector
 -
+sstream
+-
 opencv2/core/operations.hpp
 /usr/local/include/opencv2/core/opencv2/core/operations.hpp
 opencv2/core/mat.hpp
@@ -1237,8 +1233,10 @@ opencv2/core/types_c.h
 /usr/local/include/opencv2/core/opencv2/core/types_c.h
 
 /usr/local/include/opencv2/core/eigen.hpp
-cxcore.h
-/usr/local/include/opencv2/core/cxcore.h
+opencv2/core/core_c.h
+/usr/local/include/opencv2/core/opencv2/core/core_c.h
+opencv2/core/core.hpp
+/usr/local/include/opencv2/core/opencv2/core/core.hpp
 
 /usr/local/include/opencv2/core/internal.hpp
 vector
@@ -1247,14 +1245,14 @@ windows.h
 -
 pthread.h
 -
-sys/mman.h
--
 ipp.h
 /usr/local/include/opencv2/core/ipp.h
 emmintrin.h
 /usr/local/include/opencv2/core/emmintrin.h
 pmmintrin.h
 /usr/local/include/opencv2/core/pmmintrin.h
+tmmintrin.h
+/usr/local/include/opencv2/core/tmmintrin.h
 arm_neon.h
 /usr/local/include/opencv2/core/arm_neon.h
 tbb/tbb_stddef.h
@@ -1267,8 +1265,6 @@ Eigen/Core
 -
 opencv2/core/eigen.hpp
 /usr/local/include/opencv2/core/opencv2/core/eigen.hpp
-threading_framework.hpp
-/usr/local/include/opencv2/core/threading_framework.hpp
 malloc.h
 -
 alloca.h
@@ -1291,7 +1287,7 @@ ext/atomicity.h
 -
 bits/atomicity.h
 -
-intrin.h
+windows.h
 -
 limits
 -
@@ -1319,6 +1315,8 @@ ipl.h
 -
 ipl/ipl.h
 -
+tegra_round.hpp
+/usr/local/include/opencv2/core/tegra_round.hpp
 
 /usr/local/include/opencv2/core/version.hpp
 
@@ -1783,8 +1781,6 @@ opencv2/imgproc/types_c.h
 /usr/local/include/opencv2/imgproc/types_c.h
 opencv2/core/core_c.h
 /usr/local/include/opencv2/imgproc/opencv2/core/core_c.h
-opencv2/imgproc/types_c.h
-/usr/local/include/opencv2/imgproc/opencv2/imgproc/types_c.h
 
 /usr/local/include/opencv2/legacy/compat.hpp
 opencv2/core/core_c.h
@@ -1801,6 +1797,8 @@ opencv2/core/core.hpp
 /usr/local/include/opencv2/objdetect/opencv2/core/core.hpp
 opencv2/features2d/features2d.hpp
 /usr/local/include/opencv2/objdetect/opencv2/features2d/features2d.hpp
+map
+-
 deque
 -
 

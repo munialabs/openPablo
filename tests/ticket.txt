@@ -1,0 +1,196 @@
+
+tickets/parameters can be specified in the
+json format. this is easier to read than XML files.
+thanks to the boost library, both, XML and JSON
+can be processed.
+
+gives you much more control over the whole process,
+modularized. 
+
+is there a graphical editor one can use/misuse
+
+Settings
+{
+  id: Offset1
+
+  Transformation
+  {
+    Geometrical
+    {
+      id: transform1
+      Rotate 
+      {
+	Degree: 55
+	Autorotate: off/exif/face/brightness
+      }
+
+      Scale
+      {
+	LongerEdge: 400
+	X: 600
+	Y: 700
+      }
+
+      Crop
+      {
+	AutoCrop: Color
+      }
+    }
+
+    Geometrical
+    {
+      id: transform2
+      Scale
+      {
+	LongerEdge: 400
+	X: 600
+	Y: 700
+      }
+    }
+
+
+    Pipeline: transform2, transform1
+  }
+
+
+  Color
+  {
+    ICC
+    {
+      Path: '//mainserver/iccprofiles/'
+      Input: KL.ICC/AutoDetect
+      Output: RGB.ICC
+    }
+
+    ColorCast
+    {
+      Method: MaxE
+      Strength: 0.5
+    }
+    
+    Contrast
+    {
+      Brightness: 0.5
+      Contrast: 1.0
+    }
+
+    Denoising
+    {
+      Method: Median
+    }
+
+classification..
+
+    Shadows: 0.5
+    Highlights: 1.0
+
+    Local
+    {
+      RedEyeReduction: Off
+    }
+
+    Sharpness
+    {
+      USM
+      {
+	Radius: 0.5
+	Strength: 2.0
+	Detail: 1.0
+      }
+    }
+
+    # faces
+    Transformation
+    {
+      Source: Face/Fix
+      Target: RelativeLAB (50,30,10)
+    }
+
+    # vegetation
+    Transformation
+    {
+      Source: Vegetation
+      Target: RelativeLAB (50,30,10)
+    }
+
+    Postprocessing
+    {
+      Red: 1.2
+      Blue: 1.0
+      Green: 0.9
+      Brightness:
+      Saturation:
+      Contrast:
+      HueRotation: 
+    }
+
+  }
+
+
+  MetaData
+  {
+    EXIF
+    {
+      addtag: 'Vendor: 2012, Processed with OpenPablo'
+      removetag: 'Vendor'
+      addtag: { date: currentdate }
+    }
+
+    IPTC
+    {
+      name: 'OpenPablo'
+    }
+  }
+
+
+  FileHandling
+  {
+    OutputFormat: JPEG
+    Compression: 87
+
+    OutputFormat: PSD
+    Layer..
+
+    Rename
+    {
+      RegExp: ..
+    }
+
+  }
+}
+
+
+Exclusion
+{
+  rules if width < 500...
+}
+
+
+
+Output
+{
+  id: Web
+  settings: Offset1
+
+  path: '//server2/outputA';
+
+  Override..
+}
+
+
+Output
+{
+  id: Print
+  settings: Offset1
+  
+  Override..
+}
+
+statistics?
+
+
+pipeline
+A {  { { B1 },
+       { B2 } },
+     { C1 } } D1
+

@@ -1,0 +1,38 @@
+{
+  "Settings":
+  {
+    "id": "Offset1",
+
+    "Color":
+    {
+      "ICC":
+      {
+	"Path": "data/iccprofiles",
+	"Input": "Autodetect",
+	"Output": "sRGB_linear.icc"
+      }
+    },
+
+    "FileHandling":
+    {
+      "OutputFormat": "JPEG",
+      "Compression": 87
+    }
+  },
+
+
+  "Input":
+  {
+    "InputFile": "data/cmyk_cmyk.jpg"
+  },
+
+
+  "Output":
+  {
+    "id": "Web",
+    "Settings": "Offset1",
+
+    "OutputPath": "tests/"
+  }
+
+}
