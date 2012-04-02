@@ -65,22 +65,36 @@ int main ( int argc, char **argv )
     std::string inputFile = pt.get<std::string>("Input.InputFile");
     std::cout << inputFile << "\n";
     
-return -1;
+    std::string iccPath = pt.get<std::string>("Settings.Color.ICC.Path");
+    std::cout << iccPath << "\n";
+    
+    std::string outputICC = pt.get<std::string>("Settings.Color.ICC.Output");
+    std::cout << outputICC << "\n";
+    
+    std::string outputPath = pt.get<std::string>("Output.OutputPath");
+    std::cout << outputPath << "\n";
+    
+    std::string inputPath = pt.get<std::string>("Input.InputPath");
+    std::cout << inputPath << "\n";
     
     
     
-  
+    QFile file(QString::fromStdString(iccPath + "/" + outputICC));
+
+    QByteArray outputProfile;
+      if(file.open(QIODevice::ReadOnly))
+      {
+	  outputProfile = file.readAll();
+	  file.close();
+      }
+      else
+      {
+	std::cout << ("failed to load ") << iccPath << "/" << outputICC << "\n";
+      }
+    
+    
 //    PdfStreamedDocument document( "tests/tmp.pdf" );
 
-  QFile file("data/NKsRGB.icm");
-
-    if(file.open(QIODevice::ReadOnly))
-    {
-        QByteArray bytes = file.readAll();
-        file.close();
-    }
-    else
-      std::cout << ("rfile failed...");
     
    //Initialize ImageMagick install location for Windows
   InitializeMagick(*argv);
@@ -88,52 +102,27 @@ return -1;
   
 
   
-    struct stat  st;
-    int  fd;
-
-    if ( (fd = open("data/NKsRGB.icm", O_RDONLY)) <0) {
-	cerr << "unable to open original ICC file - " << strerror(errno) << endl;
-	return 1;
-    }
-    fstat(fd, &st);
-    const size_t  sRGBsz = st.st_size;
-    char*  sRGB = new char[sRGBsz];
-    read(fd, sRGB, sRGBsz);
-    close(fd);
-
-
-    if ( (fd = open("data/ISOcoated_v2_300_bas.ICC", O_RDONLY)) <0) {
-	cerr << "unable to open target ICC file - " << strerror(errno) << endl;
-	return 1;
-    }
-    fstat(fd, &st);
-    const size_t  aRGBsz = st.st_size;
-    char*  aRGB = new char[aRGBsz];
-    read(fd, aRGB, aRGBsz);
-    close(fd);
-
+ 
 
     try
     {
-	Magick::Image  magick("data/cmyk_cmyk.jpg");
+	Magick::Image  magick(inputPath + "/" + inputFile);
 
 	magick.renderingIntent(Magick::PerceptualIntent);
 
-	magick.profile("ICC", Magick::Blob(aRGB, aRGBsz));
+	magick.profile("ICC", Magick::Blob(outputProfile.constData(), outputProfile.size()));
 
-	const Magick::Blob  targetICC(aRGB, aRGBsz);
+	const Magick::Blob  targetICC (outputProfile.constData(), outputProfile.size());
 	magick.profile("ICC", targetICC);
 	magick.iccColorProfile(targetICC);
 
-	magick.write("tests/srgb.jpg");
+	magick.write(outputPath + "/" + inputFile);
     }
       catch (const std::exception& ex)
     {
 	cerr << "failed to magick - " << ex.what() << endl;
     }
-
-    delete []  sRGB;
-    delete []  aRGB;
+ 
 
 return -1;  
   

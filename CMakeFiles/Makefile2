@@ -56,10 +56,10 @@ CMAKE_BINARY_DIR = /home/drunkeneye/Dropbox/openpablo
 # Target rules for target CMakeFiles/openpablo.dir
 
 # All Build rule for target.
-CMakeFiles/openpablo.dir/all: 3rdparty/json_spirit/json_spirit/CMakeFiles/json_spirit.dir/all
+CMakeFiles/openpablo.dir/all:
 	$(MAKE) -f CMakeFiles/openpablo.dir/build.make CMakeFiles/openpablo.dir/depend
 	$(MAKE) -f CMakeFiles/openpablo.dir/build.make CMakeFiles/openpablo.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/drunkeneye/Dropbox/openpablo/CMakeFiles  4
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/drunkeneye/Dropbox/openpablo/CMakeFiles  1
 	@echo "Built target openpablo"
 .PHONY : CMakeFiles/openpablo.dir/all
 
@@ -69,7 +69,7 @@ all: CMakeFiles/openpablo.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/openpablo.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/drunkeneye/Dropbox/openpablo/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/drunkeneye/Dropbox/openpablo/CMakeFiles 1
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/openpablo.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/drunkeneye/Dropbox/openpablo/CMakeFiles 0
 .PHONY : CMakeFiles/openpablo.dir/rule
@@ -85,71 +85,6 @@ CMakeFiles/openpablo.dir/clean:
 
 # clean rule for target.
 clean: CMakeFiles/openpablo.dir/clean
-.PHONY : clean
-
-#=============================================================================
-# Directory level rules for directory 3rdparty/json_spirit
-
-# Convenience name for "all" pass in the directory.
-3rdparty/json_spirit/all: 3rdparty/json_spirit/json_spirit/all
-.PHONY : 3rdparty/json_spirit/all
-
-# Convenience name for "clean" pass in the directory.
-3rdparty/json_spirit/clean: 3rdparty/json_spirit/json_spirit/clean
-.PHONY : 3rdparty/json_spirit/clean
-
-# Convenience name for "preinstall" pass in the directory.
-3rdparty/json_spirit/preinstall: 3rdparty/json_spirit/json_spirit/preinstall
-.PHONY : 3rdparty/json_spirit/preinstall
-
-#=============================================================================
-# Directory level rules for directory 3rdparty/json_spirit/json_spirit
-
-# Convenience name for "all" pass in the directory.
-3rdparty/json_spirit/json_spirit/all: 3rdparty/json_spirit/json_spirit/CMakeFiles/json_spirit.dir/all
-.PHONY : 3rdparty/json_spirit/json_spirit/all
-
-# Convenience name for "clean" pass in the directory.
-3rdparty/json_spirit/json_spirit/clean: 3rdparty/json_spirit/json_spirit/CMakeFiles/json_spirit.dir/clean
-.PHONY : 3rdparty/json_spirit/json_spirit/clean
-
-# Convenience name for "preinstall" pass in the directory.
-3rdparty/json_spirit/json_spirit/preinstall:
-.PHONY : 3rdparty/json_spirit/json_spirit/preinstall
-
-#=============================================================================
-# Target rules for target 3rdparty/json_spirit/json_spirit/CMakeFiles/json_spirit.dir
-
-# All Build rule for target.
-3rdparty/json_spirit/json_spirit/CMakeFiles/json_spirit.dir/all:
-	$(MAKE) -f 3rdparty/json_spirit/json_spirit/CMakeFiles/json_spirit.dir/build.make 3rdparty/json_spirit/json_spirit/CMakeFiles/json_spirit.dir/depend
-	$(MAKE) -f 3rdparty/json_spirit/json_spirit/CMakeFiles/json_spirit.dir/build.make 3rdparty/json_spirit/json_spirit/CMakeFiles/json_spirit.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/drunkeneye/Dropbox/openpablo/CMakeFiles  1 2 3
-	@echo "Built target json_spirit"
-.PHONY : 3rdparty/json_spirit/json_spirit/CMakeFiles/json_spirit.dir/all
-
-# Include target in all.
-all: 3rdparty/json_spirit/json_spirit/CMakeFiles/json_spirit.dir/all
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-3rdparty/json_spirit/json_spirit/CMakeFiles/json_spirit.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/drunkeneye/Dropbox/openpablo/CMakeFiles 3
-	$(MAKE) -f CMakeFiles/Makefile2 3rdparty/json_spirit/json_spirit/CMakeFiles/json_spirit.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/drunkeneye/Dropbox/openpablo/CMakeFiles 0
-.PHONY : 3rdparty/json_spirit/json_spirit/CMakeFiles/json_spirit.dir/rule
-
-# Convenience name for target.
-json_spirit: 3rdparty/json_spirit/json_spirit/CMakeFiles/json_spirit.dir/rule
-.PHONY : json_spirit
-
-# clean rule for target.
-3rdparty/json_spirit/json_spirit/CMakeFiles/json_spirit.dir/clean:
-	$(MAKE) -f 3rdparty/json_spirit/json_spirit/CMakeFiles/json_spirit.dir/build.make 3rdparty/json_spirit/json_spirit/CMakeFiles/json_spirit.dir/clean
-.PHONY : 3rdparty/json_spirit/json_spirit/CMakeFiles/json_spirit.dir/clean
-
-# clean rule for target.
-clean: 3rdparty/json_spirit/json_spirit/CMakeFiles/json_spirit.dir/clean
 .PHONY : clean
 
 #=============================================================================

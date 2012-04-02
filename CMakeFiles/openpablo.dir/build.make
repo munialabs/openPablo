@@ -105,7 +105,6 @@ openpablo: /usr/local/lib/libMagick++.so
 openpablo: /usr/local/lib/libMagickCore.so
 openpablo: /usr/lib/libboost_filesystem.so
 openpablo: /usr/lib/libboost_system.so
-openpablo: 3rdparty/json_spirit/json_spirit/libjson_spirit.a
 openpablo: CMakeFiles/openpablo.dir/build.make
 openpablo: CMakeFiles/openpablo.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable openpablo"

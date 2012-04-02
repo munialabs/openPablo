@@ -17,7 +17,6 @@ SET(CMAKE_C_INCLUDE_PATH
   "/usr/include/qt4/QtGui"
   "/usr/include/qt4/QtXml"
   "/usr/include/qt4/QtCore"
-  "/json_spirit"
   )
 SET(CMAKE_CXX_INCLUDE_PATH ${CMAKE_C_INCLUDE_PATH})
 SET(CMAKE_Fortran_INCLUDE_PATH ${CMAKE_C_INCLUDE_PATH})

@@ -57,47 +57,6 @@ edit_cache:
 edit_cache/fast: edit_cache
 .PHONY : edit_cache/fast
 
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install
-
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
-
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: install/local
-.PHONY : install/local/fast
-
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: install/strip
-.PHONY : install/strip/fast
-
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-.PHONY : list_install_components/fast
-
 # Special rule for the target package
 package: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool..."
@@ -172,19 +131,6 @@ openpablo/fast:
 	$(MAKE) -f CMakeFiles/openpablo.dir/build.make CMakeFiles/openpablo.dir/build
 .PHONY : openpablo/fast
 
-#=============================================================================
-# Target rules for targets named json_spirit
-
-# Build rule for target.
-json_spirit: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 json_spirit
-.PHONY : json_spirit
-
-# fast build rule for target.
-json_spirit/fast:
-	$(MAKE) -f 3rdparty/json_spirit/json_spirit/CMakeFiles/json_spirit.dir/build.make 3rdparty/json_spirit/json_spirit/CMakeFiles/json_spirit.dir/build
-.PHONY : json_spirit/fast
-
 src/openpablo.o: src/openpablo.cxx.o
 .PHONY : src/openpablo.o
 
@@ -216,15 +162,10 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
-	@echo "... install"
-	@echo "... install/local"
-	@echo "... install/strip"
-	@echo "... list_install_components"
 	@echo "... openpablo"
 	@echo "... package"
 	@echo "... package_source"
 	@echo "... rebuild_cache"
-	@echo "... json_spirit"
 	@echo "... src/openpablo.o"
 	@echo "... src/openpablo.i"
 	@echo "... src/openpablo.s"

@@ -9,7 +9,7 @@
       {
 	"Path": "data/iccprofiles",
 	"Input": "Autodetect",
-	"Output": "sRGB_linear.icc"
+	"Output": "ISOcoated_v2_300_bas.ICC"
       }
     },
 
@@ -23,7 +23,8 @@
 
   "Input":
   {
-    "InputFile": "data/cmyk_cmyk.jpg"
+    "InputFile": "cmyk_cmyk.jpg",
+    "InputPath": "data"
   },
 
 
@@ -32,7 +33,7 @@
     "id": "Web",
     "Settings": "Offset1",
 
-    "OutputPath": "tests/"
+    "OutputPath": "tests/tmp/"
   }
 
 }

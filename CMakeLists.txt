@@ -27,17 +27,16 @@ include(${QT_USE_FILE})
 
 
 # add 3rd party libraries
-add_subdirectory(3rdparty/json_spirit)
-#add_library(json_spirit 3rdparty/json_spirit)
-include_directories (${JSONSPIRIT_SOURCE_DIR}/json_spirit)
-link_directories (${JSONSPIRIT_BINARY_DIR}/json_spirit)
+#add_subdirectory(3rdparty/json_spirit)
+#include_directories (${JSONSPIRIT_SOURCE_DIR}/json_spirit)
+#link_directories (${JSONSPIRIT_BINARY_DIR}/json_spirit)
 
 #SET(SRC openpablo)
 
 #install (FILES openpablo DESTINATION "${PROJECT_BINARY_DIR}/bin")
 
 ADD_EXECUTABLE(openpablo src/openpablo.cxx)
-TARGET_LINK_LIBRARIES(openpablo ${QT_LIBRARIES} ${OpenCV_LIBS} ${LIBPODOFO_LIBRARY} ${ImageMagick_LIBRARIES} ${Boost_FILESYSTEM_LIBRARY} ${Boost_SYSTEM_LIBRARY} json_spirit)
+TARGET_LINK_LIBRARIES(openpablo ${QT_LIBRARIES} ${OpenCV_LIBS} ${LIBPODOFO_LIBRARY} ${ImageMagick_LIBRARIES} ${Boost_FILESYSTEM_LIBRARY} ${Boost_SYSTEM_LIBRARY})
 
 
 #add_subdirectory(src)
