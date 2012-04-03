@@ -1,2 +1,8 @@
 tmp/
 
+*~
+.DS_Store*
+Icon?
+Thumbs.db
+*thumbs.db
+
