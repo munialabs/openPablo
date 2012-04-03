@@ -64,9 +64,6 @@ int main ( int argc, char **argv )
     std::string outputICC = pt.get<std::string>("Settings.Color.ICC.Output");
     std::cout << outputICC << "\n";
     
-    std::string outputPath = pt.get<std::string>("Output.OutputPath");
-    std::cout << outputPath << "\n";
-    
     std::string inputPath = pt.get<std::string>("Input.InputPath");
     std::cout << inputPath << "\n";
     
@@ -99,7 +96,13 @@ int main ( int argc, char **argv )
 
     try
     {
-	Magick::Image  magick(inputPath + "/" + inputFile);
+	BOOST_FOREACH(const ptree::value_type& child,
+                  pt.get_child("Output")) 
+	{	
+	  std::string outputid = child.second.get<std::string>("id");
+	  std::cout << outputid  << "\n";
+
+	  Magick::Image magick(inputPath + "/" + inputFile);
 
 	magick.renderingIntent(Magick::PerceptualIntent);
 
@@ -109,8 +112,14 @@ int main ( int argc, char **argv )
 	magick.profile("ICC", targetICC);
 	magick.iccColorProfile(targetICC);
 
-	uint32_t width = pt.get<int>("Output.Width");
-	uint32_t height = pt.get<int>("Output.Height");
+	    
+	  std::string outputPath = child.second.get<std::string>("OutputPath");
+	  std::cout << outputPath << "\n";
+
+	  
+	uint32_t width = child.second.get<int>("Width");
+	uint32_t height = child.second.get<int>("Height");
+	std::cout << "Scale to " << width << ", " << height << "\n";
 
 	std::stringstream str;
 	str << width << "x" << height;
@@ -119,6 +128,7 @@ int main ( int argc, char **argv )
 	magick.resize(resizeresult); 
 
 	magick.write(outputPath + "/" + inputFile);
+	}
     }
       catch (const std::exception& ex)
     {

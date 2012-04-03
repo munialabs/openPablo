@@ -47,6 +47,8 @@ boost/property_tree/json_parser.hpp
 -
 boost/foreach.hpp
 -
+boost/format.hpp
+-
 boost/filesystem.hpp
 -
 lcms2.h
