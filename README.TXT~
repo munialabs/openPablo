@@ -52,7 +52,6 @@ open source world:
 -PoDoFo
 -Boost
 
--OpenMP
 
 
 Features:
@@ -79,45 +78,14 @@ or modify tickets. The ticket API itself is open and documented.
 
 
 
-Library Features:
-=================
--personal preferences
--scene recognition/gist
--recognition for special branches
--vanishing points
--autorotate
--lens correction
--white balance
--sky recoloring
--timestampremoval
--chromatic aberration
--noise reduction
--sharpening
--split toning
--tone curve
--saturation
--vibrance
--clarity
--black/white point
--shadows/highlights
--contrast
--exposure
--tint
--temperature
-
-
-
 Future:
 =======
 
 -Plugin System
 We will try to implement a plugin-system, so you can develop 
 commercial plugins without being forced to give away your code.
--exclude image conditions
--better layer support/alpha channels
 -GPU
 -UI
--filerouting
 -web2.0/crowd
 -scene and object recognition
 -create your own local server, or cloud-service
