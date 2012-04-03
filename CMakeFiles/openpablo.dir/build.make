@@ -83,6 +83,7 @@ openpablo: CMakeFiles/openpablo.dir/src/openpablo.cxx.o
 openpablo: /usr/lib/x86_64-linux-gnu/libQtGui.so
 openpablo: /usr/lib/x86_64-linux-gnu/libQtXml.so
 openpablo: /usr/lib/x86_64-linux-gnu/libQtCore.so
+openpablo: /usr/lib/liblensfun.so
 openpablo: /usr/local/lib/libopencv_calib3d.so
 openpablo: /usr/local/lib/libopencv_contrib.so
 openpablo: /usr/local/lib/libopencv_core.so
@@ -105,6 +106,7 @@ openpablo: /usr/local/lib/libMagick++.so
 openpablo: /usr/local/lib/libMagickCore.so
 openpablo: /usr/lib/libboost_filesystem.so
 openpablo: /usr/lib/libboost_system.so
+openpablo: /usr/lib/libexiv2.so
 openpablo: CMakeFiles/openpablo.dir/build.make
 openpablo: CMakeFiles/openpablo.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable openpablo"

@@ -1,37 +1,41 @@
-
 {
-  "id": "Offset1",
-
-  "Color":
+  "Settings":
   {
-    "ICC"
+    "id": "Offset1",
+
+    "Color":
     {
-      "Path": "data/iccprofiles",
-      "Input": "Autodetect",
-      "Output": "sRGB_linear.icc",
+      "ICC":
+      {
+	"Path": "data/iccprofiles",
+	"Input": "Autodetect",
+	"Output": "ISOcoated_v2_300_bas.ICC"
+      }
+    },
+
+    "FileHandling":
+    {
+      "OutputFormat": "JPEG",
+      "Compression": 87
     }
-  }
+  },
 
-  "FileHandling"
+
+  "Input":
   {
-    "OutputFormat": "JPEG",
-    "Compression": 87,
+    "InputFile": "cmyk.jpg",
+    "InputPath": "data"
+  },
+
+
+  "Output":
+  {
+    "id": "Web",
+    "Settings": "Offset1",
+    "Width": 1024,
+    "Height": 1024,
+
+    "OutputPath": "tests/tmp/"
   }
+
 }
-
-
-
-"Input"
-{
-  "InputFile": "data/cmyk_cmyk.jpg"
-}
-
-
-"Output"
-{
-  "id": "Web",
-  "Settings": "Offset1",
-
-  "OutputPath": "tests/"
-}
-

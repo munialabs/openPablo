@@ -33,6 +33,12 @@ exception
 -
 magick/MagickCore.h
 -
+lensfun.h
+/home/drunkeneye/Dropbox/openpablo/src/lensfun.h
+exiv2/exiv2.hpp
+-
+iostream
+-
 boost/property_tree/ptree.hpp
 -
 boost/property_tree/string_path.hpp
@@ -43,8 +49,6 @@ boost/foreach.hpp
 -
 boost/filesystem.hpp
 -
-json_spirit.h
-/home/drunkeneye/Dropbox/openpablo/src/json_spirit.h
 lcms2.h
 /home/drunkeneye/Dropbox/openpablo/src/lcms2.h
 lcms2_plugin.h

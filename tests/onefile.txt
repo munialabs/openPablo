@@ -23,7 +23,7 @@
 
   "Input":
   {
-    "InputFile": "cmyk_cmyk.jpg",
+    "InputFile": "cmyk.jpg",
     "InputPath": "data"
   },
 
@@ -32,6 +32,9 @@
   {
     "id": "Web",
     "Settings": "Offset1",
+
+    "Width": 1024,
+    "Height": 1024,
 
     "OutputPath": "tests/tmp/"
   }

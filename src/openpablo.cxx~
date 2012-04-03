@@ -15,14 +15,19 @@
 
 #include <magick/MagickCore.h>
 
+
+#include "lensfun.h"
+#include <exiv2/exiv2.hpp>
+
+#include <iostream>
 #include <boost/property_tree/ptree.hpp>
 #include <boost/property_tree/string_path.hpp>
 #include <boost/property_tree/json_parser.hpp>
 #include <boost/foreach.hpp>
+#include <boost/format.hpp>
 #include <boost/filesystem.hpp>
 
 
-#include "json_spirit.h"
 #include "lcms2.h"
 #include "lcms2_plugin.h"
 
@@ -33,23 +38,11 @@
 
 using namespace std;
 
-using namespace json_spirit;
 using namespace PoDoFo;
 
 using namespace Magick;
 
 
-
-
-const mValue& find_value( const mObject& obj, const string& name  )
-{
-    mObject::const_iterator i = obj.find( name );
-
-    assert( i != obj.end() );
-    assert( i->first == name );
-
-    return i->second;
-}
 
 
 
@@ -106,7 +99,7 @@ int main ( int argc, char **argv )
 
     try
     {
-	Magick::Image  magick(inputFile);
+	Magick::Image  magick(inputPath + "/" + inputFile);
 
 	magick.renderingIntent(Magick::PerceptualIntent);
 
@@ -116,6 +109,12 @@ int main ( int argc, char **argv )
 	magick.profile("ICC", targetICC);
 	magick.iccColorProfile(targetICC);
 
+	uint32_t width = pt.get<int>("Output.Width");
+	uint32_t height = pt.get<int>("Output.Height");
+
+	
+	magick.resize(str(boost::format("%1%x%2%", width, height ))); 
+
 	magick.write(outputPath + "/" + inputFile);
     }
       catch (const std::exception& ex)
@@ -124,6 +123,96 @@ int main ( int argc, char **argv )
     }
  
 
+    Exiv2::Image::AutoPtr image = Exiv2::ImageFactory::open(inputPath + "/" + inputFile);
+    assert(image.get() != 0);
+    image->readMetadata();
+    std::cout << inputPath + "/" + inputFile;
+    
+    Exiv2::ExifData &exifData = image->exifData();
+    if (exifData.empty()) {
+        std::string error(inputPath + "/" + inputFile);
+        error += ": No Exif data found in the file";
+    //    throw Exiv2::Error(1, error);
+    }
+    else
+    {
+      Exiv2::ExifData::const_iterator end = exifData.end();
+      for (Exiv2::ExifData::const_iterator i = exifData.begin(); i != end; ++i) {
+	  const char* tn = i->typeName();
+	  std::cout << std::setw(44) << std::setfill(' ') << std::left
+		    << i->key() << " "
+		    << "0x" << std::setw(4) << std::setfill('0') << std::right
+		    << std::hex << i->tag() << " "
+		    << std::setw(9) << std::setfill(' ') << std::left
+		    << (tn ? tn : "Unknown") << " "
+		    << std::dec << std::setw(3)
+		    << std::setfill(' ') << std::right
+		    << i->count() << "  "
+		    << std::dec << i->value()
+		    << "\n";
+      }
+    }
+
+    
+    
+    const struct lfMount *const *mounts;
+    const struct lfCamera *const *cameras;
+    const struct lfLens *const *lenses;
+    struct lfDatabase *ldb;
+    lfError e;
+
+    ldb = lf_db_new ();
+    if (!ldb)
+    {
+        fprintf (stderr, "Failed to create database\n");
+        return -1;
+    }
+
+    std::cout << "HomeDataDir: " << ldb->HomeDataDir;
+
+    lf_db_load (ldb);
+
+    std::cout <<  ("< --------------- < Mounts > --------------- >\n");
+    mounts = lf_db_get_mounts (ldb);
+    for (uint32_t i = 0; mounts [i]; i++)
+    {
+        std::cout << ("Mount:") << lf_mlstr_get (mounts [i]->Name);
+        if (mounts [i]->Compat)
+            for (uint32_t j = 0; mounts [i]->Compat [j]; j++)
+                std::cout << ("\tCompat: \n") << mounts [i]->Compat [j];
+    }
+
+    std::cout << ("< --------------- < Cameras > --------------- >\n");
+    cameras = lf_db_get_cameras (ldb);
+    for (uint32_t i = 0; cameras [i]; i++)
+    {
+        std::cout << ("Camera: %s / %s %s%s%s\n");
+        std::cout <<     lf_mlstr_get (cameras [i]->Maker);
+            std::cout << lf_mlstr_get (cameras [i]->Model);
+            std::cout << cameras [i]->Variant;
+            std::cout << cameras [i]->Variant << lf_mlstr_get (cameras [i]->Variant);
+            std::cout << cameras [i]->Variant;
+        std::cout << ("\tMount: %s\n") << lf_db_mount_name (ldb, cameras [i]->Mount);
+        std::cout << ("\tCrop factor: %g\n") << cameras [i]->CropFactor;
+    }
+/*
+    g_print ("< --------------- < Lenses > --------------- >\n");
+    lenses = lf_db_get_lenses (ldb);
+    for (i = 0; lenses [i]; i++)
+    {
+        g_print ("Lens: %s / %s\n",
+            lf_mlstr_get (lenses [i]->Maker),
+            lf_mlstr_get (lenses [i]->Model));
+        g_print ("\tCrop factor: %g\n", lenses [i]->CropFactor);
+        g_print ("\tFocal: %g-%g\n", lenses [i]->MinFocal, lenses [i]->MaxFocal);
+        g_print ("\tAperture: %g-%g\n", lenses [i]->MinAperture, lenses [i]->MaxAperture);
+        g_print ("\tCenter: %g,%g\n", lenses [i]->CenterX, lenses [i]->CenterY);
+        g_print ("\tCCI: %g/%g/%g\n", lenses [i]->RedCCI, lenses [i]->GreenCCI, lenses [i]->BlueCCI);
+        if (lenses [i]->Mounts)
+            for (j = 0; lenses [i]->Mounts [j]; j++)
+                g_print ("\tMount: %s\n", lf_db_mount_name (ldb, lenses [i]->Mounts [j]));
+    }    
+*/    
 return -1;  
   
   

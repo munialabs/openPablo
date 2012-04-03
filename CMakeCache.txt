@@ -214,6 +214,12 @@ CPACK_SOURCE_ZIP:BOOL=OFF
 //Pick a version of QT to use: 3 or 4
 DESIRED_QT_VERSION:STRING=4
 
+//Path to a file.
+EXIV2_INCLUDE_DIR:PATH=/usr/include
+
+//Path to a library.
+EXIV2_LIBRARIES:FILEPATH=/usr/lib/libexiv2.so
+
 //Path to the ImageMagick binary directory.
 IMAGEMAGICK_BINARY_PATH:PATH=/usr/local/bin
 
@@ -252,6 +258,12 @@ LCMS2_INCLUDE_DIR:PATH=/usr/local/include
 
 //Path to a library.
 LCMS2_LIBRARY:FILEPATH=/usr/local/lib/liblcms2.so
+
+//Path to a file.
+LENSFUN_INCLUDE_DIR:PATH=/usr/include
+
+//Path to a library.
+LENSFUN_LIBRARIES:FILEPATH=/usr/lib/liblensfun.so
 
 //Extra flags for compiling against PoDoFo
 LIBPODOFO_CFLAGS:STRING=
@@ -303,6 +315,9 @@ OpenCV_DIR:PATH=/usr/local/share/OpenCV
 
 //No help, variable specified on the command line.
 OpenCV_Dir:UNINITIALIZED=~/Downloads/CODE/opencvBETA/opencv/opencv2/
+
+//Path to a program.
+PKGCONFIG_EXECUTABLE:FILEPATH=/usr/bin/pkg-config
 
 //Path to a file.
 QT3_QGLOBAL_H_FILE:FILEPATH=QT3_QGLOBAL_H_FILE-NOTFOUND
@@ -916,6 +931,9 @@ QT_WORLDTIMECLOCKPLUGIN_PLUGIN_DEBUG:FILEPATH=QT_WORLDTIMECLOCKPLUGIN_PLUGIN_DEB
 //Path to a library.
 QT_WORLDTIMECLOCKPLUGIN_PLUGIN_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/qt4/plugins/designer/libworldtimeclockplugin.so
 
+//The directory containing a CMake configuration file for exiv2.
+exiv2_DIR:PATH=exiv2_DIR-NOTFOUND
+
 //Value Computed by CMake
 json_spirit_BINARY_DIR:STATIC=/home/drunkeneye/Dropbox/openpablo/3rdparty/json_spirit
 
@@ -1103,12 +1121,18 @@ CPACK_SOURCE_TGZ-ADVANCED:INTERNAL=1
 CPACK_SOURCE_TZ-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CPACK_SOURCE_ZIP
 CPACK_SOURCE_ZIP-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: EXIV2_INCLUDE_DIR
+EXIV2_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: EXIV2_LIBRARIES
+EXIV2_LIBRARIES-ADVANCED:INTERNAL=1
 //Details about finding ImageMagick
 FIND_PACKAGE_MESSAGE_DETAILS_ImageMagick:INTERNAL=[TRUE][v()]
 //Details about finding LCMS2
 FIND_PACKAGE_MESSAGE_DETAILS_LCMS2:INTERNAL=[/usr/local/lib/liblcms2.so][/usr/local/include][v()]
+//Details about finding Lensfun
+FIND_PACKAGE_MESSAGE_DETAILS_Lensfun:INTERNAL=[/usr/include][/usr/lib/liblensfun.so][v()]
 //Details about finding Qt4
-FIND_PACKAGE_MESSAGE_DETAILS_Qt4:INTERNAL=[/usr/bin/qmake][/usr/bin/moc-qt4][/usr/bin/rcc][/usr/include/qt4][/usr/lib/x86_64-linux-gnu][/usr/include/qt4/QtCore][/usr/lib/x86_64-linux-gnu/libQtCore.so][/usr/include/qt4/QtGui][/usr/lib/x86_64-linux-gnu/libQtGui.so][/usr/include/qt4/QtXml][/usr/lib/x86_64-linux-gnu/libQtXml.so][/usr/bin/uic-qt4][v4.8.0(4.7)]
+FIND_PACKAGE_MESSAGE_DETAILS_Qt4:INTERNAL=[/usr/bin/qmake][/usr/bin/moc-qt4][/usr/bin/rcc][/usr/include/qt4][/usr/lib/x86_64-linux-gnu][/usr/include/qt4/QtCore][/usr/lib/x86_64-linux-gnu/libQtCore.so][/usr/include/qt4/QtGui][/usr/lib/x86_64-linux-gnu/libQtGui.so][/usr/include/qt4/QtXml][/usr/lib/x86_64-linux-gnu/libQtXml.so][/usr/bin/uic-qt4][v4.8.1(4.7)]
 //ADVANCED property for variable: IMAGEMAGICK_BINARY_PATH
 IMAGEMAGICK_BINARY_PATH-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: IMAGEMAGICK_COMPOSITE_EXECUTABLE
@@ -1121,6 +1145,10 @@ IMAGEMAGICK_IMPORT_EXECUTABLE-ADVANCED:INTERNAL=1
 IMAGEMAGICK_MOGRIFY_EXECUTABLE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: IMAGEMAGICK_MONTAGE_EXECUTABLE
 IMAGEMAGICK_MONTAGE_EXECUTABLE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: LENSFUN_INCLUDE_DIR
+LENSFUN_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: LENSFUN_LIBRARIES
+LENSFUN_LIBRARIES-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: OPENCV_CVAUX_LIBRARY
 OPENCV_CVAUX_LIBRARY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: OPENCV_CVCAM_LIBRARY
@@ -1141,6 +1169,8 @@ OPENCV_INCLUDE_DIR_CXCORE-ADVANCED:INTERNAL=1
 OPENCV_INCLUDE_DIR_HIGHGUI-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: OPENCV_LIBRARY
 OPENCV_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PKGCONFIG_EXECUTABLE
+PKGCONFIG_EXECUTABLE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: QT3_QGLOBAL_H_FILE
 QT3_QGLOBAL_H_FILE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: QT4_QGLOBAL_H_FILE
