@@ -35,9 +35,6 @@ CMAKE_COMMAND = /usr/bin/cmake
 # The command to remove a file.
 RM = /usr/bin/cmake -E remove -f
 
-# The program to use to edit the cache.
-CMAKE_EDIT_COMMAND = /usr/bin/cmake-gui
-
 # The top-level source directory on which CMake was run.
 CMAKE_SOURCE_DIR = /home/drunkeneye/Dropbox/openpablo
 
@@ -49,8 +46,8 @@ CMAKE_BINARY_DIR = /home/drunkeneye/Dropbox/openpablo
 
 # Special rule for the target edit_cache
 edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	/usr/bin/cmake-gui -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running interactive CMake command-line interface..."
+	/usr/bin/cmake -i .
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -131,29 +128,29 @@ openpablo/fast:
 	$(MAKE) -f CMakeFiles/openpablo.dir/build.make CMakeFiles/openpablo.dir/build
 .PHONY : openpablo/fast
 
-src/openpablo.o: src/openpablo.cxx.o
-.PHONY : src/openpablo.o
+src/main.o: src/main.cpp.o
+.PHONY : src/main.o
 
 # target to build an object file
-src/openpablo.cxx.o:
-	$(MAKE) -f CMakeFiles/openpablo.dir/build.make CMakeFiles/openpablo.dir/src/openpablo.cxx.o
-.PHONY : src/openpablo.cxx.o
+src/main.cpp.o:
+	$(MAKE) -f CMakeFiles/openpablo.dir/build.make CMakeFiles/openpablo.dir/src/main.cpp.o
+.PHONY : src/main.cpp.o
 
-src/openpablo.i: src/openpablo.cxx.i
-.PHONY : src/openpablo.i
+src/main.i: src/main.cpp.i
+.PHONY : src/main.i
 
 # target to preprocess a source file
-src/openpablo.cxx.i:
-	$(MAKE) -f CMakeFiles/openpablo.dir/build.make CMakeFiles/openpablo.dir/src/openpablo.cxx.i
-.PHONY : src/openpablo.cxx.i
+src/main.cpp.i:
+	$(MAKE) -f CMakeFiles/openpablo.dir/build.make CMakeFiles/openpablo.dir/src/main.cpp.i
+.PHONY : src/main.cpp.i
 
-src/openpablo.s: src/openpablo.cxx.s
-.PHONY : src/openpablo.s
+src/main.s: src/main.cpp.s
+.PHONY : src/main.s
 
 # target to generate assembly for a file
-src/openpablo.cxx.s:
-	$(MAKE) -f CMakeFiles/openpablo.dir/build.make CMakeFiles/openpablo.dir/src/openpablo.cxx.s
-.PHONY : src/openpablo.cxx.s
+src/main.cpp.s:
+	$(MAKE) -f CMakeFiles/openpablo.dir/build.make CMakeFiles/openpablo.dir/src/main.cpp.s
+.PHONY : src/main.cpp.s
 
 # Help Target
 help:
@@ -166,9 +163,9 @@ help:
 	@echo "... package"
 	@echo "... package_source"
 	@echo "... rebuild_cache"
-	@echo "... src/openpablo.o"
-	@echo "... src/openpablo.i"
-	@echo "... src/openpablo.s"
+	@echo "... src/main.o"
+	@echo "... src/main.i"
+	@echo "... src/main.s"
 .PHONY : help
 
 

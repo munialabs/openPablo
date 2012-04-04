@@ -1,0 +1,56 @@
+ Version 0.1.5
+~~~~~~~~~~~~~
+Released: 2011-11-01
+
+* New Features:
+ - Add a fake BRG profile from Kai-Uwe Behrmann (Richard Hughes)
+ - Add another RBG profile for testing (Richard Hughes)
+ - Tag the colorspace profiles with DATA_source=standard (Richard Hughes)
+ - Tag the test profiles with DATA_source=test (Richard Hughes)
+ - Tag the well-known colorspace profiles with STANDARD_space (Richard Hughes)
+
+Version 0.1.4
+~~~~~~~~~~~~~
+Released: 2011-04-08
+
+* Bugfix:
+ - Ensure all profiles have an embedded profile ID (Richard Hughes)
+
+Version 0.1.3
+~~~~~~~~~~~~~
+Released: 2011-01-11
+
+* Bugfix:
+ - Rename the Oyranos profiles to Oysonar to fix Kai-Uwe Behrmann's
+   reported license violation (Richard Hughes)
+
+Version 0.1.2
+~~~~~~~~~~~~~
+Released: 2010-10-01
+
+* New Features:
+ - Add several other RGB colorspaces generated using Argyll and LCMS2
+   using data from the SCARSE project (Richard Hughes)
+ - Add the Yamma abstract profiles (Richard Hughes)
+ - Add two further gray profiles from the Oyranos project (Richard Hughes)
+
+Version 0.1.1
+~~~~~~~~~~~~~
+Released: 2010-04-06
+
+* New Features:
+ - Add the Public Domain Fogra27L CMYK Coated Press ICC profile (Richard Hughes)
+ - Add some profiles from Oyranos with a zlib licence (Richard Hughes)
+
+Version 0.1.0
+~~~~~~~~~~~~~
+Released: 2009-12-09
+
+* New Features:
+ - First release!
+ - Add the free Argyll profiles that are in the public domain (Richard Hughes)
+
+* Bugfix:
+ - Don't install README and LICENSE in /usr/share/color (Richard Hughes)
+ - Require color-filesystem on Fedora (Richard Hughes)
+

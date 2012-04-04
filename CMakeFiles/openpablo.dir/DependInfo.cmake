@@ -4,7 +4,7 @@ SET(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 SET(CMAKE_DEPENDS_CHECK_CXX
-  "/home/drunkeneye/Dropbox/openpablo/src/openpablo.cxx" "/home/drunkeneye/Dropbox/openpablo/CMakeFiles/openpablo.dir/src/openpablo.cxx.o"
+  "/home/drunkeneye/Dropbox/openpablo/src/main.cpp" "/home/drunkeneye/Dropbox/openpablo/CMakeFiles/openpablo.dir/src/main.cpp.o"
   )
 SET(CMAKE_CXX_COMPILER_ID "GNU")
 

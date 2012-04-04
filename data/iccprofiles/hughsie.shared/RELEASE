@@ -1,0 +1,55 @@
+PackageKit Release Notes
+
+1. Write NEWS entries in the same format as usual.
+
+git shortlog SHARED_COLOR_PROFILES_0_1_5.. | grep -i -v trivial | uniq | grep -v Merge > NEWS.new
+
+--------------------------------------------------------------------------------
+Version 0.1.6
+~~~~~~~~~~~~~
+Released: 2011-xx-xx
+
+Notes:
+
+New Features:
+
+Bugfixes:
+--------------------------------------------------------------------------------
+
+3. Commit changes in git:
+
+git commit -a -m "Release version 0.1.6"
+git tag -s SHARED_COLOR_PROFILES_0_1_6 -m "==== Version 0.1.6 ===="
+<wait>
+git push --tags
+git push
+
+4. Create tarball
+
+make distcheck
+
+5. Upload tarballs:
+
+scp *.tar.xz hughsient@people.freedesktop.org:public_html/releases/
+
+6. Do post release version bump in configure.ac
+
+7. Commit trivial changes:
+
+git commit -a -m "trivial: Post release version bump"
+git push
+
+8. Send an email to colord@lists.freedesktop.org
+
+=================================================
+shared-color-profiles 0.1.5 released!
+
+The shared-color-profiles package contains various profiles which are
+useful for programs that are color management aware.
+This package only contains the free profiles that can be safely
+distributed with distributions.
+
+Tarballs available here: http://people.freedesktop.org/~hughsient/releases/
+
+=================================================
+

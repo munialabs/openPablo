@@ -31,9 +31,6 @@ CMAKE_COMMAND = /usr/bin/cmake
 # The command to remove a file.
 RM = /usr/bin/cmake -E remove -f
 
-# The program to use to edit the cache.
-CMAKE_EDIT_COMMAND = /usr/bin/cmake-gui
-
 # The top-level source directory on which CMake was run.
 CMAKE_SOURCE_DIR = /home/drunkeneye/Dropbox/openpablo
 
@@ -49,74 +46,57 @@ include CMakeFiles/openpablo.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/openpablo.dir/flags.make
 
-CMakeFiles/openpablo.dir/src/openpablo.cxx.o: CMakeFiles/openpablo.dir/flags.make
-CMakeFiles/openpablo.dir/src/openpablo.cxx.o: src/openpablo.cxx
+CMakeFiles/openpablo.dir/src/main.cpp.o: CMakeFiles/openpablo.dir/flags.make
+CMakeFiles/openpablo.dir/src/main.cpp.o: src/main.cpp
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/drunkeneye/Dropbox/openpablo/CMakeFiles $(CMAKE_PROGRESS_1)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/openpablo.dir/src/openpablo.cxx.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/openpablo.dir/src/openpablo.cxx.o -c /home/drunkeneye/Dropbox/openpablo/src/openpablo.cxx
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/openpablo.dir/src/main.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/openpablo.dir/src/main.cpp.o -c /home/drunkeneye/Dropbox/openpablo/src/main.cpp
 
-CMakeFiles/openpablo.dir/src/openpablo.cxx.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/openpablo.dir/src/openpablo.cxx.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/drunkeneye/Dropbox/openpablo/src/openpablo.cxx > CMakeFiles/openpablo.dir/src/openpablo.cxx.i
+CMakeFiles/openpablo.dir/src/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/openpablo.dir/src/main.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/drunkeneye/Dropbox/openpablo/src/main.cpp > CMakeFiles/openpablo.dir/src/main.cpp.i
 
-CMakeFiles/openpablo.dir/src/openpablo.cxx.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/openpablo.dir/src/openpablo.cxx.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/drunkeneye/Dropbox/openpablo/src/openpablo.cxx -o CMakeFiles/openpablo.dir/src/openpablo.cxx.s
+CMakeFiles/openpablo.dir/src/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/openpablo.dir/src/main.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/drunkeneye/Dropbox/openpablo/src/main.cpp -o CMakeFiles/openpablo.dir/src/main.cpp.s
 
-CMakeFiles/openpablo.dir/src/openpablo.cxx.o.requires:
-.PHONY : CMakeFiles/openpablo.dir/src/openpablo.cxx.o.requires
+CMakeFiles/openpablo.dir/src/main.cpp.o.requires:
+.PHONY : CMakeFiles/openpablo.dir/src/main.cpp.o.requires
 
-CMakeFiles/openpablo.dir/src/openpablo.cxx.o.provides: CMakeFiles/openpablo.dir/src/openpablo.cxx.o.requires
-	$(MAKE) -f CMakeFiles/openpablo.dir/build.make CMakeFiles/openpablo.dir/src/openpablo.cxx.o.provides.build
-.PHONY : CMakeFiles/openpablo.dir/src/openpablo.cxx.o.provides
+CMakeFiles/openpablo.dir/src/main.cpp.o.provides: CMakeFiles/openpablo.dir/src/main.cpp.o.requires
+	$(MAKE) -f CMakeFiles/openpablo.dir/build.make CMakeFiles/openpablo.dir/src/main.cpp.o.provides.build
+.PHONY : CMakeFiles/openpablo.dir/src/main.cpp.o.provides
 
-CMakeFiles/openpablo.dir/src/openpablo.cxx.o.provides.build: CMakeFiles/openpablo.dir/src/openpablo.cxx.o
+CMakeFiles/openpablo.dir/src/main.cpp.o.provides.build: CMakeFiles/openpablo.dir/src/main.cpp.o
 
 # Object files for target openpablo
 openpablo_OBJECTS = \
-"CMakeFiles/openpablo.dir/src/openpablo.cxx.o"
+"CMakeFiles/openpablo.dir/src/main.cpp.o"
 
 # External object files for target openpablo
 openpablo_EXTERNAL_OBJECTS =
 
-openpablo: CMakeFiles/openpablo.dir/src/openpablo.cxx.o
-openpablo: /usr/lib/x86_64-linux-gnu/libQtGui.so
-openpablo: /usr/lib/x86_64-linux-gnu/libQtXml.so
-openpablo: /usr/lib/x86_64-linux-gnu/libQtCore.so
-openpablo: /usr/lib/liblensfun.so
-openpablo: /usr/local/lib/libopencv_calib3d.so
-openpablo: /usr/local/lib/libopencv_contrib.so
-openpablo: /usr/local/lib/libopencv_core.so
-openpablo: /usr/local/lib/libopencv_features2d.so
-openpablo: /usr/local/lib/libopencv_flann.so
-openpablo: /usr/local/lib/libopencv_gpu.so
-openpablo: /usr/local/lib/libopencv_highgui.so
-openpablo: /usr/local/lib/libopencv_imgproc.so
-openpablo: /usr/local/lib/libopencv_legacy.so
-openpablo: /usr/local/lib/libopencv_ml.so
-openpablo: /usr/local/lib/libopencv_nonfree.so
-openpablo: /usr/local/lib/libopencv_objdetect.so
-openpablo: /usr/local/lib/libopencv_photo.so
-openpablo: /usr/local/lib/libopencv_stitching.so
-openpablo: /usr/local/lib/libopencv_ts.so
-openpablo: /usr/local/lib/libopencv_video.so
-openpablo: /usr/local/lib/libopencv_videostab.so
-openpablo: /usr/lib/libpodofo.so
-openpablo: /usr/local/lib/libMagick++.so
-openpablo: /usr/local/lib/libMagickCore.so
-openpablo: /usr/lib/libboost_filesystem.so
-openpablo: /usr/lib/libboost_system.so
-openpablo: /usr/lib/libexiv2.so
-openpablo: CMakeFiles/openpablo.dir/build.make
-openpablo: CMakeFiles/openpablo.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable openpablo"
+bin/openpablo: CMakeFiles/openpablo.dir/src/main.cpp.o
+bin/openpablo: /usr/lib/x86_64-linux-gnu/libQtGui.so
+bin/openpablo: /usr/lib/x86_64-linux-gnu/libQtXml.so
+bin/openpablo: /usr/lib/x86_64-linux-gnu/libQtCore.so
+bin/openpablo: /usr/lib/liblensfun.so
+bin/openpablo: /usr/lib/libpodofo.so
+bin/openpablo: /usr/lib/libMagick++.so
+bin/openpablo: /usr/lib/libMagickCore.so
+bin/openpablo: /usr/lib/libboost_filesystem-mt.so
+bin/openpablo: /usr/lib/libboost_system-mt.so
+bin/openpablo: /usr/lib/libexiv2.so
+bin/openpablo: CMakeFiles/openpablo.dir/build.make
+bin/openpablo: CMakeFiles/openpablo.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable bin/openpablo"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/openpablo.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-CMakeFiles/openpablo.dir/build: openpablo
+CMakeFiles/openpablo.dir/build: bin/openpablo
 .PHONY : CMakeFiles/openpablo.dir/build
 
-CMakeFiles/openpablo.dir/requires: CMakeFiles/openpablo.dir/src/openpablo.cxx.o.requires
+CMakeFiles/openpablo.dir/requires: CMakeFiles/openpablo.dir/src/main.cpp.o.requires
 .PHONY : CMakeFiles/openpablo.dir/requires
 
 CMakeFiles/openpablo.dir/clean:

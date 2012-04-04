@@ -1,0 +1,456 @@
+\documentclass[a4paper,12pt, final]{book}
+
+\usepackage{titlesec}
+\usepackage{verbatim}
+
+\usepackage[cm-default]{fontspec}
+
+
+ %\XeTeXtracingfonts=1 
+
+%\newfontfamily\unicodefont{Oxygen}
+\defaultfontfeatures{Scale=MatchLowercase,Mapping=tex-text}
+\setmainfont[ExternalLocation=./fonts/]{Nunito-Light.ttf}
+%\setmainfont{Oxygen}
+%\setromanfont{Oxygen}
+%\setsansfont{Oxygen}
+\setmonofont[ExternalLocation=./fonts/]{Nunito-Regular.ttf}
+
+\usepackage{xunicode}
+\usepackage{xltxtra}
+\usepackage{calc}
+\usepackage{array}
+\usepackage{color}
+\usepackage{setspace}
+\usepackage{fancyhdr}
+\usepackage{shorttoc}
+\usepackage{graphicx}
+%\usepackage{natbib}
+\usepackage{german, hyperref} 
+\usepackage{makeidx}
+\usepackage[style=alphabetic-verb]{biblatex}
+
+
+%\bibliography{imagequality}
+
+\graphicspath{{images/}}
+
+\renewcommand{\labelitemi}{$\cdot$}
+
+
+
+\frontmatter
+\pagestyle{fancy}      
+\fancyhead[RO, LE]{\fontfamily{phv}\selectfont \rightmark}
+\fancyhead[RE, LO]{\fontfamily{phv}\selectfont \thepage}
+\fancyhead[CE, CO]{}
+\fancyfoot[CE, CO]{}
+
+ \makeatletter
+ \makeindex
+ 
+\def\cleardoublepage{\vspace{1.0cm}}  
+\def\clearpage{\vspace{1.0cm}}
+%\def\newpage{\vspace{1.0cm}}
+\makeatother        
+ 
+
+\titleformat{\section}%
+  {\Large\bfseries \filcenter}%
+  {\thesection}%
+  {1em}%
+  {}%
+
+
+\titleformat{\subsection}%
+  {\large\bfseries \filcenter}%
+  {\thesubsection}%
+  {1em}%
+  {}%
+
+
+\titleformat{\subsubsection}%
+  {\normalsize\bfseries \filcenter}%
+  {\thesubsection}%
+  {1em}%
+  {}%
+
+
+\titleformat{\chapter}%
+  {\huge\bfseries \filcenter}%
+  {\thechapter}%
+  {1em}%
+  {}%
+
+\titleformat{\part}%`
+  { \Huge\bfseries \filcenter}%
+  {\thepart}%
+  {1em}%
+  {}%
+
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\newenvironment{proof}[1][Proof]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+\newenvironment{definition}[1][Definition]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+\newenvironment{example}[1][Example]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+\newenvironment{remark}[1][Remark]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+
+\newenvironment{code}{\small\verbatim}{\endverbatim}
+
+
+
+\newcommand{\qed}{\nobreak \ifvmode \relax \else
+      \ifdim\lastskip<1.5em \hskip-\lastskip
+      \hskip1.5em plus0em minus0.5em \fi \nobreak
+      \vrule height0.75em width0.5em depth0.25em\fi}
+
+\def\lra{\longrightarrow}
+
+
+\newcommand{\mnote}[1]{\marginpar{%
+	\vskip-\baselineskip
+	\raggedright\footnotesize
+	\itshape\hrule\smallskip\tiny{#1}\par\smallskip\hrule}}
+
+\mainmatter
+
+\begin{document}
+
+\pagestyle{empty}
+{\center
+
+{\Huge
+openPablo manual v0.1
+}\vfil}
+ 
+\newpage
+ 
+
+\tableofcontents
+
+\newpage 
+
+
+\chapter{Introduction}
+
+
+\section{What is openPablo?}
+
+As an open source project openPablo can harrness
+the inherent power of community power.
+
+
+if you need premium support (and you will likely
+do so in a commercial and productive environment)
+currently it is better to use commercial products
+like Elipcal's Claro, Softcolors Color or OneVisions
+Amendo. This might change though, depending on how
+much support the project gets.
+
+Still, some of the software out there is quite buggy,
+and so its quite legitimate to ask: Why pay for
+bananaware, if you can have similar functions for free?
+
+Rumors are that curent image enhancement technology
+is not better than ImageMagick, a free tool. Unluckily
+ImageMagick does not come with a ready-to-use interface,
+contrary, using it can be quite delicate. There are 
+even very sophisticated scripts, but using them is hard,
+modifying them can be harder.
+
+The tool aims for the Newspaper Market, where it is
+not crucial to have 100 percent superb images, and
+where cost is a major problem.
+Therefore collaborating on such issues like color
+management in an open manner can be beneficial for 
+the whole branch.
+
+\begin{itemize}
+\item No more dongles, licences, encrypted, propriary ticket  
+formats  or price-discussions
+\item Strange Behaviour can be identified by your local hacker.
+\item Latest technology library updates will result in speed.
+(we do not fear breaking something, if so, we can fix and
+release it on a daily basis).
+\item Forum to talk about common problems, place for experts
+to discuss and exchange.
+\item Technology is crossplattform as possible, allows it
+to be run on mobile phones. (at least some controller?)
+\end{itemize}
+
+As an open source project, we can use the all the power of the
+open source world:
+
+\begin{itemize}
+\item OpenCV
+\item Lensfun
+\item Exiv 2
+\item Little CMS 2
+\item Magick++
+\item Qt
+\item PoDoFo
+\item Boost
+\item OpenMP
+\end{itemize}
+
+
+\section{Shell Features}
+
+openPablo supports the following fileformats (thanks to Magick++):
+\begin{itemize}
+  \item JPG
+  \item JPG2000
+  \item TIFF
+  \item PNG
+  \item PSD
+  \item PDF (via podofo)
+\item RAW (via dcraw++)
+\end{itemize}
+
+openPablo can handle the following metadata (thanks to Exiv2):
+\begin{itemize}  
+  \item EXIF
+  \item IPTC
+  \item XMP
+  \item PSD Section
+\end{itemize}
+
+Tickets can be written either in JSON or in XML format. Any
+tool that can edit these fileformats can be used to create
+or modify tickets. The ticket API itself is open and documented.
+
+You can run several instances next to each other. For example
+each one could monitor some hotfolder.
+
+
+\section{Library Features}
+
+\begin{itemize}
+\item personal preferences
+\item scene recognition/gist
+\item recognition for special branches
+\item vanishing points
+\item autorotate
+\item lens correction
+\item white balance
+\item sky recoloring
+\item timestampremoval
+\item chromatic aberration
+\item noise reduction
+\item sharpening
+\item split toning
+\item tone curve
+\item saturation
+\item vibrance
+\item clarity
+\item black/white point
+\item shadows/highlights
+\item contrast
+\item exposure
+\item tint
+\item temperature
+\end{itemize}
+
+\section{ToDos and Ideas}
+
+\begin{itemize}
+\item Plugin System
+We will try to implement a plugin-system, so you can develop 
+commercial plugins without being forced to give away your code.
+\item exclude image conditions
+\item better layer support/alpha channels
+\item GPU
+\item UI
+\item filerouting
+\item web2.0/crowd
+\item scene and object recognition
+\item create your own local server, or cloud-service
+\item test system/test set images
+\item JDF
+\item use smile or bson format internaly for the blobs.
+\end{itemize}
+
+
+\section{The other side of the coin}
+
+Though we will take some care not to include patented algorithms,
+we cannot take any guarantees that by using this software, you are
+making use of third-party patents.
+If you see anything that infringes any patent or copyright, please
+tell us, we will remove the offending parts immediately and will
+try to find another workaround.
+
+
+\section{Remarks}
+
+Why openPablo has been initiated?
+My main goal is to implement several image enhancement routines.
+But there is none open source library where I could add my code to.
+Just producing these routines would be some kind of time, as without
+some application around it, these ideas would simply be left to die.
+But with some nice application around it, these might get used
+by a broader community. Also there hopefully be more exchange on
+these topics, between developers and users of these software.
+
+
+ 
+\chapter{Using openPablo}
+
+
+\section{Simple example}
+
+
+You can also specify a whole folder with settings via the
+'--settingsfolder' option. openPablo will then read all valid
+tickets inside this folder and process them. This way you can
+easily save more complex setups.
+
+
+
+\chapter{Tickets}
+
+
+
+
+\begin{verbatim}
+{
+    "Settings": {
+        "id": "Offset1",
+        "Color": {
+            "ICC": {
+                "Path": "data/iccprofiles",
+                "Input": "Autodetect",
+                "Output": "ISOcoated_v2_300_bas.ICC"
+            }
+        },
+        "FileHandling": {
+            "OutputFormat": "JPEG",
+            "Compression": 87
+        }
+    },
+
+    "Input": {
+        "InputFile": "cmyk.jpg",
+        "InputPath": "data"
+    },
+
+    "Output": [
+        {
+            "id": "Web",
+            "Settings": "Offset1",
+            "Width": 320,
+            "Height": 240,
+            "OutputPath": "tmp/tmpweb/",
+	    "RenamePattern": "%f_%d.%e"
+        },
+
+        {
+            "id": "Print",
+            "Settings": "Offset1",
+            "Width": 1024,
+            "Height": 1024,
+            "OutputPath": "tmp/tmpprint/"
+        }
+    ]
+}
+\end{verbatim}
+
+
+\section{Input}
+
+Either an explicit input file is given, or a wildcard.
+In this case, openPablo will go into a hotfolder-state, i.e.
+it will monitor the given input-path and process every 
+incoming file.
+
+
+
+\section{Output}
+
+Several output can be defined. Each output must have a
+distinct id which identifies it. A Settings have to be
+specified by a settings id, where the specific settings
+will be used for processing.
+Other options are: Width, Height.
+The outputpath will be the path where the processed files
+will be put into.
+
+
+\section{Logs}
+
+format of log (=HTML, XML, JSON?, TXT), place for log, filename for log.
+
+
+
+\chapter{Test cases}
+
+TestCases are skripted via Python.
+Logs can be read and interpreted.
+only blackbox testing.
+
+
+
+\chapter{Technical side}
+
+...
+Uses ImageMagick (i.e. Magick++) to read images.
+This format is then converted to BSON, decorated with
+some minor extra-infos (e.g. was the image JPEG-compressed?)
+and forwarded to the engine. After the engine finished
+its processing, returning another image in BSON format,
+the data is then pumped back to Magick++ which then
+will write the image as specified in the ticket.
+
+?LAB support in Magick++? OpenCV has no such support?
+but CImg has?
+
+
+\section{Unittests}
+
+or whitebox testing.
+
+
+\section{Sourcefolder Structure}
+
+datas: icc, test, training etc.
+
+
+\chapter{Appendix}
+
+
+
+\section{Licences}
+
+Document created with XeLateX.
+
+This document uses the Oxygen font.
+
+...
+
+
+
+
+%\backmatter
+
+%\addcontentsline{toc}{chapter}{Bibliography}
+%\printbibliography
+
+%\appendix
+ 
+%\chapter{Index}
+%\printindex
+
+
+%\chapter{Index}
+
+
+
+\end{document}

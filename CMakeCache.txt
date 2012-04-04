@@ -18,13 +18,13 @@
 Boost_DIR:PATH=Boost_DIR-NOTFOUND
 
 //The Boost FILESYSTEM library
-Boost_FILESYSTEM_LIBRARY:FILEPATH=/usr/lib/libboost_filesystem.so
+Boost_FILESYSTEM_LIBRARY:FILEPATH=/usr/lib/libboost_filesystem-mt.so
 
 //Boost filesystem library (debug)
-Boost_FILESYSTEM_LIBRARY_DEBUG:FILEPATH=/usr/lib/libboost_filesystem.so
+Boost_FILESYSTEM_LIBRARY_DEBUG:FILEPATH=/usr/lib/libboost_filesystem-mt.so
 
 //Boost filesystem library (release)
-Boost_FILESYSTEM_LIBRARY_RELEASE:FILEPATH=/usr/lib/libboost_filesystem.so
+Boost_FILESYSTEM_LIBRARY_RELEASE:FILEPATH=/usr/lib/libboost_filesystem-mt.so
 
 //Path to a file.
 Boost_INCLUDE_DIR:PATH=/usr/include
@@ -33,13 +33,13 @@ Boost_INCLUDE_DIR:PATH=/usr/include
 Boost_LIBRARY_DIRS:FILEPATH=/usr/lib
 
 //The Boost SYSTEM library
-Boost_SYSTEM_LIBRARY:FILEPATH=/usr/lib/libboost_system.so
+Boost_SYSTEM_LIBRARY:FILEPATH=/usr/lib/libboost_system-mt.so
 
 //Boost system library (debug)
-Boost_SYSTEM_LIBRARY_DEBUG:FILEPATH=/usr/lib/libboost_system.so
+Boost_SYSTEM_LIBRARY_DEBUG:FILEPATH=/usr/lib/libboost_system-mt.so
 
 //Boost system library (release)
-Boost_SYSTEM_LIBRARY_RELEASE:FILEPATH=/usr/lib/libboost_system.so
+Boost_SYSTEM_LIBRARY_RELEASE:FILEPATH=/usr/lib/libboost_system-mt.so
 
 //Path to a program.
 CMAKE_AR:FILEPATH=/usr/bin/ar
@@ -221,37 +221,37 @@ EXIV2_INCLUDE_DIR:PATH=/usr/include
 EXIV2_LIBRARIES:FILEPATH=/usr/lib/libexiv2.so
 
 //Path to the ImageMagick binary directory.
-IMAGEMAGICK_BINARY_PATH:PATH=/usr/local/bin
+IMAGEMAGICK_BINARY_PATH:PATH=/usr/bin
 
 //Path to ImageMagick's composite executable.
-IMAGEMAGICK_COMPOSITE_EXECUTABLE:FILEPATH=/usr/local/bin/composite
+IMAGEMAGICK_COMPOSITE_EXECUTABLE:FILEPATH=/usr/bin/composite
 
 //Path to ImageMagick's convert executable.
-IMAGEMAGICK_CONVERT_EXECUTABLE:FILEPATH=/usr/local/bin/convert
+IMAGEMAGICK_CONVERT_EXECUTABLE:FILEPATH=/usr/bin/convert
 
 //Path to ImageMagick's import executable.
-IMAGEMAGICK_IMPORT_EXECUTABLE:FILEPATH=/usr/local/bin/import
+IMAGEMAGICK_IMPORT_EXECUTABLE:FILEPATH=/usr/bin/import
 
 //Path to ImageMagick's mogrify executable.
-IMAGEMAGICK_MOGRIFY_EXECUTABLE:FILEPATH=/usr/local/bin/mogrify
+IMAGEMAGICK_MOGRIFY_EXECUTABLE:FILEPATH=/usr/bin/mogrify
 
 //Path to ImageMagick's montage executable.
-IMAGEMAGICK_MONTAGE_EXECUTABLE:FILEPATH=/usr/local/bin/montage
+IMAGEMAGICK_MONTAGE_EXECUTABLE:FILEPATH=/usr/bin/montage
 
 //Path to the ImageMagick binary directory.
-ImageMagick_EXECUTABLE_DIR:PATH=/usr/local/bin
+ImageMagick_EXECUTABLE_DIR:PATH=/usr/bin
 
 //Path to the ImageMagick include dir.
-ImageMagick_Magick++_INCLUDE_DIR:PATH=/usr/local/include/ImageMagick
+ImageMagick_Magick++_INCLUDE_DIR:PATH=/usr/include/ImageMagick
 
 //Path to the ImageMagick Magick++ library.
-ImageMagick_Magick++_LIBRARY:FILEPATH=/usr/local/lib/libMagick++.so
+ImageMagick_Magick++_LIBRARY:FILEPATH=/usr/lib/libMagick++.so
 
 //Path to the ImageMagick include dir.
-ImageMagick_MagickCore_INCLUDE_DIR:PATH=/usr/local/include/ImageMagick
+ImageMagick_MagickCore_INCLUDE_DIR:PATH=/usr/include/ImageMagick
 
 //Path to the ImageMagick Magick++ library.
-ImageMagick_MagickCore_LIBRARY:FILEPATH=/usr/local/lib/libMagickCore.so
+ImageMagick_MagickCore_LIBRARY:FILEPATH=/usr/lib/libMagickCore.so
 
 //Path to a file.
 LCMS2_INCLUDE_DIR:PATH=/usr/local/include
@@ -277,44 +277,8 @@ LIBPODOFO_INCLUDE_DIR:PATH=/usr/include
 //Path to a library.
 LIBPODOFO_LIBRARY:FILEPATH=/usr/lib/libpodofo.so
 
-//Do you want to link against libhighgui?
-LINK_LIB_HIGHGUI:BOOL=TRUE
-
-//Location of the cvaux lib
-OPENCV_CVAUX_LIBRARY:FILEPATH=OPENCV_CVAUX_LIBRARY-NOTFOUND
-
-//Location of the cvcam lib
-OPENCV_CVCAM_LIBRARY:FILEPATH=OPENCV_CVCAM_LIBRARY-NOTFOUND
-
-//Location of the cvcore lib
-OPENCV_CXCORE_LIBRARY:FILEPATH=OPENCV_CXCORE_LIBRARY-NOTFOUND
-
-//Location of the highgui library
-OPENCV_HIGHGUI_LIBRARY:FILEPATH=OPENCV_HIGHGUI_LIBRARY-NOTFOUND
-
-//Path to a file.
-OPENCV_INCLUDE_DIR_CV:PATH=/usr/local/include/opencv
-
-//Path to a file.
-OPENCV_INCLUDE_DIR_CVAUX:PATH=/usr/local/include/opencv
-
-//Path to a file.
-OPENCV_INCLUDE_DIR_CVCAM:PATH=OPENCV_INCLUDE_DIR_CVCAM-NOTFOUND
-
-//Path to a file.
-OPENCV_INCLUDE_DIR_CXCORE:PATH=/usr/local/include/opencv
-
-//Path to a file.
-OPENCV_INCLUDE_DIR_HIGHGUI:PATH=/usr/local/include/opencv
-
-//Location of the opencv lib
-OPENCV_LIBRARY:FILEPATH=OPENCV_LIBRARY-NOTFOUND
-
 //The directory containing a CMake configuration file for OpenCV.
-OpenCV_DIR:PATH=/usr/local/share/OpenCV
-
-//No help, variable specified on the command line.
-OpenCV_Dir:UNINITIALIZED=~/Downloads/CODE/opencvBETA/opencv/opencv2/
+OpenCV_DIR:PATH=/usr/share/OpenCV
 
 //Path to a program.
 PKGCONFIG_EXECUTABLE:FILEPATH=/usr/bin/pkg-config
@@ -518,7 +482,7 @@ QT_QSQLITE_PLUGIN_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/qt4/plugins/sqldriv
 QT_QSQLMYSQL_PLUGIN_DEBUG:FILEPATH=QT_QSQLMYSQL_PLUGIN_DEBUG-NOTFOUND
 
 //Path to a library.
-QT_QSQLMYSQL_PLUGIN_RELEASE:FILEPATH=QT_QSQLMYSQL_PLUGIN_RELEASE-NOTFOUND
+QT_QSQLMYSQL_PLUGIN_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/qt4/plugins/sqldrivers/libqsqlmysql.so
 
 //Path to a library.
 QT_QSQLOCI_PLUGIN_DEBUG:FILEPATH=QT_QSQLOCI_PLUGIN_DEBUG-NOTFOUND
@@ -931,18 +895,6 @@ QT_WORLDTIMECLOCKPLUGIN_PLUGIN_DEBUG:FILEPATH=QT_WORLDTIMECLOCKPLUGIN_PLUGIN_DEB
 //Path to a library.
 QT_WORLDTIMECLOCKPLUGIN_PLUGIN_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/qt4/plugins/designer/libworldtimeclockplugin.so
 
-//The directory containing a CMake configuration file for exiv2.
-exiv2_DIR:PATH=exiv2_DIR-NOTFOUND
-
-//Value Computed by CMake
-json_spirit_BINARY_DIR:STATIC=/home/drunkeneye/Dropbox/openpablo/3rdparty/json_spirit
-
-//Dependencies for target
-json_spirit_LIB_DEPENDS:STATIC=
-
-//Value Computed by CMake
-json_spirit_SOURCE_DIR:STATIC=/home/drunkeneye/Dropbox/openpablo/3rdparty/json_spirit
-
 //Value Computed by CMake
 openpablo_BINARY_DIR:STATIC=/home/drunkeneye/Dropbox/openpablo
 
@@ -1030,8 +982,6 @@ CMAKE_C_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 CMAKE_DETERMINE_CXX_ABI_COMPILED:INTERNAL=TRUE
 //Result of TRY_COMPILE
 CMAKE_DETERMINE_C_ABI_COMPILED:INTERNAL=TRUE
-//Path to cache edit program executable.
-CMAKE_EDIT_COMMAND:INTERNAL=/usr/bin/cmake-gui
 //Executable file format
 CMAKE_EXECUTABLE_FORMAT:INTERNAL=ELF
 //ADVANCED property for variable: CMAKE_EXE_LINKER_FLAGS
@@ -1132,7 +1082,7 @@ FIND_PACKAGE_MESSAGE_DETAILS_LCMS2:INTERNAL=[/usr/local/lib/liblcms2.so][/usr/lo
 //Details about finding Lensfun
 FIND_PACKAGE_MESSAGE_DETAILS_Lensfun:INTERNAL=[/usr/include][/usr/lib/liblensfun.so][v()]
 //Details about finding Qt4
-FIND_PACKAGE_MESSAGE_DETAILS_Qt4:INTERNAL=[/usr/bin/qmake][/usr/bin/moc-qt4][/usr/bin/rcc][/usr/include/qt4][/usr/lib/x86_64-linux-gnu][/usr/include/qt4/QtCore][/usr/lib/x86_64-linux-gnu/libQtCore.so][/usr/include/qt4/QtGui][/usr/lib/x86_64-linux-gnu/libQtGui.so][/usr/include/qt4/QtXml][/usr/lib/x86_64-linux-gnu/libQtXml.so][/usr/bin/uic-qt4][v4.8.1(4.7)]
+FIND_PACKAGE_MESSAGE_DETAILS_Qt4:INTERNAL=[/usr/bin/qmake][/usr/bin/moc-qt4][/usr/bin/rcc][/usr/include/qt4][/usr/lib/x86_64-linux-gnu][/usr/include/qt4/QtCore][/usr/lib/x86_64-linux-gnu/libQtCore.so][/usr/include/qt4/QtGui][/usr/lib/x86_64-linux-gnu/libQtGui.so][/usr/include/qt4/QtXml][/usr/lib/x86_64-linux-gnu/libQtXml.so][/usr/bin/uic-qt4][v4.8.0(4.7)]
 //ADVANCED property for variable: IMAGEMAGICK_BINARY_PATH
 IMAGEMAGICK_BINARY_PATH-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: IMAGEMAGICK_COMPOSITE_EXECUTABLE
@@ -1149,26 +1099,6 @@ IMAGEMAGICK_MONTAGE_EXECUTABLE-ADVANCED:INTERNAL=1
 LENSFUN_INCLUDE_DIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: LENSFUN_LIBRARIES
 LENSFUN_LIBRARIES-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: OPENCV_CVAUX_LIBRARY
-OPENCV_CVAUX_LIBRARY-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: OPENCV_CVCAM_LIBRARY
-OPENCV_CVCAM_LIBRARY-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: OPENCV_CXCORE_LIBRARY
-OPENCV_CXCORE_LIBRARY-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: OPENCV_HIGHGUI_LIBRARY
-OPENCV_HIGHGUI_LIBRARY-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: OPENCV_INCLUDE_DIR_CV
-OPENCV_INCLUDE_DIR_CV-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: OPENCV_INCLUDE_DIR_CVAUX
-OPENCV_INCLUDE_DIR_CVAUX-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: OPENCV_INCLUDE_DIR_CVCAM
-OPENCV_INCLUDE_DIR_CVCAM-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: OPENCV_INCLUDE_DIR_CXCORE
-OPENCV_INCLUDE_DIR_CXCORE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: OPENCV_INCLUDE_DIR_HIGHGUI
-OPENCV_INCLUDE_DIR_HIGHGUI-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: OPENCV_LIBRARY
-OPENCV_LIBRARY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: PKGCONFIG_EXECUTABLE
 PKGCONFIG_EXECUTABLE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: QT3_QGLOBAL_H_FILE

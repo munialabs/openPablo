@@ -1,0 +1,6 @@
+-ticket format should be finished in a first version
+-can handle metadata like EXIF/IPTC..
+-first proto-prototype of an engine, i.e. just use
+imagemagick to adapt contrast, colors and sharpness,
+maybe noise.
+

@@ -1,0 +1,79 @@
+%define alphatag #ALPHATAG#
+
+Summary: Shared color profiles are used in color management aware applications
+Name: shared-color-profiles
+Version: #VERSION#
+Release: 0.#BUILD#%{?alphatag}
+URL: http://github.com/hughsie/shared-color-profiles
+Source0: http://people.freedesktop.org/~hughsient/releases/%{name}-%{version}.tar.xz
+License: GPLv2+ and Public Domain and zlib and MIT
+BuildArch: noarch
+
+Requires: color-filesystem
+
+%description 
+The shared-color-profiles package contains various profiles which are useful for
+programs that are color management aware.
+This package only contains the free profiles that can be safely distributed
+with Fedora.
+
+%package extra
+Summary: More color profiles for color management that are less commonly used
+Requires: %{name} = %{version}-%{release}
+
+%description extra
+More color profiles for color management that are less commonly used.
+
+%prep
+%setup -q
+
+%build
+%configure
+
+%install
+make install DESTDIR=$RPM_BUILD_ROOT
+
+%files
+%defattr(-,root,root,-)
+%doc AUTHORS COPYING ChangeLog
+#%{_datadir}/color/icc/*.ic?
+%dir %{_datadir}/shared-color-profiles
+
+# Argyll
+%dir %{_datadir}/color/icc/Argyll
+%dir %{_datadir}/shared-color-profiles/Argyll
+%{_datadir}/shared-color-profiles/Argyll/*
+
+# common colorspaces
+%{_datadir}/color/icc/Argyll/lab2lab.icm
+%{_datadir}/color/icc/Argyll/*RGB*.ic?
+
+# so we can display at least something in the default dropdown
+%{_datadir}/color/icc/Fogra27L.icc
+%{_datadir}/color/icc/Oysonar/Gray.icc
+
+# monitor test profiles
+%{_datadir}/color/icc/bluish.icc
+%{_datadir}/color/icc/AdobeGammaTest.icm
+%{_datadir}/color/icc/Fake*.icc
+
+# abstract profiles
+%{_datadir}/color/icc/Yamma
+%{_datadir}/shared-color-profiles/Yamma
+
+%files extra
+%defattr(-,root,root,-)
+
+# Oysonar
+%dir %{_datadir}/color/icc/Oysonar
+%{_datadir}/color/icc/Oysonar/FOGRA*.icc
+%{_datadir}/color/icc/Oysonar/GRACoL*.icc
+%{_datadir}/color/icc/Oysonar/SNAP*.icc
+%{_datadir}/color/icc/Oysonar/SWOP*.icc
+%{_datadir}/color/icc/Oysonar/Gray-CIE_L.icc
+%{_datadir}/shared-color-profiles/Oysonar/*
+
+
+%changelog
+* #LONGDATE# Richard Hughes <richard@hughsie.com> #VERSION#-0.#BUILD##ALPHATAG#
+- Update from git

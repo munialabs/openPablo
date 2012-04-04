@@ -1,7 +1,7 @@
 FILE(REMOVE_RECURSE
-  "CMakeFiles/openpablo.dir/src/openpablo.cxx.o"
-  "openpablo.pdb"
-  "openpablo"
+  "CMakeFiles/openpablo.dir/src/main.cpp.o"
+  "bin/openpablo.pdb"
+  "bin/openpablo"
 )
 
 # Per-language clean rules from dependency scanning.
