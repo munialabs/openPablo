@@ -1,25 +1,80 @@
-cmake_minimum_required (VERSION 2.8)
+
+# openPablo CMakeLists.txt
+
+# --- cmake settings
+#
+  cmake_minimum_required (VERSION 2.8)
 
 
-PROJECT (openpablo)
-set (openpablo_VERSION_MAJOR 0)
-set (openpablo_VERSION_MINOR 1)
+# --- project settings
+#
+  PROJECT (openpablo)
+    set (openpablo_VERSION_MAJOR 0)
+    set (openpablo_VERSION_MINOR 1)
+
+    SET(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake/modules)
 
 
-SET(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake/modules)
+
+# --- extra options
+#
+# option(USE_CAMERA_SUPPORT "Detect and use camera support if available." ON)
 
 
-FIND_PACKAGE(OpenCV REQUIRED)
-find_package(Exiv2 REQUIRED)
-find_package(LCMS2 REQUIRED)
-find_package(ImageMagick COMPONENTS Magick++ REQUIRED)
-find_package(ImageMagick COMPONENTS MagickCore REQUIRED)
-find_package(Qt COMPONENTS QtOpenGL QtXml REQUIRED)
-find_package(LIBPODOFO REQUIRED)
-find_package(Boost COMPONENTS system filesystem REQUIRED)
-find_package(Qt4 4.7 REQUIRED QtCore QtGui QtXml)
-FIND_PACKAGE(Exiv2 REQUIRED)
-FIND_PACKAGE(Lensfun REQUIRED)
+
+# --- specific os things
+#
+  IF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
+    # linux specific code
+    SET(OperatingSystem "Linux")
+    message("-- Linux build detected.")
+  ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Linux") 
+
+
+  IF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
+    # OSX specific code
+    SET(OperatingSystem "Mac OS X")
+    message("-- OSX build detected.")
+  ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin") 
+
+
+  if(WIN32)
+    # windows specific code
+    SET(OperatingSystem "Win")
+    message("-- Windows build detected.")
+  endif(WIN32)
+
+
+
+
+
+# --- avoid source tree pollution
+#
+If(CMAKE_SOURCE_DIR STREQUAL CMAKE_BINARY_DIR)
+	message(FATAL_ERROR "In-source builds are not permitted. Make a separate folder for building:\nmkdir build; cd build; cmake ..\nBefore that, remove the files already created:\nrm -rf CMakeCache.txt CMakeFiles")
+endif(CMAKE_SOURCE_DIR STREQUAL CMAKE_BINARY_DIR)
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/modules/")
+
+
+# --- add subdirectories
+  add_subdirectory(src)
+  add_subdirectory(data)
+  add_subdirectory(doc)
+
+
+# --- required packages
+#
+  FIND_PACKAGE(OpenCV REQUIRED)
+  find_package(Exiv2 REQUIRED)
+  find_package(LCMS2 REQUIRED)
+  find_package(ImageMagick COMPONENTS Magick++ REQUIRED)
+  find_package(ImageMagick COMPONENTS MagickCore REQUIRED)
+  find_package(Qt COMPONENTS QtOpenGL QtXml REQUIRED)
+  find_package(LIBPODOFO REQUIRED)
+  find_package(Boost COMPONENTS system filesystem REQUIRED)
+  find_package(Qt4 4.7 REQUIRED QtCore QtGui QtXml)
+  FIND_PACKAGE(Exiv2 REQUIRED)
+  FIND_PACKAGE(Lensfun REQUIRED)
 
 
 add_definitions(-Wall -W -ggdb)
@@ -47,9 +102,6 @@ set(PROJECT_BINARY_DIR ${PROJECT_SOURCE_DIR}/bin)
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR})
 ADD_EXECUTABLE(openpablo src/main.cpp)
 TARGET_LINK_LIBRARIES(openpablo ${QT_LIBRARIES} ${LENSFUN_LIBRARIES} ${OpenCV_LIBS} ${LIBPODOFO_LIBRARY} ${ImageMagick_LIBRARIES} ${Boost_FILESYSTEM_LIBRARY} ${Boost_SYSTEM_LIBRARY} ${EXIV2_LIBRARIES})
-
-
-#add_subdirectory(src)
 
 
 # build a CPack driven installer package
