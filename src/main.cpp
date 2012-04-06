@@ -177,6 +177,9 @@ int main ( int argc, char **argv )
  	Blob newBlob((const char*) myMemIo.mmap(false), myMemIo.size());
 //	magick.update (newblob.data, blob.length);
 	magick.read(newBlob);
+	
+	magick.unsharpmask(20, 2.0, 1.0, 0);
+	
 	magick.write(outputPath + "/" + inputFile);
 	
 	}
