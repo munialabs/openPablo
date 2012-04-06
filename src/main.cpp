@@ -127,7 +127,58 @@ int main ( int argc, char **argv )
 	str >> resizeresult;
 	magick.resize(resizeresult); 
 
+	// modify exif data
+	
+ 	Blob blob;
+	magick.magick( "JPEG" ); // Set JPEG output format
+	magick.write( &blob );
+
+	Exiv2::Image::AutoPtr image = Exiv2::ImageFactory::open((const uint8_t*) blob.data(), (long) blob.length());
+	
+	image->readMetadata();
+	Exiv2::ExifData &exifData = image->exifData();
+
+	exifData["Exif.Photo.UserComment"] = "charset=\"Unicode\" An Unicode Exif comment added with Exiv2";
+	exifData["Exif.Photo.UserComment"] = "charset=\"Undefined\" An undefined Exif comment added with Exiv2";
+	exifData["Exif.Photo.UserComment"] = "Another undefined Exif comment added with Exiv2";
+	exifData["Exif.Photo.UserComment"] = "charset=Ascii An ASCII Exif comment added with Exiv2";
+	exifData["Exif.Image.Model"] = "Test 1";                     // AsciiValue
+	exifData["Exif.Image.SamplesPerPixel"] = uint16_t(162);      // UShortValue
+	exifData["Exif.Image.XResolution"] = int32_t(-2);            // LongValue
+	exifData["Exif.Image.YResolution"] = Exiv2::Rational(-2, 3); // RationalValue
+		
+	
+	Exiv2::IptcData &iptcData = image -> iptcData();
+
+	iptcData["Iptc.Application2.Headline"] = "openPablo v0.1";
+	iptcData["Iptc.Application2.Keywords"] = "Yet another keyword";
+	iptcData["Iptc.Application2.DateCreated"] = "2004-8-3";
+	iptcData["Iptc.Application2.Urgency"] = uint16_t(1);
+	iptcData["Iptc.Envelope.ModelVersion"] = 42;
+	iptcData["Iptc.Envelope.TimeSent"] = "14:41:0-05:00";
+	iptcData["Iptc.Application2.RasterizedCaption"] = "230 42 34 2 90 84 23 146";
+	iptcData["Iptc.0x0009.0x0001"] = "Who am I?";
+
+	
+	image->writeMetadata();
+	Exiv2::BasicIo &myMemIo = image->io();
+	
+	
+	// create blob again
+// 	unsigned char *newImage = new unsigned char[myMemIo.size()];
+// 	myMemIo.open();
+// 	myMemIo.write(newImage, myMemIo.size());
+	
+	
+	std::cout << myMemIo.size();
+//	DataBuf myBuf;
+//	image->writeFile (myBuf, 
+	
+ 	Blob newBlob((const char*) myMemIo.mmap(false), myMemIo.size());
+//	magick.update (newblob.data, blob.length);
+	magick.read(newBlob);
 	magick.write(outputPath + "/" + inputFile);
+	
 	}
     }
       catch (const std::exception& ex)
@@ -135,6 +186,7 @@ int main ( int argc, char **argv )
 	cerr << "failed to magick - " << ex.what() << endl;
     }
  
+return -1;
 
     Exiv2::Image::AutoPtr image = Exiv2::ImageFactory::open(inputPath + "/" + inputFile);
     assert(image.get() != 0);
