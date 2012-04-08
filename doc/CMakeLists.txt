@@ -24,9 +24,21 @@
 #      data/main.bib
 #  )
 
-  ADD_LATEX_DOCUMENT(manual.ltx
-    INPUTS ${INPUTS_TEX_FILES}
-    IMAGE_DIRS images
-    BIBFILES ${BIB_FILE}
-    DEFAULT_PDF
-  )
+
+
+
+#
+# ----------------------------------------------------------------------------
+# add a target to generate manual with xelatex (if requested)
+# ----------------------------------------------------------------------------#
+# 
+
+    if(compile_docs)
+      ADD_LATEX_DOCUMENT(manual.ltx
+	INPUTS ${INPUTS_TEX_FILES}
+	IMAGE_DIRS images
+	BIBFILES ${BIB_FILE}
+	DEFAULT_PDF
+      )
+    endif(compile_docs)
+

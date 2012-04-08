@@ -14,6 +14,8 @@
 
     SET(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake/modules)
 
+    # should doc-generation (doxygen, manual) be run? 
+    set (compile_docs OFF)
 
 
 # --- extra options
@@ -75,6 +77,9 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/modules/")
   find_package(Qt4 4.7 REQUIRED QtCore QtGui QtXml)
   FIND_PACKAGE(Exiv2 REQUIRED)
   FIND_PACKAGE(Lensfun REQUIRED)
+  find_package(LibMagic REQUIRED)
+  find_package(RawTherapeeEngine REQUIRED)
+
 
 
 add_definitions(-Wall -W -ggdb)
@@ -82,6 +87,8 @@ include_directories(${ImageMagick_INCLUDE_DIRS})
 include_directories (${LIBPODOFO_INCLUDE_DIR})
 INCLUDE_DIRECTORIES(${EXIV2_INCLUDE_DIR})
 INCLUDE_DIRECTORIES(${LENSFUN_INCLUDE_DIR})
+INCLUDE_DIRECTORIES(${LibMagic_INCLUDE_DIR})
+include_directories (${RawTherapeeEngine_INCLUDE_DIR})
 
 
 
@@ -101,7 +108,7 @@ include(${QT_USE_FILE})
 set(PROJECT_BINARY_DIR ${PROJECT_SOURCE_DIR}/bin)
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR})
 ADD_EXECUTABLE(openpablo src/main.cpp)
-TARGET_LINK_LIBRARIES(openpablo ${QT_LIBRARIES} ${LENSFUN_LIBRARIES} ${OpenCV_LIBS} ${LIBPODOFO_LIBRARY} ${ImageMagick_LIBRARIES} ${Boost_FILESYSTEM_LIBRARY} ${Boost_SYSTEM_LIBRARY} ${EXIV2_LIBRARIES})
+TARGET_LINK_LIBRARIES(openpablo ${QT_LIBRARIES} ${RawTherapeeEngine_LIBRARY} ${LibMagic_LIBRARY} ${LENSFUN_LIBRARIES} ${OpenCV_LIBS} ${LIBPODOFO_LIBRARY} ${ImageMagick_LIBRARIES} ${Boost_FILESYSTEM_LIBRARY} ${Boost_SYSTEM_LIBRARY} ${EXIV2_LIBRARIES})
 
 
 # build a CPack driven installer package
@@ -111,3 +118,30 @@ set (CPACK_RESOURCE_FILE_LICENSE
 set (CPACK_PACKAGE_VERSION_MAJOR "${Tutorial_VERSION_MAJOR}")
 set (CPACK_PACKAGE_VERSION_MINOR "${Tutorial_VERSION_MINOR}")
 include (CPack)
+
+
+
+
+#
+# ----------------------------------------------------------------------------
+# add a target to generate API documentation with Doxygen
+# ----------------------------------------------------------------------------#
+# 
+
+  find_package(Doxygen)
+
+  if(DOXYGEN_FOUND)
+    message("Doxygen template file is ${PROJECT_SOURCE_DIR}/doc/Doxyfile.in")
+
+    configure_file(${PROJECT_SOURCE_DIR}/doc/Doxyfile.in ${CMAKE_CURRENT_BINARY_DIR}/Doxyfile @ONLY)
+    if(compile_docs)
+      add_custom_target(doxygen ALL ${DOXYGEN_EXECUTABLE} ${CMAKE_CURRENT_BINARY_DIR}/Doxyfile 
+	  WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
+	  COMMENT "Generating API documentation with Doxygen" VERBATIM)
+    else(compile_docs)
+#      add_custom_target(doxygen ${DOXYGEN_EXECUTABLE} ${CMAKE_CURRENT_BINARY_DIR}/Doxyfile 
+#	  WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
+#	  COMMENT "Generating API documentation with Doxygen" VERBATIM)
+    endif(compile_docs)
+  endif(DOXYGEN_FOUND)
+

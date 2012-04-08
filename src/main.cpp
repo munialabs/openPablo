@@ -1,8 +1,38 @@
+/*
+ *  main.cpp
+ * 
+ * 
+ *  This file is part of openPalo.
+ *
+ *  Copyright (c) 2012- Aydin Demircioglu (aydin@openpablo.org)
+ *
+ *  openPablo is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  (at your option) any later version.
+ * 
+ *  openPablo is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with openPablo.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+
+
 #include <cv.h>
 #include <highgui.h>
- #include <QFile>
 
+#include <QDir>
+#include <QFile>
+#include <QDataStream>
 
+ #include <magic.h>
+
+//#include "rtengine.h"
+ 
 #include <Magick++.h>
 #include <string>
 #include <iostream>
@@ -48,15 +78,38 @@ using namespace Magick;
 
 int main ( int argc, char **argv )
 {
+
+//    rtengine::Settings mySettings;
+//    rtengine::init (&s, ".");
+
+  
+    // TODO: crashreporter-lib..
+    
+    // TODO: arguments interpretation
+    // for now: just test for 1 argument with the ticket.
+    
+    // FIXME: version number
+    std::cout << "\nopenPablo v0.1\n";
+    
+    if (argc != 2)
+    {
+      std::cout << "\n  You must only specify one ticket!\n";
+      return (-1);
+    }
+    
+  
     using boost::property_tree::ptree;
     ptree pt;
 
-    // Load the XML file into the property tree. If reading fails
+    // Load the settings file into the property tree. If reading fails
     // (cannot open file, parse error), an exception is thrown.
-    read_json("tests/onefile.txt" , pt);
+    
+    // FIXME: try json first then xml or info parser.
+    // TODO: info parser should be #1 way of specifiying tickets.
+    read_json(argv[1] , pt);
 
-    std::string inputFile = pt.get<std::string>("Input.InputFile");
-    std::cout << inputFile << "\n";
+    
+    // check if input
     
     std::string iccPath = pt.get<std::string>("Settings.Color.ICC.Path");
     std::cout << iccPath << "\n";
@@ -64,22 +117,61 @@ int main ( int argc, char **argv )
     std::string outputICC = pt.get<std::string>("Settings.Color.ICC.Output");
     std::cout << outputICC << "\n";
     
+    std::string inputFile = pt.get<std::string>("Input.InputFile");
     std::string inputPath = pt.get<std::string>("Input.InputPath");
-    std::cout << inputPath << "\n";
+
+    QDir inputDir (QString::fromStdString(pt.get<std::string>("Input.InputPath")));
+    QString filePath = inputDir.filePath(QString::fromStdString(pt.get<std::string>("Input.InputFile")));
+    
+    std::cout << filePath.toStdString() << "\n";
+    std::string inputFileFull = filePath.toStdString();
+    
+return -1;
+
+    // FIXME: check if file exists
+    
+    
+    // depending on file type different things should happen.
+    //ProcessorFactory.createProcessor (inputPath + "/" + inputFile);
+   
+	
+    QFile file(QString::fromStdString(argv[1]));
+    if (!file.open(QIODevice::ReadOnly) )
+    {
+      std::cout << ("failed to load ") << iccPath << "/" << outputICC << "\n";
+      return -1;
+    }
+
+    // Read and check the header
+    QDataStream in(&file);
+    quint32 magic;
+    in >> magic;
+    file.close();
+    
+    // -----
+
+    // check if its a pdf file
+    if ( magic == 2064261152)
+    {
+      // this is a pdf file
+      std::cout << "  Found PDF File.\n";
+    }
     
     
     
-    QFile file(QString::fromStdString(iccPath + "/" + outputICC));
+    // ----
+    QFile iccfile(QString::fromStdString(iccPath + "/" + outputICC));
 
     QByteArray outputProfile;
-      if(file.open(QIODevice::ReadOnly))
+      if(iccfile.open(QIODevice::ReadOnly))
       {
-	  outputProfile = file.readAll();
-	  file.close();
+	  outputProfile = iccfile.readAll();
+	  iccfile.close();
       }
       else
       {
 	std::cout << ("failed to load ") << iccPath << "/" << outputICC << "\n";
+	return -1;
       }
     
     
@@ -102,7 +194,7 @@ int main ( int argc, char **argv )
 	  std::string outputid = child.second.get<std::string>("id");
 	  std::cout << outputid  << "\n";
 
-	  Magick::Image magick(inputPath + "/" + inputFile);
+	  Magick::Image magick(inputFile);
 
 	magick.renderingIntent(Magick::PerceptualIntent);
 
