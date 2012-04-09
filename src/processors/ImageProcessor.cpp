@@ -43,35 +43,35 @@
 namespace openPablo
 {
 
-  /*
-   * @class ImageProcessor
-   *
-   * @brief Abstract class to interface the capabilities of a processor
-   *
-   * Abstract class..
-   *
-   */
+    /*
+     * @class ImageProcessor
+     *
+     * @brief Abstract class to interface the capabilities of a processor
+     *
+     * Abstract class..
+     *
+     */
 
 
-	ImageProcessor::ImageProcessor()
-	{
-		//
-	}
-
-
-
-	ImageProcessor::~ImageProcessor()
-	{
-		//
-
-	}
+    ImageProcessor::ImageProcessor()
+    {
+        //
+    }
 
 
 
-	void ImageProcessor::start ()
-	{
-		//
-	}
+    ImageProcessor::~ImageProcessor()
+    {
+        //
 
- 
+    }
+
+
+
+    void ImageProcessor::start ()
+    {
+        //
+    }
+
+
 }

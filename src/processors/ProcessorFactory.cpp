@@ -1,7 +1,7 @@
 /*
  *  ProcessorFactory.cpp
- * 
- * 
+ *
+ *
  *  This file is part of openPalo.
  *
  *  Copyright (c) 2012- Aydin Demircioglu (aydin@openpablo.org)
@@ -10,7 +10,7 @@
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
- * 
+ *
  *  openPablo is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
@@ -23,24 +23,27 @@
 
 /*
  * @mainpage ProcessorFactory
- * 
+ *
  * Description in html
  * @author Aydin Demircioglu
-  */ 
+  */
 
 
-/* 
+/*
  * @file ProcessorFactory.hpp
- * 
+ *
  * @brief description in brief.
- * 
- */ 
+ *
+ */
 
 
 #include <QString>
 #include <QFile>
 #include <QDataStream>
 #include <QDebug>
+
+#include <magic.h>
+
 
 #include "ProcessorFactory.hpp"
 
@@ -50,74 +53,75 @@
 namespace openPablo
 {
 
-  /*
-   * @class ProcessorFactory
-   * 
-   * @brief Factory class to create the right processor for a given image
-   * 
-   * This will give back the correct processor when provided with an image
-   * in form of filename.
-   * 
-   */
+    /*
+     * @class ProcessorFactory
+     *
+     * @brief Factory class to create the right processor for a given image
+     *
+     * This will give back the correct processor when provided with an image
+     * in form of filename.
+     *
+     */
 
-   Processor* ProcessorFactory::createInstance (QString imageFileName)
-   {
-	   	ImageProcessor *imageProcessor = new ImageProcessor();
+    Processor* ProcessorFactory::createInstance (QString imageFileName)
+    {
+        ImageProcessor *imageProcessor = new ImageProcessor();
 
-	   	qDebug() << "Analysing file type of file ";
-
-	    QFile file(imageFileName);
-	    if (!file.open(QIODevice::ReadOnly) )
-	    {
-	      qDebug() << ("failed to load ");// << iccPath << "/" << outputICC << "\n";
-	      return imageProcessor;
-	    }
-
-	    // Read and check the header
-	    QDataStream in(&file);
-	    quint32 magic;
-	    in >> magic;
-	    file.close();
-
-	    // -----
-
-	    // check if its a pdf file
-	    if ( magic == 2064261152)
-	    {
-	      // this is a pdf file
-//	      std::cout << "  Found PDF File.\n";
-	    }
+        qDebug() << "Analysing file type of file " << imageFileName;
 
 
+        // determine type of image
+        // apply magic for it
+        const char *magic_full;
+        magic_t magic_cookie;
 
-      // determine type of image
-          
-    // for now just PDF file
-//     const char *magic_full;
-//     magic_t magic_cookie;
-//     /*MAGIC_MIME tells magic to return a mime of the file, but you can specify different things*/
-//     magic_cookie = magic_open(MAGIC_MIME);
-//     
-//     if (magic_cookie == NULL) {
-//             printf("unable to initialize magic library\n");
-//             return 1;
-//             }
-//         printf("Loading default magic database\n");
-//         if (magic_load(magic_cookie, NULL) != 0) {
-//             printf("cannot load magic database - %s\n", magic_error(magic_cookie));
-//             magic_close(magic_cookie);
-//             return 1;
-//         }
-//     magic_full = magic_file(magic_cookie, inputFile.c_str());
-//     std::cout << "Filetype: " << magic_full;
-//     magic_close(magic_cookie);
-//     
+        magic_cookie = magic_open(MAGIC_MIME);
 
-	  // create processor
+        if (magic_cookie == NULL)
+        {
+            qDebug() << "unable to initialize magic library";
+            return imageProcessor;
+        }
+        printf("Loading default magic database\n");
+        if (magic_load(magic_cookie, NULL) != 0)
+        {
+            qDebug() << "cannot load magic database" << magic_error(magic_cookie);
+            magic_close(magic_cookie);
+            return imageProcessor;
+        }
+        magic_full = magic_file(magic_cookie, imageFileName.toStdString().c_str());
 
-	  // assign correct filename to processor
+        // convert to qstring
+        QString mimeType(magic_full);
+        qDebug() << "Filetype: " << mimeType;
+        magic_close(magic_cookie);
 
-      return imageProcessor;
-   }
-    
+        // create processor
+        if (mimeType.contains("application/pdf", Qt::CaseInsensitive))
+        {
+        	qDebug() << "  Determined file type PDF.";
+
+        	// create PDF Processor
+            ImageProcessor *pdfProcessor = new ImageProcessor();
+        	return pdfProcessor;
+        }
+
+        if (mimeType.contains("image/jpeg", Qt::CaseInsensitive))
+        {
+        	qDebug() << "  Determined file type JPG.";
+
+        	// create PDF Processor
+            ImageProcessor *imageProcessor = new ImageProcessor();
+        	return imageProcessor;
+        }
+
+        // assign correct filename to processor
+
+        // unable to do anything
+    	qDebug() << "  Unknown file type.";
+
+
+        return imageProcessor;
+    }
+
 }

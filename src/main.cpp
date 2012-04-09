@@ -36,7 +36,6 @@
 #include <QTextStream>
 
 
- #include <magic.h>
 
 //#include "rtengine.h"
  
@@ -116,7 +115,7 @@ void customMessageHandler(QtMsgType type, const char *msg)
 int main ( int argc, char **argv )
 {
 	// some logging initialization
-	qInstallMsgHandler(customMessageHandler);
+//	qInstallMsgHandler(customMessageHandler);
 
 //    rtengine::Settings mySettings;
 //    rtengine::init (&s, ".");

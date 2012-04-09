@@ -1,7 +1,7 @@
 /*
  *  ProcessorFactory.hpp
- * 
- * 
+ *
+ *
  *  This file is part of openPalo.
  *
  *  Copyright (c) 2012- Aydin Demircioglu (aydin@openpablo.org)
@@ -10,7 +10,7 @@
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
- * 
+ *
  *  openPablo is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
@@ -27,18 +27,18 @@
 
 /*
  * @mainpage ProcessorFactory
- * 
+ *
  * Description in html
  * @author Aydin Demircioglu
- */ 
+ */
 
 
-/* 
+/*
  * @file ProcessorFactory.hpp
- * 
+ *
  * @brief description in brief.
- * 
- */ 
+ *
+ */
 
 
 #include <QString>
@@ -53,26 +53,26 @@ using namespace openPablo;
 namespace openPablo
 {
 
-  /*
-   * @class ProcessorFactory
-   * 
-   * @brief Factory class to create the right processor for a given image
-   * 
-   * This will give back the correct processor when provided with an image
-   * in form of filename.
-   * 
-   */
-  class ProcessorFactory
-  {
-public:
     /*
-     * 
+     * @class ProcessorFactory
+     *
+     * @brief Factory class to create the right processor for a given image
+     *
+     * This will give back the correct processor when provided with an image
+     * in form of filename.
+     *
      */
-    static Processor* createInstance (QString imageFileName);
+    class ProcessorFactory
+    {
+        public:
+            /*
+             *
+             */
+            static Processor* createInstance (QString imageFileName);
 
-  };
-  
-} 
+    };
+
+}
 
 
 #endif // OPENPABLO_PROCESSORFACTORY_H_
