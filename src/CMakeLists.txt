@@ -20,7 +20,7 @@
   add_definitions("-DHAVE_CONFIG_H")
   set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -std=c99")
   set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -fno-strict-aliasing")
-
+  set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wl -subsystem,console,debug")
 
   #if(NOT APPLE)
     # apple build fails on deprecated warnings..
@@ -74,6 +74,7 @@ ENDIF (${OPENPABLO_SHARED_LIBS})
 #
 
 add_executable (openpablo main.cpp) # add config.h
+set(LINK_FLAGS "${LINK_FLAGS} -mwindows -mdebug -mconsole")
 target_link_libraries(openpablo ${openpablo_libs} ${QT_LIBRARIES} ${RawTherapeeEngine_LIBRARY} ${LibMagic_LIBRARY} ${LENSFUN_LIBRARIES} ${OpenCV_LIBS} ${LIBPODOFO_LIBRARY} ${ImageMagick_LIBRARIES} ${Boost_FILESYSTEM_LIBRARY} ${Boost_SYSTEM_LIBRARY} ${EXIV2_LIBRARIES})
 
 
