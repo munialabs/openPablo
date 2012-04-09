@@ -14,7 +14,7 @@
 
     SET(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake/modules)
 
-    # should doc-generation (doxygen, manual) be run every time? 
+    # should doc-generation (doxygen, manual) be run? 
     set (compile_docs OFF)
 
 
@@ -58,12 +58,6 @@ endif(CMAKE_SOURCE_DIR STREQUAL CMAKE_BINARY_DIR)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/modules/")
 
 
-# --- add subdirectories
-  add_subdirectory(src)
-  add_subdirectory(data)
-  add_subdirectory(doc)
-
-
 # --- required packages
 #
   FIND_PACKAGE(OpenCV REQUIRED)
@@ -82,6 +76,22 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/modules/")
 
 
 
+# --- find dependencies
+#
+
+IF (UNIX)
+  FIND_PACKAGE(PkgConfig)
+ENDIF (UNIX)
+
+IF(WIN32)
+    set(OPENPABLO_SHARED "0" CACHE STRING "Build shared internal libraries" )
+ELSE(WIN32)
+    set(OPENPABLO_SHARED "1" CACHE STRING "Build shared internal libraries" )
+ENDIF(WIN32)
+
+
+
+
 add_definitions(-Wall -W -ggdb)
 include_directories(${ImageMagick_INCLUDE_DIRS})
 include_directories (${LIBPODOFO_INCLUDE_DIR})
@@ -90,10 +100,22 @@ INCLUDE_DIRECTORIES(${LENSFUN_INCLUDE_DIR})
 INCLUDE_DIRECTORIES(${LibMagic_INCLUDE_DIR})
 include_directories (${RawTherapeeEngine_INCLUDE_DIR})
 
-
+include_directories(${CMAKE_SOURCE_DIR}/src)
+include_directories(${CMAKE_BINARY_DIR}/src)
+include_directories(${CMAKE_SOURCE_DIR}/src/processors)
 
 
 include(${QT_USE_FILE})
+
+
+
+# --- add subdirectories
+  add_subdirectory(src)
+  add_subdirectory(data)
+  add_subdirectory(doc)
+
+
+
 
 
 # add 3rd party libraries
@@ -107,8 +129,7 @@ include(${QT_USE_FILE})
 
 set(PROJECT_BINARY_DIR ${PROJECT_SOURCE_DIR}/bin)
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR})
-ADD_EXECUTABLE(openpablo src/main.cpp)
-TARGET_LINK_LIBRARIES(openpablo ${QT_LIBRARIES} ${RawTherapeeEngine_LIBRARY} ${LibMagic_LIBRARY} ${LENSFUN_LIBRARIES} ${OpenCV_LIBS} ${LIBPODOFO_LIBRARY} ${ImageMagick_LIBRARIES} ${Boost_FILESYSTEM_LIBRARY} ${Boost_SYSTEM_LIBRARY} ${EXIV2_LIBRARIES})
+
 
 
 # build a CPack driven installer package

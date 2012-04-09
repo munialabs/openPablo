@@ -25,6 +25,11 @@
 #include <cv.h>
 #include <highgui.h>
 
+
+#include "Processor.hpp"
+#include "ProcessorFactory.hpp"
+
+
 #include <QDir>
 #include <QFile>
 #include <QDataStream>
@@ -71,6 +76,8 @@ using namespace std;
 using namespace PoDoFo;
 
 using namespace Magick;
+
+using namespace openPablo;
 
 
 
@@ -119,45 +126,31 @@ int main ( int argc, char **argv )
     
     std::string inputFile = pt.get<std::string>("Input.InputFile");
     std::string inputPath = pt.get<std::string>("Input.InputPath");
-
-    QDir inputDir (QString::fromStdString(pt.get<std::string>("Input.InputPath")));
-    QString filePath = inputDir.filePath(QString::fromStdString(pt.get<std::string>("Input.InputFile")));
     
-    std::cout << filePath.toStdString() << "\n";
-    std::string inputFileFull = filePath.toStdString();
-    
-return -1;
-
     // FIXME: check if file exists
     
     
     // depending on file type different things should happen.
-    //ProcessorFactory.createProcessor (inputPath + "/" + inputFile);
-   
-	
-    QFile file(QString::fromStdString(argv[1]));
-    if (!file.open(QIODevice::ReadOnly) )
-    {
-      std::cout << ("failed to load ") << iccPath << "/" << outputICC << "\n";
-      return -1;
-    }
+    QDir inputDir (QString::fromStdString(pt.get<std::string>("Input.InputPath")));
+    QString imageFileName = inputDir.filePath(QString::fromStdString(pt.get<std::string>("Input.InputFile")));
 
-    // Read and check the header
-    QDataStream in(&file);
-    quint32 magic;
-    in >> magic;
-    file.close();
-    
-    // -----
+    Processor *processor = ProcessorFactory::createInstance (imageFileName);
 
-    // check if its a pdf file
-    if ( magic == 2064261152)
-    {
-      // this is a pdf file
-      std::cout << "  Found PDF File.\n";
-    }
-    
-    
+    std::cout << imageFileName.toStdString() << "\n";
+    std::string inputFileFull = imageFileName.toStdString();
+
+
+    //    processor.setEngine ("GIMP");
+    //    processor.start ();
+
+    // destruct processor again
+
+	// inputPath + "/" + inputFile
+	//QString::fromStdString(argv[1]);
+
+
+    return -1;
+
     
     // ----
     QFile iccfile(QString::fromStdString(iccPath + "/" + outputICC));
