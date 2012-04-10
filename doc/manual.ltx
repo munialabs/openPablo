@@ -361,6 +361,25 @@ easily save more complex setups.
             "OutputPath": "tmp/tmpprint/"
         }
     ]
+
+    "Logging": [
+	{
+	    "id": "File",
+	    "Type": "txt",
+	    "OutputPath": "~/logs/",
+	    "FilenameTemplate": "openPablo-%Y%m%d-%file.log",
+	    "LogTemplate": "[%h:%m:%s] [%level]: %message",
+	    "LogLevel": "Warning"
+	},
+	{
+	    "id": "File",
+	    "OutputPath": "~/logs/",
+	    "FilenameTemplate": "openPablo-%Y%m%d-%file.html",
+	    "LogTemplate": "~/template/log-template.html",
+	    "LogLevel": "Warning"
+	}
+     ]
+    
 }
 \end{verbatim}
 

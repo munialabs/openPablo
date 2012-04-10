@@ -68,7 +68,7 @@ namespace openPablo
 
 	  virtual ~Processor();
 
-	private:
+	protected:
 
 	  QString filename;
 

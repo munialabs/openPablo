@@ -39,7 +39,6 @@
 
 //#include "rtengine.h"
  
-#include <Magick++.h>
 #include <string>
 #include <iostream>
 #include <list>
@@ -48,8 +47,6 @@
   #include <string.h>
   #include <time.h>
 #include <exception>
-
-#include <magick/MagickCore.h>
 
 
 #include "lensfun.h"
@@ -68,15 +65,8 @@
 #include "lcms2_plugin.h"
 
 
-#include <podofo/podofo.h>
-
-
-
 using namespace std;
 
-using namespace PoDoFo;
-
-using namespace Magick;
 
 using namespace openPablo;
 
@@ -116,6 +106,9 @@ int main ( int argc, char **argv )
 {
 	// some logging initialization
 //	qInstallMsgHandler(customMessageHandler);
+
+
+
 
 //    rtengine::Settings mySettings;
 //    rtengine::init (&s, ".");
@@ -167,12 +160,13 @@ int main ( int argc, char **argv )
 
     Processor *processor = ProcessorFactory::createInstance (imageFileName);
 
+
     std::cout << imageFileName.toStdString() << "\n";
     std::string inputFileFull = imageFileName.toStdString();
 
 
     //    processor.setEngine ("GIMP");
-    //    processor.start ();
+    processor -> start ();
 
     // destruct processor again
 
@@ -201,112 +195,23 @@ int main ( int argc, char **argv )
     
 //    PdfStreamedDocument document( "tests/tmp.pdf" );
 
-    
-   //Initialize ImageMagick install location for Windows
-  InitializeMagick(*argv);
 
   
 
   
  
-
-    try
-    {
-	BOOST_FOREACH(const ptree::value_type& child,
-                  pt.get_child("Output")) 
-	{	
-	  std::string outputid = child.second.get<std::string>("id");
-	  std::cout << outputid  << "\n";
-
-	  Magick::Image magick(inputFile);
-
-	magick.renderingIntent(Magick::PerceptualIntent);
-
-	magick.profile("ICC", Magick::Blob(outputProfile.constData(), outputProfile.size()));
-
-	const Magick::Blob  targetICC (outputProfile.constData(), outputProfile.size());
-	magick.profile("ICC", targetICC);
-	magick.iccColorProfile(targetICC);
-
-	    
-	  std::string outputPath = child.second.get<std::string>("OutputPath");
-	  std::cout << outputPath << "\n";
-
-	  
-	uint32_t width = child.second.get<int>("Width");
-	uint32_t height = child.second.get<int>("Height");
-	std::cout << "Scale to " << width << ", " << height << "\n";
-
-	std::stringstream str;
-	str << width << "x" << height;
-	std::string resizeresult;
-	str >> resizeresult;
-	magick.resize(resizeresult); 
-
-	// modify exif data
-	
- 	Blob blob;
-	magick.magick( "JPEG" ); // Set JPEG output format
-	magick.write( &blob );
-
-	Exiv2::Image::AutoPtr image = Exiv2::ImageFactory::open((const uint8_t*) blob.data(), (long) blob.length());
-	
-	image->readMetadata();
-	Exiv2::ExifData &exifData = image->exifData();
-
-	exifData["Exif.Photo.UserComment"] = "charset=\"Unicode\" An Unicode Exif comment added with Exiv2";
-	exifData["Exif.Photo.UserComment"] = "charset=\"Undefined\" An undefined Exif comment added with Exiv2";
-	exifData["Exif.Photo.UserComment"] = "Another undefined Exif comment added with Exiv2";
-	exifData["Exif.Photo.UserComment"] = "charset=Ascii An ASCII Exif comment added with Exiv2";
-	exifData["Exif.Image.Model"] = "Test 1";                     // AsciiValue
-	exifData["Exif.Image.SamplesPerPixel"] = uint16_t(162);      // UShortValue
-	exifData["Exif.Image.XResolution"] = int32_t(-2);            // LongValue
-	exifData["Exif.Image.YResolution"] = Exiv2::Rational(-2, 3); // RationalValue
-		
-	
-	Exiv2::IptcData &iptcData = image -> iptcData();
-
-	iptcData["Iptc.Application2.Headline"] = "openPablo v0.1";
-	iptcData["Iptc.Application2.Keywords"] = "Yet another keyword";
-	iptcData["Iptc.Application2.DateCreated"] = "2004-8-3";
-	iptcData["Iptc.Application2.Urgency"] = uint16_t(1);
-	iptcData["Iptc.Envelope.ModelVersion"] = 42;
-	iptcData["Iptc.Envelope.TimeSent"] = "14:41:0-05:00";
-	iptcData["Iptc.Application2.RasterizedCaption"] = "230 42 34 2 90 84 23 146";
-	iptcData["Iptc.0x0009.0x0001"] = "Who am I?";
-
-	
-	image->writeMetadata();
-	Exiv2::BasicIo &myMemIo = image->io();
-	
-	
-	// create blob again
-// 	unsigned char *newImage = new unsigned char[myMemIo.size()];
-// 	myMemIo.open();
-// 	myMemIo.write(newImage, myMemIo.size());
-	
-	
-	std::cout << myMemIo.size();
-//	DataBuf myBuf;
-//	image->writeFile (myBuf, 
-	
- 	Blob newBlob((const char*) myMemIo.mmap(false), myMemIo.size());
-//	magick.update (newblob.data, blob.length);
-	magick.read(newBlob);
-	
-	magick.unsharpmask(20, 2.0, 1.0, 0);
-	
-	magick.write(outputPath + "/" + inputFile);
-	
-	}
-    }
-      catch (const std::exception& ex)
-    {
-	cerr << "failed to magick - " << ex.what() << endl;
-    }
+//
+//    try
+//    {
+//	BOOST_FOREACH(const ptree::value_type& child,
+//                  pt.get_child("Output"))
+//	{
+//	  std::string outputid = child.second.get<std::string>("id");
+//	  std::cout << outputid  << "\n";
+//	}
  
 return -1;
-
+/*
     Exiv2::Image::AutoPtr image = Exiv2::ImageFactory::open(inputPath + "/" + inputFile);
     assert(image.get() != 0);
     image->readMetadata();
@@ -400,7 +305,7 @@ return -1;
 return -1;  
   
   
-
+/*
   cvNamedWindow( "My Window", 1 );
   IplImage *img = cvCreateImage( cvSize( 640, 480 ), IPL_DEPTH_8U, 1 );
   CvFont font;
@@ -855,6 +760,7 @@ return -1;
       //
       // Create image montage.
       //
+/*
       cout <<  "Montage images..." << endl;
 
       for_each( images.begin(), images.end(), fontImage( font ) );
@@ -906,6 +812,6 @@ return -1;
       cout << "Caught exception: " << error_.what() << endl;
       return 1;
     }
-
+*/
   return 0;
 }

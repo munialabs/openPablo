@@ -48,6 +48,8 @@
 #include "ProcessorFactory.hpp"
 
 #include "ImageProcessor.hpp"
+#include "PDFProcessor.hpp"
+
 
 
 namespace openPablo
@@ -63,7 +65,7 @@ namespace openPablo
      *
      */
 
-    Processor* ProcessorFactory::createInstance (QString imageFileName)
+    Processor* ProcessorFactory::createInstance (QString imageFileName, settings)
     {
         ImageProcessor *imageProcessor = new ImageProcessor();
 
@@ -102,7 +104,8 @@ namespace openPablo
         	qDebug() << "  Determined file type PDF.";
 
         	// create PDF Processor
-            ImageProcessor *pdfProcessor = new ImageProcessor();
+            PDFProcessor *pdfProcessor = new PDFProcessor();
+            pdfProcessor->setFilename(imageFileName);
         	return pdfProcessor;
         }
 
@@ -112,6 +115,7 @@ namespace openPablo
 
         	// create PDF Processor
             ImageProcessor *imageProcessor = new ImageProcessor();
+            imageProcessor->setFilename(imageFileName);
         	return imageProcessor;
         }
 
