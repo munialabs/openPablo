@@ -82,13 +82,23 @@ namespace openPablo
  	   // Initialize ImageMagick install location for Windows
  	  InitializeMagick(NULL);
 
- 	  std::string inputFile = filename.toStdString();
- 	  qDebug() << "Opening file: " << filename.toStdString().c_str();
+ 	  // TODO: do it correctly.
+ 	  Magick::Image magick;
+ 	  if (imageBlob.length() > 0)
+ 	  {
+ 		  magick.read(imageBlob);
+ 	  }
+ 	  else
+ 	  {
+ 	 	  qDebug() << "Opening file: " << filename.toStdString().c_str();
 
- 	  // FIXME: test for empty string
+ 	 	  // FIXME: test for empty string
 
- 	  //
- 	  Magick::Image magick(filename.toStdString());
+ 	 	  //
+ 	 	  magick.read(filename.toStdString());
+ 	  }
+
+ 	  // set ICC stuff
  	  magick.renderingIntent(Magick::PerceptualIntent);
 /*
  	  magick.profile("ICC", Magick::Blob(outputProfile.constData(), outputProfile.size()));
@@ -173,7 +183,8 @@ namespace openPablo
   //	magick.update (newblob.data, blob.length);
   	magick.read(newBlob);
 */
-  	magick.unsharpmask(20, 2.0, 1.0, 0);
+  	magick.unsharpmask(40, 5.0, 1.0, 0);
+  	magick.normalize();
 
   	//magick.write(outputPath + "/" + inputFile);
 /*
@@ -185,7 +196,8 @@ namespace openPablo
 	std::cout << outputPath << "\n";
 
 */
-  	magick.write("/tmp/" + inputFile);
+    std::string inputFile = filename.toStdString();
+  	magick.write("/tmp/" + inputFile + ".jpg");
 
 //  	}
 //      }
@@ -197,4 +209,10 @@ namespace openPablo
     }
 
 
+
+    void ImageProcessor::setBLOB (unsigned char *data, uint64_t datalength)
+    {
+    	// create blob
+		imageBlob.update (data, datalength);
+    }
 }

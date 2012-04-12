@@ -41,6 +41,7 @@
 
 
 #include <QString>
+#include <stdint.h>
 
 #include <boost/property_tree/ptree.hpp>
 #include <boost/property_tree/string_path.hpp>
@@ -69,6 +70,8 @@ namespace openPablo
 	  void setEngine (QString _engineID);
 
 	  void setSettings (boost::property_tree::ptree _pt);
+
+	  virtual void setBLOB (unsigned char *data, uint64_t datalength) = 0;
 
 	  virtual void start() = 0;
 

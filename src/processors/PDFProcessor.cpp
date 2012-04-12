@@ -174,4 +174,8 @@ namespace openPablo
     }
 
 
+    void PDFProcessor::setBLOB (unsigned char *data, uint64_t datalength)
+    {
+    	//
+    }
 }

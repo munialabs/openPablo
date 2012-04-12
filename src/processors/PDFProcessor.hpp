@@ -69,6 +69,9 @@ namespace openPablo
 
 	  virtual void start ();
 
+	  virtual void setBLOB (unsigned char *data, uint64_t datalength);
+
+
 	private:
 	};
 

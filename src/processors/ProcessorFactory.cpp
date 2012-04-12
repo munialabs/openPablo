@@ -37,6 +37,7 @@
  */
 
 
+#include <string.h>
 #include <QString>
 #include <QFile>
 #include <QDataStream>
@@ -44,6 +45,16 @@
 
 #include <magic.h>
 #include "libraw/libraw.h"
+#include "boost/format.hpp"
+
+
+#ifdef WIN32
+#define snprintf _snprintf
+#include <winsock2.h>
+#pragma comment(lib, "ws2_32.lib")
+#else
+#include <netinet/in.h>
+#endif
 
 
 #include "ProcessorFactory.hpp"
@@ -51,6 +62,8 @@
 #include "ImageProcessor.hpp"
 #include "PDFProcessor.hpp"
 
+
+using boost::format;
 
 
 namespace openPablo
@@ -113,15 +126,43 @@ namespace openPablo
         	// could be a RAW
         	qDebug() << "  Determined file type RAW.";
 
-            // Convert from imgdata.rawdata to imgdata.image:
-//            iProcessor.raw2image();
+            // unpack and develop with dcraw
+        	int errorCode;
+            iProcessor.unpack();
+            iProcessor.dcraw_process();
+            libraw_processed_image_t *developedImage = iProcessor.dcraw_make_mem_image(&errorCode);
+
+            // convert developed libraw image to something magic can handle-- e.g. ppm.
+            std::string header;
+            int maxValue = (1 << developedImage ->bits)-1;
+            header = boost::str (boost::format ("P6\n%d %d\n%d\n") % developedImage ->width % developedImage -> height % maxValue);
+            unsigned char *ppmBuffer = new unsigned char [developedImage -> data_size + header.size()];
+            memcpy (ppmBuffer, header.data(), header.size());
+			   /*
+				 NOTE:
+				 data in img->data is not converted to network byte order.
+				 So, we should swap values on some architectures for dcraw compatibility
+				 (unfortunately, xv cannot display 16-bit PPMs with network byte order data
+			   */
+			   #define SWAP(a,b) { a ^= b; a ^= (b ^= a); }
+				   if (developedImage->bits == 16 && htons(0x55aa) != 0x55aa)
+					   for(unsigned i=0; i< developedImage->data_size; i+=2)
+						   SWAP(developedImage->data[i],developedImage->data[i+1]);
+			   #undef SWAP
+
+
+		    // copy image data
+			memcpy (ppmBuffer+header.size(), developedImage->data, developedImage->data_size);
 
             // Finally, let us free the image processor for work with the next image
             iProcessor.recycle();
 
-        	// create PDF Processor
+        	// create JPG Processor
             ImageProcessor *imageProcessor = new ImageProcessor();
+
+            // FIXME: still set filename for now for ooutput reasons.
             imageProcessor->setFilename(imageFileName);
+            imageProcessor -> setBLOB (ppmBuffer, developedImage->data_size+header.size());
         	return imageProcessor;
         }
 

@@ -42,7 +42,12 @@
 
 #include <QString>
 
+#include <Magick++.h>
+
 #include "Processor.hpp"
+
+
+using namespace Magick;
 
 
 namespace openPablo
@@ -69,7 +74,11 @@ namespace openPablo
 
 	  virtual void start ();
 
+	  virtual void setBLOB (unsigned char *data, uint64_t datalength);
+
+
 	private:
+	  Blob imageBlob;
 	};
 
 }
