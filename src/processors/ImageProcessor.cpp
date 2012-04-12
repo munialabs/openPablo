@@ -27,6 +27,7 @@
 #include <string>
 #include <QString>
 #include <QDebug>
+#include <QDir>
 
 
 /*
@@ -78,16 +79,16 @@ namespace openPablo
 
     void ImageProcessor::start ()
     {
- 	   //Initialize ImageMagick install location for Windows
+ 	   // Initialize ImageMagick install location for Windows
  	  InitializeMagick(NULL);
 
  	  std::string inputFile = filename.toStdString();
  	  qDebug() << "Opening file: " << filename.toStdString().c_str();
 
- 	  // test for empty string
+ 	  // FIXME: test for empty string
 
+ 	  //
  	  Magick::Image magick(filename.toStdString());
-
  	  magick.renderingIntent(Magick::PerceptualIntent);
 /*
  	  magick.profile("ICC", Magick::Blob(outputProfile.constData(), outputProfile.size()));
@@ -95,6 +96,16 @@ namespace openPablo
  	  const Magick::Blob  targetICC (outputProfile.constData(), outputProfile.size());
  	  magick.profile("ICC", targetICC);
  	  magick.iccColorProfile(targetICC);
+
+//
+//    try
+//    {
+//	BOOST_FOREACH(const ptree::value_type& child,
+//                  pt.get_child("Output"))
+//	{
+//	  std::string outputid = child.second.get<std::string>("id");
+//	  std::cout << outputid  << "\n";
+//	}
 
 
   	  std::string outputPath = child.second.get<std::string>("OutputPath");
@@ -165,6 +176,15 @@ namespace openPablo
   	magick.unsharpmask(20, 2.0, 1.0, 0);
 
   	//magick.write(outputPath + "/" + inputFile);
+/*
+    // depending on file type different things should happen.
+    QDir outputDir (QString::fromStdString(pt.get<std::string>("InputPath")));
+    QString imageFileName = inputDir.filePath(QString::fromStdString(pt.get<std::string>("Input.InputFile")));
+
+	std::string outputPath = child.second.get<std::string>("OutputPath");
+	std::cout << outputPath << "\n";
+
+*/
   	magick.write("/tmp/" + inputFile);
 
 //  	}

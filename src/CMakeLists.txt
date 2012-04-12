@@ -75,7 +75,7 @@ ENDIF (${OPENPABLO_SHARED_LIBS})
 
 add_executable (openpablo main.cpp) # add config.h
 set(LINK_FLAGS "${LINK_FLAGS} -mwindows -mdebug -mconsole")
-target_link_libraries(openpablo ${openpablo_libs} ${QT_LIBRARIES} ${RawTherapeeEngine_LIBRARY} ${LibMagic_LIBRARY} ${LENSFUN_LIBRARIES} ${OpenCV_LIBS} ${LIBPODOFO_LIBRARY} ${ImageMagick_LIBRARIES} ${Boost_FILESYSTEM_LIBRARY} ${Boost_SYSTEM_LIBRARY} ${EXIV2_LIBRARIES})
+target_link_libraries(openpablo ${openpablo_libs} ${LIBRAW_LIBRARIES} ${QT_LIBRARIES} ${RawTherapeeEngine_LIBRARY} ${LibMagic_LIBRARY} ${LENSFUN_LIBRARIES} ${OpenCV_LIBS} ${LIBPODOFO_LIBRARY} ${ImageMagick_LIBRARIES} ${Boost_FILESYSTEM_LIBRARY} ${Boost_SYSTEM_LIBRARY} ${EXIV2_LIBRARIES})
 
 
 

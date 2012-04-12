@@ -42,6 +42,10 @@
 
 #include <QString>
 
+#include <boost/property_tree/ptree.hpp>
+#include <boost/property_tree/string_path.hpp>
+#include <boost/property_tree/json_parser.hpp>
+
 
 namespace openPablo
 {
@@ -64,11 +68,15 @@ namespace openPablo
 
 	  void setEngine (QString _engineID);
 
+	  void setSettings (boost::property_tree::ptree _pt);
+
 	  virtual void start() = 0;
 
 	  virtual ~Processor();
 
 	protected:
+
+	  boost::property_tree::ptree pt;
 
 	  QString filename;
 

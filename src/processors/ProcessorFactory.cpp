@@ -43,6 +43,7 @@
 #include <QDebug>
 
 #include <magic.h>
+#include "libraw/libraw.h"
 
 
 #include "ProcessorFactory.hpp"
@@ -65,7 +66,7 @@ namespace openPablo
      *
      */
 
-    Processor* ProcessorFactory::createInstance (QString imageFileName, settings)
+    Processor* ProcessorFactory::createInstance (QString imageFileName)
     {
         ImageProcessor *imageProcessor = new ImageProcessor();
 
@@ -98,6 +99,33 @@ namespace openPablo
         qDebug() << "Filetype: " << mimeType;
         magic_close(magic_cookie);
 
+
+        // create processors depending on filetype
+
+
+        // --- RAW section
+        //
+        LibRaw iProcessor;
+
+        // Open the file and read the metadata
+        if (iProcessor.open_file(imageFileName.toStdString().c_str()) == LIBRAW_SUCCESS)
+        {
+        	// could be a RAW
+        	qDebug() << "  Determined file type RAW.";
+
+            // Convert from imgdata.rawdata to imgdata.image:
+//            iProcessor.raw2image();
+
+            // Finally, let us free the image processor for work with the next image
+            iProcessor.recycle();
+
+        	// create PDF Processor
+            ImageProcessor *imageProcessor = new ImageProcessor();
+            imageProcessor->setFilename(imageFileName);
+        	return imageProcessor;
+        }
+
+
         // create processor
         if (mimeType.contains("application/pdf", Qt::CaseInsensitive))
         {
@@ -118,6 +146,8 @@ namespace openPablo
             imageProcessor->setFilename(imageFileName);
         	return imageProcessor;
         }
+
+
 
         // assign correct filename to processor
 

@@ -68,6 +68,7 @@
 	find_package(ImageMagick COMPONENTS MagickCore REQUIRED)
 	find_package(Qt COMPONENTS QtOpenGL QtXml REQUIRED)
 	find_package(LIBPODOFO REQUIRED)
+	find_package(LibRaw REQUIRED)
 	find_package(Boost COMPONENTS system filesystem REQUIRED)
 	find_package(Qt4 4.7 REQUIRED QtCore QtGui QtXml)
 	find_package(Exiv2 REQUIRED)

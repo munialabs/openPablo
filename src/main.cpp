@@ -108,8 +108,6 @@ int main ( int argc, char **argv )
 //	qInstallMsgHandler(customMessageHandler);
 
 
-
-
 //    rtengine::Settings mySettings;
 //    rtengine::init (&s, ".");
 
@@ -165,6 +163,7 @@ int main ( int argc, char **argv )
     std::string inputFileFull = imageFileName.toStdString();
 
 
+    processor -> setSettings (pt);
     //    processor.setEngine ("GIMP");
     processor -> start ();
 

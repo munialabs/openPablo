@@ -66,6 +66,13 @@ namespace openPablo
 
 
 
+	void Processor::setSettings (boost::property_tree::ptree _pt)
+	{
+		pt = _pt;
+	}
+
+
+
 	Processor::~Processor()
 	{
 		//

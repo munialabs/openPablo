@@ -338,6 +338,8 @@ easily save more complex setups.
         }
     },
 
+   
+
     "Input": {
         "InputFile": "cmyk.jpg",
         "InputPath": "data"
@@ -379,9 +381,36 @@ easily save more complex setups.
 	    "LogLevel": "Warning"
 	}
      ]
+
+
+  MetaData
+  {
+    EXIF
+    {
+      addtag: 'Vendor: 2012, Processed with OpenPablo'
+      removetag: 'Vendor'
+      addtag: { date: currentdate }
+    }
+
+    IPTC
+    {
+      name: 'OpenPablo'
+    }
+  }
+
     
 }
 \end{verbatim}
+
+statistics?
+
+
+pipeline
+A {  { { B1 },
+       { B2 } },
+     { C1 } } D1
+
+
 
 
 \section{Input}

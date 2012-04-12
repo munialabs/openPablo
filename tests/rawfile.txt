@@ -1,0 +1,40 @@
+{
+    "Settings": {
+        "id": "Offset1",
+        "Color": {
+            "ICC": {
+                "Path": "data/iccprofiles",
+                "Input": "Autodetect",
+                "Output": "ISOcoated_v2_300_bas.ICC"
+            }
+        },
+        "FileHandling": {
+            "OutputFormat": "JPEG",
+            "Compression": 87
+        }
+    },
+
+    "Input": {
+        "InputFile": "_mg_4669.cr2",
+        "InputPath": "data"
+    },
+
+    "Output": [
+        {
+            "id": "Web",
+            "Settings": "Offset1",
+            "Width": 320,
+            "Height": 240,
+            "OutputPath": "tmp/tmpweb/",
+	    "RenamePattern": "%f_%d.%e"
+        },
+
+        {
+            "id": "Print",
+            "Settings": "Offset1",
+            "Width": 1024,
+            "Height": 1024,
+            "OutputPath": "tmp/tmpprint/"
+        }
+    ]
+}
