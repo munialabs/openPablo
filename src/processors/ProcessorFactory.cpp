@@ -81,8 +81,6 @@ namespace openPablo
 
     Processor* ProcessorFactory::createInstance (QString imageFileName)
     {
-        ImageProcessor *imageProcessor = new ImageProcessor();
-
         qDebug() << "Analysing file type of file " << imageFileName;
 
 
@@ -96,6 +94,9 @@ namespace openPablo
         if (magic_cookie == NULL)
         {
             qDebug() << "unable to initialize magic library";
+
+            // FIXME: throw some error
+            ImageProcessor *imageProcessor = new ImageProcessor();
             return imageProcessor;
         }
         printf("Loading default magic database\n");
@@ -103,6 +104,9 @@ namespace openPablo
         {
             qDebug() << "cannot load magic database" << magic_error(magic_cookie);
             magic_close(magic_cookie);
+
+            // FIXME: throw some error
+            ImageProcessor *imageProcessor = new ImageProcessor();
             return imageProcessor;
         }
         magic_full = magic_file(magic_cookie, imageFileName.toStdString().c_str());
@@ -153,17 +157,22 @@ namespace openPablo
 
 		    // copy image data
 			memcpy (ppmBuffer+header.size(), developedImage->data, developedImage->data_size);
+			uint64_t ppmBufferSize = developedImage->data_size + header.size();
 
-            // Finally, let us free the image processor for work with the next image
-            iProcessor.recycle();
 
         	// create JPG Processor
             ImageProcessor *imageProcessor = new ImageProcessor();
 
             // FIXME: still set filename for now for ooutput reasons.
             imageProcessor->setFilename(imageFileName);
-            imageProcessor -> setBLOB (ppmBuffer, developedImage->data_size+header.size());
-        	return imageProcessor;
+            imageProcessor -> setBLOB (ppmBuffer, ppmBufferSize);
+
+
+            // Finally, let us free the image processor for work with the next image
+            LibRaw::dcraw_clear_mem(developedImage);
+            iProcessor.recycle();
+
+            return imageProcessor;
         }
 
 
@@ -189,13 +198,13 @@ namespace openPablo
         }
 
 
-
         // assign correct filename to processor
 
         // unable to do anything
     	qDebug() << "  Unknown file type.";
 
-
+        // FIXME: throw some error
+        ImageProcessor *imageProcessor = new ImageProcessor();
         return imageProcessor;
     }
 

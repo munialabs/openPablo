@@ -185,6 +185,9 @@ namespace openPablo
 */
   	magick.unsharpmask(40, 5.0, 1.0, 0);
   	magick.normalize();
+  	magick.equalize();
+  	magick.enhance();
+  	magick.gamma(1.8);
 
   	//magick.write(outputPath + "/" + inputFile);
 /*
@@ -213,6 +216,6 @@ namespace openPablo
     void ImageProcessor::setBLOB (unsigned char *data, uint64_t datalength)
     {
     	// create blob
-		imageBlob.update (data, datalength);
+		imageBlob.updateNoCopy(data, datalength );
     }
 }

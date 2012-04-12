@@ -181,6 +181,10 @@
         "Transformation": {
             "Source": "Vegetation",
             "Target": "RelativeLAB(50,30,10)"
+        },
+        "Transformation": {
+            "Source": "Skin",
+            "Target": "RelativeLAB(50,30,10)"
         }
     }
 }

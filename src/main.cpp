@@ -56,6 +56,7 @@
 #include <boost/property_tree/ptree.hpp>
 #include <boost/property_tree/string_path.hpp>
 #include <boost/property_tree/json_parser.hpp>
+#include <boost/property_tree/info_parser.hpp>
 #include <boost/foreach.hpp>
 #include <boost/format.hpp>
 #include <boost/filesystem.hpp>
@@ -136,7 +137,7 @@ int main ( int argc, char **argv )
     // FIXME: try json first then xml or info parser.
     // TODO: info parser should be #1 way of specifiying tickets.
     read_json(argv[1] , pt);
-
+    write_info ("/tmp/data/settings.info", pt);
     
     // check if input
     
@@ -168,6 +169,7 @@ int main ( int argc, char **argv )
     processor -> start ();
 
     // destruct processor again
+    delete processor;
 
 	// inputPath + "/" + inputFile
 	//QString::fromStdString(argv[1]);
