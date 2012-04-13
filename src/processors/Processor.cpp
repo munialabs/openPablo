@@ -43,40 +43,40 @@
 namespace openPablo
 {
 
-  /*
-   * @class Processor
-   *
-   * @brief Abstract class to interface the capabilities of a processor
-   *
-   * Abstract class..
-   *
-   */
+    /*
+     * @class Processor
+     *
+     * @brief Abstract class to interface the capabilities of a processor
+     *
+     * Abstract class..
+     *
+     */
 
-	void Processor::setFilename (QString _filename)
-	{
-		filename = _filename;
-	}
-
-
-
-	void Processor::setEngine (QString _engineID)
-	{
-		engineID = _engineID;
-	}
+    void Processor::setFilename (QString _filename)
+    {
+        filename = _filename;
+    }
 
 
 
-	void Processor::setSettings (boost::property_tree::ptree _pt)
-	{
-		pt = _pt;
-	}
+    void Processor::setEngine (QString _engineID)
+    {
+        engineID = _engineID;
+    }
 
 
 
-	Processor::~Processor()
-	{
-		//
-	}
+    void Processor::setSettings (boost::property_tree::ptree _pt)
+    {
+        pt = _pt;
+    }
 
- 
+
+
+    Processor::~Processor()
+    {
+        //
+    }
+
+
 }

@@ -3,10 +3,13 @@
 # --- add subdirectories
 #
 
+  include_directories(engines)
+  add_subdirectory(engines)
   include_directories(processors)
   add_subdirectory(processors)
-  set (openpablo_libs processors)
 
+  set (openpablo_libs engines processors)
+  
 
 # --- Add files for openpablo main
 #
@@ -64,7 +67,7 @@ ELSE (${OPENPABLO_SHARED_LIBS})
     ENDIF (NOT WIN32)       
 
 #    ADD_LIBRARY(openpablo STATIC ${CELESTE_SRC})
-#    TARGET_LINK_LIBRARIES(openpablo processors ${common_libs})
+#    TARGET_LINK_LIBRARIES(openpablo engines processors ${common_libs})
 #    set_target_properties(openpablo PROPERTIES VERSION ${openpablo_LIB_VERSION})
 ENDIF (${OPENPABLO_SHARED_LIBS})
 

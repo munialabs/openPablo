@@ -25,7 +25,7 @@ SET(PROCESSORS_HEADER
 
 IF (${OPENPABLO_SHARED_LIBS})
   add_library(processors SHARED ${PROCESSORS_SOURCE} ${PROCESSORS_HEADER})
-  #target_link_libraries(processors ${Boost_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT})
+  target_link_libraries(processors engines ${Boost_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT})
   #set_target_properties(processors PROPERTIES VERSION ${HUGIN_LIB_VERSION})
   IF(WIN32)
     install(TARGETS processors RUNTIME DESTINATION ${BINDIR})
@@ -38,6 +38,6 @@ ELSE (${OPENPABLO_SHARED_LIBS})
   add_library(processors STATIC ${PROCESSORS_SOURCE} ${PROCESSORS_HEADER})
 ENDIF (${OPENPABLO_SHARED_LIBS})
 
-target_link_libraries(processors ${QT_LIBRARIES}) # ${Boost_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT})
+target_link_libraries(processors engines ${QT_LIBRARIES}) # ${Boost_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT})
 install(TARGETS processors DESTINATION lib)        
 

@@ -128,11 +128,11 @@ namespace openPablo
         // Open the file and read the metadata
         if (iProcessor.open_file(imageFileName.toStdString().c_str()) == LIBRAW_SUCCESS)
         {
-        	// could be a RAW
-        	qDebug() << "  Determined file type RAW.";
+            // could be a RAW
+            qDebug() << "  Determined file type RAW.";
 
             // unpack and develop with dcraw
-        	int errorCode;
+            int errorCode;
             iProcessor.unpack();
             iProcessor.dcraw_process();
             libraw_processed_image_t *developedImage = iProcessor.dcraw_make_mem_image(&errorCode);
@@ -143,25 +143,25 @@ namespace openPablo
             header = boost::str (boost::format ("P6\n%d %d\n%d\n") % developedImage ->width % developedImage -> height % maxValue);
             unsigned char *ppmBuffer = new unsigned char [developedImage -> data_size + header.size()];
             memcpy (ppmBuffer, header.data(), header.size());
-			   /*
-				 NOTE:
-				 data in img->data is not converted to network byte order.
-				 So, we should swap values on some architectures for dcraw compatibility
-				 (unfortunately, xv cannot display 16-bit PPMs with network byte order data
-			   */
-			   #define SWAP(a,b) { a ^= b; a ^= (b ^= a); }
-				   if (developedImage->bits == 16 && htons(0x55aa) != 0x55aa)
-					   for(unsigned i=0; i< developedImage->data_size; i+=2)
-						   SWAP(developedImage->data[i],developedImage->data[i+1]);
-			   #undef SWAP
+            /*
+             NOTE:
+             data in img->data is not converted to network byte order.
+             So, we should swap values on some architectures for dcraw compatibility
+             (unfortunately, xv cannot display 16-bit PPMs with network byte order data
+            */
+#define SWAP(a,b) { a ^= b; a ^= (b ^= a); }
+            if (developedImage->bits == 16 && htons(0x55aa) != 0x55aa)
+                for(unsigned i=0; i< developedImage->data_size; i+=2)
+                    SWAP(developedImage->data[i],developedImage->data[i+1]);
+#undef SWAP
 
 
-		    // copy image data
-			memcpy (ppmBuffer+header.size(), developedImage->data, developedImage->data_size);
-			uint64_t ppmBufferSize = developedImage->data_size + header.size();
+            // copy image data
+            memcpy (ppmBuffer+header.size(), developedImage->data, developedImage->data_size);
+            uint64_t ppmBufferSize = developedImage->data_size + header.size();
 
 
-        	// create JPG Processor
+            // create JPG Processor
             ImageProcessor *imageProcessor = new ImageProcessor();
 
             // FIXME: still set filename for now for ooutput reasons.
@@ -180,39 +180,39 @@ namespace openPablo
         // create processor
         if (mimeType.contains("application/pdf", Qt::CaseInsensitive))
         {
-        	qDebug() << "  Determined file type PDF.";
+            qDebug() << "  Determined file type PDF.";
 
-        	// create PDF Processor
+            // create PDF Processor
             PDFProcessor *pdfProcessor = new PDFProcessor();
             pdfProcessor->setFilename(imageFileName);
-        	return pdfProcessor;
+            return pdfProcessor;
         }
 
         if (mimeType.contains("image/jpeg", Qt::CaseInsensitive))
         {
-        	qDebug() << "  Determined file type JPG.";
+            qDebug() << "  Determined file type JPG.";
 
-        	// create PDF Processor
+            // create PDF Processor
             ImageProcessor *imageProcessor = new ImageProcessor();
             imageProcessor->setFilename(imageFileName);
-        	return imageProcessor;
+            return imageProcessor;
         }
 
         if (mimeType.contains("image/vnd.adobe.photoshop", Qt::CaseInsensitive))
         {
-        	qDebug() << "  Determined file type PSD.";
+            qDebug() << "  Determined file type PSD.";
 
-        	// create PDF Processor
+            // create PDF Processor
             PSDProcessor *psdProcessor = new PSDProcessor();
             psdProcessor->setFilename(imageFileName);
-        	return psdProcessor;
+            return psdProcessor;
         }
-        
+
 
         // assign correct filename to processor
 
         // unable to do anything
-    	qDebug() << "  Unknown file type.";
+        qDebug() << "  Unknown file type.";
 
         // FIXME: throw some error
         ImageProcessor *imageProcessor = new ImageProcessor();

@@ -1,8 +1,8 @@
 /*
- *  RAWProcessor.cpp
+ *  EngineFactory.hpp
  *
  *
- *  This file is part of openPablo.
+ *  This file is part of openPalo.
  *
  *  Copyright (c) 2012- Aydin Demircioglu (aydin@openpablo.org)
  *
@@ -20,78 +20,59 @@
  *  along with openPablo.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "RAWProcessor.hpp"
-
-#include "Engine.hpp"
-#include "EngineFactory.hpp"
 
 
-#include <Magick++.h>
-#include <magick/MagickCore.h>
-#include <list>
-#include <string>
-#include <QString>
-#include <QDebug>
-#include <QDir>
-
+#ifndef OPENPABLO_ENGINEFACTORY_H_
+#define OPENPABLO_ENGINEFACTORY_H_
 
 /*
- * @mainpage RAWProcessor
+ * @mainpage EngineFactory
  *
  * Description in html
  * @author Aydin Demircioglu
-  */
+ */
 
 
 /*
- * @file RAWProcessor.cpp
+ * @file EngineFactory.hpp
  *
  * @brief description in brief.
  *
  */
 
-using namespace Magick;
-using namespace std;
 
+#include <QString>
+
+
+#include "Engine.hpp"
+
+
+using namespace openPablo;
 
 
 namespace openPablo
 {
 
     /*
-     * @class RAWProcessor
+     * @class EngineFactory
      *
-     * @brief Abstract class to interface the capabilities of a processor
+     * @brief Factory class to create the right engine for a given image
      *
-     * Abstract class..
+     * This will give back the correct engine when provided with an image
+     * in form of filename.
      *
      */
-
-
-    RAWProcessor::RAWProcessor()
+    class EngineFactory
     {
-        //
-    }
+        public:
+            /*
+             *
+             */
+            static Engine* createEngine (QString engineName);
 
+    };
 
-
-    RAWProcessor::~RAWProcessor()
-    {
-        //
-
-    }
-
-
-
-    void RAWProcessor::start ()
-    {
-
-    }
-
-
-
-    void RAWProcessor::setBLOB (unsigned char *data, uint64_t datalength)
-    {
-
-    }
 }
+
+
+#endif // OPENPABLO_ENGINEFACTORY_H_

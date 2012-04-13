@@ -1,5 +1,5 @@
 /*
- *  RAWProcessor.cpp
+ *  Engine.cpp
  *
  *
  *  This file is part of openPablo.
@@ -20,23 +20,11 @@
  *  along with openPablo.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "RAWProcessor.hpp"
-
 #include "Engine.hpp"
-#include "EngineFactory.hpp"
-
-
-#include <Magick++.h>
-#include <magick/MagickCore.h>
-#include <list>
-#include <string>
-#include <QString>
-#include <QDebug>
-#include <QDir>
 
 
 /*
- * @mainpage RAWProcessor
+ * @mainpage Engine
  *
  * Description in html
  * @author Aydin Demircioglu
@@ -44,14 +32,11 @@
 
 
 /*
- * @file RAWProcessor.cpp
+ * @file Engine.cpp
  *
  * @brief description in brief.
  *
  */
-
-using namespace Magick;
-using namespace std;
 
 
 
@@ -59,7 +44,7 @@ namespace openPablo
 {
 
     /*
-     * @class RAWProcessor
+     * @class Engine
      *
      * @brief Abstract class to interface the capabilities of a processor
      *
@@ -68,30 +53,24 @@ namespace openPablo
      */
 
 
-    RAWProcessor::RAWProcessor()
+    void Engine::setSettings (boost::property_tree::ptree _pt)
+    {
+        pt = _pt;
+    }
+
+
+
+    void Engine::setFilename (QString _filename)
+    {
+        filename = _filename;
+    }
+
+
+
+    Engine::~Engine()
     {
         //
     }
 
 
-
-    RAWProcessor::~RAWProcessor()
-    {
-        //
-
-    }
-
-
-
-    void RAWProcessor::start ()
-    {
-
-    }
-
-
-
-    void RAWProcessor::setBLOB (unsigned char *data, uint64_t datalength)
-    {
-
-    }
 }

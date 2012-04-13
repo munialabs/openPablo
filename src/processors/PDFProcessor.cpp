@@ -90,92 +90,93 @@ namespace openPablo
 
     void PDFProcessor::start ()
     {
-    	int nNum = 0;
-      try {
-    	    PdfObject*  pObj  = NULL;
+        int nNum = 0;
+        try
+        {
+            PdfObject*  pObj  = NULL;
 
-    	    // open document
-    	    qDebug() << "Opening file: " << filename.toStdString().c_str();
-    	    PdfMemDocument document( filename.toStdString().c_str() );
+            // open document
+            qDebug() << "Opening file: " << filename.toStdString().c_str();
+            PdfMemDocument document( filename.toStdString().c_str() );
 
 //    	    m_pszOutputDirectory = const_cast<char*>(pszOutput);
 
-    	    TCIVecObjects it = document.GetObjects().begin();
+            TCIVecObjects it = document.GetObjects().begin();
 
-    	    while( it != document.GetObjects().end() )
-    	    {
-    	        if( (*it)->IsDictionary() )
-    	        {
-    	            PdfObject* pObjType = (*it)->GetDictionary().GetKey( PdfName::KeyType );
-    	            PdfObject* pObjSubType = (*it)->GetDictionary().GetKey( PdfName::KeySubtype );
-    	            if( ( pObjType && pObjType->IsName() && ( pObjType->GetName().GetName() == "XObject" ) ) ||
-    	                ( pObjSubType && pObjSubType->IsName() && ( pObjSubType->GetName().GetName() == "Image" ) ) )
-    	            {
-    	                pObj = (*it)->GetDictionary().GetKey( PdfName::KeyFilter );
-    	                if( pObj && pObj->IsArray() && pObj->GetArray().GetSize() == 1 &&
-    	                    pObj->GetArray()[0].IsName() && (pObj->GetArray()[0].GetName().GetName() == "DCTDecode") )
-    	                    pObj = &pObj->GetArray()[0];
+            while( it != document.GetObjects().end() )
+            {
+                if( (*it)->IsDictionary() )
+                {
+                    PdfObject* pObjType = (*it)->GetDictionary().GetKey( PdfName::KeyType );
+                    PdfObject* pObjSubType = (*it)->GetDictionary().GetKey( PdfName::KeySubtype );
+                    if( ( pObjType && pObjType->IsName() && ( pObjType->GetName().GetName() == "XObject" ) ) ||
+                            ( pObjSubType && pObjSubType->IsName() && ( pObjSubType->GetName().GetName() == "Image" ) ) )
+                    {
+                        pObj = (*it)->GetDictionary().GetKey( PdfName::KeyFilter );
+                        if( pObj && pObj->IsArray() && pObj->GetArray().GetSize() == 1 &&
+                                pObj->GetArray()[0].IsName() && (pObj->GetArray()[0].GetName().GetName() == "DCTDecode") )
+                            pObj = &pObj->GetArray()[0];
 
-    	                std::string filterName = pObj->GetName().GetName();
-    	                bool processed = 0;
+                        std::string filterName = pObj->GetName().GetName();
+                        bool processed = 0;
 
-    	                if( pObj && pObj->IsName() && ( filterName == "DCTDecode" ) )
-    	                {
-    	                    // The only filter is JPEG -> create a JPEG file
-    	                    qDebug() << "JPG found.\n";
-    	                    processed = true;
-    	                    nNum++;
-    	                }
+                        if( pObj && pObj->IsName() && ( filterName == "DCTDecode" ) )
+                        {
+                            // The only filter is JPEG -> create a JPEG file
+                            qDebug() << "JPG found.\n";
+                            processed = true;
+                            nNum++;
+                        }
 
-    	                if( pObj && pObj->IsName() && ( filterName == "JPXDecode" ) )
-    	                {
-    	                    // The only filter is JPEG -> create a JPEG file
-    	                    qDebug() << "JPG found.\n";
-    	                    processed = true;
-    	                    nNum++;
-    	                }
+                        if( pObj && pObj->IsName() && ( filterName == "JPXDecode" ) )
+                        {
+                            // The only filter is JPEG -> create a JPEG file
+                            qDebug() << "JPG found.\n";
+                            processed = true;
+                            nNum++;
+                        }
 
-    	                if( pObj && pObj->IsName() && ( filterName == "FlateDecode" ) )
-    	                {
-    	                    // The only filter is JPEG -> create a JPEG file
-    	                    qDebug() << "JPG found.\n";
-    	                    processed = true;
-    	                    nNum++;
-    	                }
-
-
-    	                // else we found something strange, we do not care about it for now.
-    	                if (processed == false)
-    	                {
-    	                    qDebug() << "Unknown image type found:" << QString::fromStdString(filterName) << "\n";
-    	                    nNum++;
-    	                }
-
-    	                document.FreeObjectMemory( *it );
-    	            }
-    	        }
-
-    	        ++it;
-    	    }
+                        if( pObj && pObj->IsName() && ( filterName == "FlateDecode" ) )
+                        {
+                            // The only filter is JPEG -> create a JPEG file
+                            qDebug() << "JPG found.\n";
+                            processed = true;
+                            nNum++;
+                        }
 
 
-      }
-      catch( PdfError & e )
-      {
-    	  qDebug() << "Error: An error ocurred during processing the pdf file:" << e.GetError();
-    	  e.PrintErrorMsg();
-    	  return;// e.GetError();
-      }
+                        // else we found something strange, we do not care about it for now.
+                        if (processed == false)
+                        {
+                            qDebug() << "Unknown image type found:" << QString::fromStdString(filterName) << "\n";
+                            nNum++;
+                        }
 
-      // TODO: statistics of no of images etc
+                        document.FreeObjectMemory( *it );
+                    }
+                }
+
+                ++it;
+            }
+
+
+        }
+        catch( PdfError & e )
+        {
+            qDebug() << "Error: An error ocurred during processing the pdf file:" << e.GetError();
+            e.PrintErrorMsg();
+            return;// e.GetError();
+        }
+
+        // TODO: statistics of no of images etc
 //      nNum = extractor.GetNumImagesExtracted();
 
-      qDebug() << "Extracted " << nNum << " images successfully from the PDF file.\n";
+        qDebug() << "Extracted " << nNum << " images successfully from the PDF file.\n";
     }
 
 
     void PDFProcessor::setBLOB (unsigned char *data, uint64_t datalength)
     {
-    	//
+        //
     }
 }

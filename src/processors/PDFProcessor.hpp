@@ -48,35 +48,35 @@
 namespace openPablo
 {
 
-  /*
-   * @class PDFProcessor
-   *
-   * @brief Abstract class to interface the capabilities of a processor
-   *
-   * Abstract class..
-   *
-   */
-	class PDFProcessor: public Processor
-	{
-	public:
-	  /*
-	   *
-	   */
+    /*
+     * @class PDFProcessor
+     *
+     * @brief Abstract class to interface the capabilities of a processor
+     *
+     * Abstract class..
+     *
+     */
+    class PDFProcessor: public Processor
+    {
+        public:
+            /*
+             *
+             */
 
-	  PDFProcessor();
+            PDFProcessor();
 
-	  virtual ~PDFProcessor();
+            virtual ~PDFProcessor();
 
-	  virtual void start ();
+            virtual void start ();
 
-	  virtual void setBLOB (unsigned char *data, uint64_t datalength);
+            virtual void setBLOB (unsigned char *data, uint64_t datalength);
 
 
-	private:
-	};
+        private:
+    };
 
 }
 
 
 #endif
- 
+

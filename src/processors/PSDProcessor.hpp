@@ -53,33 +53,33 @@ using namespace Magick;
 namespace openPablo
 {
 
-  /*
-   * @class PSDProcessor
-   *
-   * @brief Abstract class to interface the capabilities of a processor
-   *
-   * Abstract class..
-   *
-   */
-	class PSDProcessor: public Processor
-	{
-	public:
-	  /*
-	   *
-	   */
+    /*
+     * @class PSDProcessor
+     *
+     * @brief Abstract class to interface the capabilities of a processor
+     *
+     * Abstract class..
+     *
+     */
+    class PSDProcessor: public Processor
+    {
+        public:
+            /*
+             *
+             */
 
-	  PSDProcessor();
+            PSDProcessor();
 
-	  virtual ~PSDProcessor();
+            virtual ~PSDProcessor();
 
-	  virtual void start ();
+            virtual void start ();
 
-	  virtual void setBLOB (unsigned char *data, uint64_t datalength);
+            virtual void setBLOB (unsigned char *data, uint64_t datalength);
 
 
-	private:
-	  Blob imageBlob;
-	};
+        private:
+            Blob imageBlob;
+    };
 
 }
 

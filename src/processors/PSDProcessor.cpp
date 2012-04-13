@@ -22,6 +22,10 @@
 
 #include "PSDProcessor.hpp"
 
+#include "Engine.hpp"
+#include "EngineFactory.hpp"
+
+
 #include <Magick++.h>
 #include <magick/MagickCore.h>
 #include <list>
@@ -64,14 +68,14 @@ namespace openPablo
      */
 
 
-	PSDProcessor::PSDProcessor()
+    PSDProcessor::PSDProcessor()
     {
         //
     }
 
 
 
-	PSDProcessor::~PSDProcessor()
+    PSDProcessor::~PSDProcessor()
     {
         //
 
@@ -81,50 +85,64 @@ namespace openPablo
 
     void PSDProcessor::start ()
     {
- 	   // Initialize ImageMagick install location for Windows
- 	  InitializeMagick(NULL);
+        // Initialize ImageMagick install location for Windows
+        InitializeMagick(NULL);
 
- 	  // TODO: do it correctly.
- 	  Magick::Image magick;
- 	  if (imageBlob.length() > 0)
- 	  {
- 	 	  qDebug() << "Opening from memory..";
- 	//	  magick.read(imageBlob);
- 	  }
- 	  else
- 	  {
- 	 	  qDebug() << "Opening file: " << filename.toStdString().c_str();
+        // TODO: do it correctly.
+        Magick::Image magick;
+        if (imageBlob.length() > 0)
+        {
+            qDebug() << "Opening from memory..";
+            //	  magick.read(imageBlob);
+        }
+        else
+        {
+            qDebug() << "Opening file: " << filename.toStdString().c_str();
 
- 	 	  // FIXME: test for empty string
-
-
- 	 	  // determine if user wants to have second (original) layer (..)
-
-	 	  magick.read(filename.toStdString());
-
-	 	  list<Image> layers;
-
-	 	  // copy original image as layer
-	 	  layers.push_back (magick);
-
-	 	  // create next optimized layer
-	 	  magick.renderingIntent(Magick::PerceptualIntent);
-	 	  magick.unsharpmask(40, 5.0, 1.0, 0);
-	      magick.normalize();
-  	  	  magick.gamma(1.8);
-	 	  layers.push_back (magick);
-
-	 	  Image finalPSD;
-	      std::string inputFile = filename.toStdString();
-	 	  writeImages( layers.begin(), layers.end(), "/tmp/" + inputFile, true );
-	      //finalPSD.write(
+            // FIXME: test for empty string
 
 
+            // determine if user wants to have second (original) layer (..)
 
-	 	  // if user selected a special layer, read PSD file as layered image
-	 	  // and extract the correct layer
+            magick.read(filename.toStdString());
 
-	 	  // read layers
+            list<Image> layers;
+
+            // copy original image as layer
+            layers.push_back (magick);
+
+
+            // -- create engine
+
+            // get engine name and ask factory to assemble it
+            //QString engineName (pt.get<std::string>("Engine").c_str());
+            QString engineName = "Magick";
+
+            Engine *engine = EngineFactory::createEngine(engineName);
+
+            engine->setSettings(pt);
+            engine->setMagickImage (magick);
+//	 	  engine->setLogging (...);
+            engine->start();
+            magick = engine->getMagickImage ();
+
+            layers.push_back (magick);
+
+            // cleanup
+            delete engine;
+
+
+            Image finalPSD;
+            std::string inputFile = filename.toStdString();
+            writeImages( layers.begin(), layers.end(), "/tmp/" + inputFile, true );
+            //finalPSD.write(
+
+
+
+            // if user selected a special layer, read PSD file as layered image
+            // and extract the correct layer
+
+            // read layers
 // 	 	  list<Image> layers;
 // 	 	  readImages(&layers, filename.toStdString());
 // 	 	  //
@@ -136,7 +154,7 @@ namespace openPablo
 // 	 	 	  QString layerName = QString::number(curLayer++);
 // 	 		  it -> write("/tmp/" + inputFile + layerName.toStdString() + ".jpg");
 // 	 	  }
- 	  }
+        }
 
     }
 
@@ -144,7 +162,7 @@ namespace openPablo
 
     void PSDProcessor::setBLOB (unsigned char *data, uint64_t datalength)
     {
-    	// create blob
-		imageBlob.updateNoCopy(data, datalength );
+        // create blob
+        imageBlob.updateNoCopy(data, datalength );
     }
 }

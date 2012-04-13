@@ -1,5 +1,5 @@
 /*
- *  RAWProcessor.cpp
+ *  BauhausEngine.hpp
  *
  *
  *  This file is part of openPablo.
@@ -20,23 +20,12 @@
  *  along with openPablo.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "RAWProcessor.hpp"
 
-#include "Engine.hpp"
-#include "EngineFactory.hpp"
-
-
-#include <Magick++.h>
-#include <magick/MagickCore.h>
-#include <list>
-#include <string>
-#include <QString>
-#include <QDebug>
-#include <QDir>
-
+#ifndef OPENPABLO_BAUHAUSENGINE_H_
+#define OPENPABLO_BAUHAUSENGINE_H_
 
 /*
- * @mainpage RAWProcessor
+ * @mainpage BauhausEngine
  *
  * Description in html
  * @author Aydin Demircioglu
@@ -44,54 +33,59 @@
 
 
 /*
- * @file RAWProcessor.cpp
+ * @file BauhausEngine.hpp
  *
  * @brief description in brief.
  *
  */
 
-using namespace Magick;
-using namespace std;
 
+#include <QString>
+
+#include <Magick++.h>
+
+#include "Engine.hpp"
+
+
+using namespace Magick;
 
 
 namespace openPablo
 {
 
     /*
-     * @class RAWProcessor
+     * @class Engine
      *
-     * @brief Abstract class to interface the capabilities of a processor
+     * @brief Abstract class to interface the capabilities of a engine
      *
      * Abstract class..
      *
      */
-
-
-    RAWProcessor::RAWProcessor()
+    class BauhausEngine: public Engine
     {
-        //
-    }
+        public:
+            /*
+             *
+             */
+
+            BauhausEngine();
+
+            virtual ~BauhausEngine();
+
+            virtual void start ();
+
+            virtual void setMagickImage (Magick::Image _magickImage);
+
+            virtual Magick::Image getMagickImage ();
 
 
+        private:
 
-    RAWProcessor::~RAWProcessor()
-    {
-        //
+            Magick::Image magickImage;
 
-    }
+    };
 
-
-
-    void RAWProcessor::start ()
-    {
-
-    }
-
-
-
-    void RAWProcessor::setBLOB (unsigned char *data, uint64_t datalength)
-    {
-
-    }
 }
+
+
+#endif

@@ -1,5 +1,5 @@
 /*
- *  RAWProcessor.cpp
+ *  MagickEngine.cpp
  *
  *
  *  This file is part of openPablo.
@@ -20,15 +20,10 @@
  *  along with openPablo.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "RAWProcessor.hpp"
-
-#include "Engine.hpp"
-#include "EngineFactory.hpp"
-
+#include "MagickEngine.hpp"
 
 #include <Magick++.h>
 #include <magick/MagickCore.h>
-#include <list>
 #include <string>
 #include <QString>
 #include <QDebug>
@@ -36,7 +31,7 @@
 
 
 /*
- * @mainpage RAWProcessor
+ * @mainpage MagickEngine
  *
  * Description in html
  * @author Aydin Demircioglu
@@ -44,14 +39,13 @@
 
 
 /*
- * @file RAWProcessor.cpp
+ * @file MagickEngine.cpp
  *
  * @brief description in brief.
  *
  */
 
 using namespace Magick;
-using namespace std;
 
 
 
@@ -59,7 +53,7 @@ namespace openPablo
 {
 
     /*
-     * @class RAWProcessor
+     * @class MagickEngine
      *
      * @brief Abstract class to interface the capabilities of a processor
      *
@@ -68,30 +62,50 @@ namespace openPablo
      */
 
 
-    RAWProcessor::RAWProcessor()
+    MagickEngine::MagickEngine()
     {
         //
     }
 
 
 
-    RAWProcessor::~RAWProcessor()
+    MagickEngine::~MagickEngine()
     {
         //
-
     }
 
 
 
-    void RAWProcessor::start ()
+    void MagickEngine::start ()
     {
+        // Initialize ImageMagick install location for Windowsm
+        // just to be sure
+        InitializeMagick(NULL);
+
+        // create next optimized layer
+        magickImage.renderingIntent(Magick::PerceptualIntent);
+        magickImage.unsharpmask(40, 5.0, 1.0, 0);
+        magickImage.normalize();
+        magickImage.gamma(2.8);
+        magickImage.equalize();
 
     }
 
 
 
-    void RAWProcessor::setBLOB (unsigned char *data, uint64_t datalength)
+    void MagickEngine::setMagickImage (Magick::Image _magickImage)
     {
-
+        // easy as we do not need to convert
+        magickImage = _magickImage;
     }
+
+
+
+    Magick::Image MagickEngine::getMagickImage ()
+    {
+        // easy as we do not need to convert
+        return magickImage;
+    }
+
+
 }
