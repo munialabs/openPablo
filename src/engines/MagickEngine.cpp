@@ -81,7 +81,23 @@ namespace openPablo
         // Initialize ImageMagick install location for Windowsm
         // just to be sure
         InitializeMagick(NULL);
+        /*
+        	    // ----
+        	    QFile iccfile(QString::fromStdString(iccPath + "/" + outputICC));
 
+        	    QByteArray outputProfile;
+        	    if(iccfile.open(QIODevice::ReadOnly))
+        	    {
+        	        outputProfile = iccfile.readAll();
+        	        iccfile.close();
+        	    }
+        	    else
+        	    {
+        	        std::cout << ("failed to load ") << iccPath << "/" << outputICC << "\n";
+        	        return -1;
+        	    }
+
+        */
         // create next optimized layer
         magickImage.renderingIntent(Magick::PerceptualIntent);
         magickImage.unsharpmask(40, 5.0, 1.0, 0);

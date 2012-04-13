@@ -32,7 +32,11 @@
         "PDF": {
             "Compression": "LZW",
             "Output-Intent": "Yes"
-        }
+        },
+	"PSD": {
+	    "ProcessLayers": "Yes",
+	    "Layers": "Pengu"
+	}
     },
     "GeometricalTransformations": [
         {
@@ -70,7 +74,6 @@
     "Output": [
         {
             "id": "Web",
-            "Settings": "Offset1",
             "Width": 320,
             "Height": 240,
             "OutputPath": "tmp/tmpweb/",
@@ -86,7 +89,6 @@
         },
         {
             "id": "Print",
-            "Settings": "Offset1",
             "Width": 1024,
             "Height": 1024,
             "OutputPath": "tmp/tmpprint/",

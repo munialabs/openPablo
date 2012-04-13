@@ -24,7 +24,7 @@
 
 #include "Engine.hpp"
 #include "EngineFactory.hpp"
-
+#include "ImageProcessor.hpp"
 
 #include <Magick++.h>
 #include <magick/MagickCore.h>
@@ -53,6 +53,8 @@
 using namespace Magick;
 using namespace std;
 
+
+#include <boost/property_tree/ptree.hpp>
 
 
 namespace openPablo
@@ -101,59 +103,48 @@ namespace openPablo
 
             // FIXME: test for empty string
 
+            std::string processLayersStr = pt.get<std::string>("Processors.PSD.ProcessLayers");
 
-            // determine if user wants to have second (original) layer (..)
+            // TODO: some more general "YES,yes,True,TRUE,true,1" routine
+            if (processLayersStr == "Yes")
+            {
+                std::string layersStr = pt.get<std::string>("Processors.PSD.Layers");
+                std::cout << "Processing all Layers with Pattern " << layersStr  << "\n";
 
-            magick.read(filename.toStdString());
-
-            list<Image> layers;
-
-            // copy original image as layer
-            layers.push_back (magick);
-
-
-            // -- create engine
-
-            // get engine name and ask factory to assemble it
-            //QString engineName (pt.get<std::string>("Engine").c_str());
-            QString engineName = "Magick";
-
-            Engine *engine = EngineFactory::createEngine(engineName);
-
-            engine->setSettings(pt);
-            engine->setMagickImage (magick);
-//	 	  engine->setLogging (...);
-            engine->start();
-            magick = engine->getMagickImage ();
-
-            layers.push_back (magick);
-
-            // cleanup
-            delete engine;
+                //
 
 
-            Image finalPSD;
-            std::string inputFile = filename.toStdString();
-            writeImages( layers.begin(), layers.end(), "/tmp/" + inputFile, true );
-            //finalPSD.write(
+                // if user selected a special layer, read PSD file as layered image
+                // and extract the correct layer
 
+                // read layers
+                list<Image> layers;
+                readImages(&layers, filename.toStdString());
+                //
+                std::string inputFile = filename.toStdString();
+                int curLayer = 0;
+                for (list<Image>::iterator it = layers.begin(); it != layers.end(); it++)
+                {
+                    qDebug() << "Writing layer..";
+                    QString layerName = QString::number(curLayer++);
+                    it -> write("/tmp/" + inputFile + layerName.toStdString() + ".jpg");
+                }
 
+                // now pipe the layer through the ImageProcessor
+            }
+            else
+            {
+                // no, handle PSD as normal container
+                // so its ok to process it via normal image processor
+                ImageProcessor *imageProcessor = new ImageProcessor();
+                imageProcessor->setFilename(filename);
 
-            // if user selected a special layer, read PSD file as layered image
-            // and extract the correct layer
+                imageProcessor-> setSettings (pt);
+                imageProcessor-> start ();
 
-            // read layers
-// 	 	  list<Image> layers;
-// 	 	  readImages(&layers, filename.toStdString());
-// 	 	  //
-//  	     std::string inputFile = filename.toStdString();
-// 	 	  int curLayer = 0;
-// 	 	  for (list<Image>::iterator it = layers.begin(); it != layers.end(); it++)
-// 	 	  {
-// 	 	 	  qDebug() << "Writing layer..";
-// 	 	 	  QString layerName = QString::number(curLayer++);
-// 	 		  it -> write("/tmp/" + inputFile + layerName.toStdString() + ".jpg");
-// 	 	  }
+                // destruct processor again
+                delete imageProcessor;
+            }
         }
 
     }
