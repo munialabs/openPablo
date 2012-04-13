@@ -8,6 +8,7 @@ SET(PROCESSORS_SOURCE
   ProcessorFactory.cpp
   ImageProcessor.cpp
   PDFProcessor.cpp
+  PSDProcessor.cpp
   RAWProcessor.cpp
   )
 
@@ -17,6 +18,7 @@ SET(PROCESSORS_HEADER
   ProcessorFactory.hpp
   ImageProcessor.hpp
   PDFProcessor.hpp
+  PSDProcessor.hpp
   RAWProcessor.hpp
 )
 

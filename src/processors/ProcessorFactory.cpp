@@ -61,6 +61,7 @@
 
 #include "ImageProcessor.hpp"
 #include "PDFProcessor.hpp"
+#include "PSDProcessor.hpp"
 
 
 using boost::format;
@@ -197,6 +198,16 @@ namespace openPablo
         	return imageProcessor;
         }
 
+        if (mimeType.contains("image/vnd.adobe.photoshop", Qt::CaseInsensitive))
+        {
+        	qDebug() << "  Determined file type PSD.";
+
+        	// create PDF Processor
+            PSDProcessor *psdProcessor = new PSDProcessor();
+            psdProcessor->setFilename(imageFileName);
+        	return psdProcessor;
+        }
+        
 
         // assign correct filename to processor
 

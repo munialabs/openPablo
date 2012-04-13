@@ -74,7 +74,7 @@
 	find_package(Exiv2 REQUIRED)
 	find_package(Lensfun REQUIRED)
 	find_package(LibMagic REQUIRED)
-	find_package(RawTherapeeEngine REQUIRED)
+#	find_package(RawTherapeeEngine REQUIRED)
 
 
 
@@ -100,7 +100,7 @@
 	INCLUDE_DIRECTORIES(${EXIV2_INCLUDE_DIR})
 	INCLUDE_DIRECTORIES(${LENSFUN_INCLUDE_DIR})
 	INCLUDE_DIRECTORIES(${LibMagic_INCLUDE_DIR})
-	include_directories (${RawTherapeeEngine_INCLUDE_DIR})
+#	include_directories (${RawTherapeeEngine_INCLUDE_DIR})
 	
 	include_directories(${CMAKE_SOURCE_DIR}/src)
 	include_directories(${CMAKE_BINARY_DIR}/src)
