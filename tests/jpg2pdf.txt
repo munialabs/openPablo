@@ -1,0 +1,192 @@
+{
+    "Input": {
+        "InputFile": "cmyk.jpg",
+        "InputPath": "data",
+        "ICC": {
+            "Path": "data/iccprofiles",
+            "Input": "Autodetect",
+            "CMYK": "ISOcoated_v2_300_bas.ICC",
+            "RGB": "sRGB_linear.icc",
+            "RenderingIntent": "Perceptual"
+        },
+        "ExclusionRules": {
+            "MinWidth": "500",
+            "MaxWidth": "5000",
+            "MinResolution": "50",
+            "MaxResolution": "5000",
+            "MinColors": "10"
+        },
+        "Autorotate": "EXIF",
+        "Scale": {
+            "Width": 600,
+            "Height": 600,
+            "Priority": "LongerEdge",
+            "UpscalingMethod": "Bicubic"
+        },
+        "Crop": {
+            "AspectRatio": "16: 9",
+            "Center": "NW"
+        }
+    },
+    "Processors": {
+        "PDF": {
+            "Compression": "LZW",
+            "Output-Intent": "Yes"
+        },
+	"PSD": {
+	    "ProcessLayers": "Yes",
+	    "Layers": "Pengu"
+	}
+    },
+    "GeometricalTransformations": [
+        {
+            "id": "WebTransform",
+            "type": "Output",
+            "Scale": {
+                "Width": 600,
+                "Height": 600,
+                "Priority": "LongerEdge",
+                "UpsamplingMethod": "Bicubic",
+                "DownsamplingMethod": "Bicubic"
+            }
+        },
+        {
+            "id": "PrintTransform",
+            "type": "Output",
+            "Scale": {
+                "Width": 3000,
+                "Height": 3000,
+                "Priority": "LongerEdge",
+                "UpsamplingMethod": "Bicubic",
+                "DownsamplingMethod": "Bicubic"
+            }
+        }
+    ],
+    "Postprocessing": {
+        "id": "post1",
+        "Red": "1.2",
+        "Blue": "1.1",
+        "Green": "0.7",
+        "Brightness": "1.0",
+        "Saturation": "1.0",
+        "Contrast": "1.0"
+    },
+    "Output": [
+        {
+            "id": "Web",
+            "Width": 320,
+            "Height": 240,
+            "OutputPath": "tmp/tmpweb/",
+            "RenamePattern": "%f_%d.%e",
+            "FileHandling": {
+                "OutputFormat": "JPEG",
+                "Compression": 87
+            },
+            "ICC": {
+                "Path": "data/iccprofiles",
+                "Output": "ISOcoated_v2_300_bas.ICC"
+            }
+        },
+        {
+            "id": "Print",
+            "Width": 1024,
+            "Height": 1024,
+            "OutputPath": "tmp/tmpprint/",
+            "FileHandling": {
+                "OutputFormat": "PSD",
+                "PreserveOriginalLayer": "True"
+            },
+            "ICC": {
+                "Path": "data/iccprofiles",
+                "Output": "ISOcoated_v2_300_bas.ICC"
+            }
+        }
+    ],
+    "Logging": [
+        {
+            "id": "File",
+            "Type": "txt",
+            "OutputPath": "~/logs/",
+            "FilenameTemplate": "openPablo-%Y%m%d-%file.log",
+            "LogTemplate": "message",
+            "LogLevel": "Warning"
+        },
+        {
+            "id": "File",
+            "OutputPath": "~/logs/",
+            "FilenameTemplate": "openPablo-%Y%m%d-%file.html",
+            "LogTemplate": "~/template/log-template.html",
+            "LogLevel": "Warning"
+        }
+    ],
+    "MetaData": [
+        {
+            "id": "exif1",
+            "type": "EXIF",
+            "addtags": [
+                {
+                    "Vendor": "2012 ProcessedwithOpenPablo"
+                }
+            ],
+            "removetag": [
+                [
+                    "Vendor",
+                    "Date"
+                ]
+            ]
+        },
+        {
+            "id": "iptc1",
+            "type": "IPTC",
+            "addtags": [
+                {
+                    "Caption": "MyNewspaperImages03-2012"
+                },
+                {
+                    "Copyright": "(C)2012MyNewspaper"
+                },
+                {
+                    "Country": "Germany"
+                }
+            ],
+            "removetags": [
+                "ProvinceState"
+            ]
+        }
+    ],
+    "Settings": {
+        "id": "medium",
+        "ColorCast": {
+            "Method": "MaxE",
+            "Strength": 0.5
+        },
+        "Contrast": {
+            "Brightness": "0.5",
+            "Contrast": "1.0",
+            "Shadows": "0.5",
+            "Highlights": "1.0"
+        },
+        "Denoising": {
+            "Method": "Median",
+            "Strength": "0.6"
+        },
+        "LocalEdits": {
+            "RedEyeReduction": "Off"
+        },
+        "Sharpness": {
+            "UnsharpMasking": {
+                "Radius": "0.5",
+                "Strength": 2,
+                "Detail": "1.0"
+            }
+        },
+        "Transformation": {
+            "Source": "Vegetation",
+            "Target": "RelativeLAB(50,30,10)"
+        },
+        "Transformation": {
+            "Source": "Skin",
+            "Target": "RelativeLAB(50,30,10)"
+        }
+    }
+}

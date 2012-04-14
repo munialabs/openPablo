@@ -92,21 +92,25 @@ namespace openPablo
         InitializeMagick(NULL);
 
         // TODO: do it correctly.
-        Magick::Image magick;
+        Magick::Image originalImage;
         if (imageBlob.length() > 0)
         {
-            magick.read(imageBlob);
+        	// read from blob
+        	originalImage.read(imageBlob);
         }
         else
         {
+        	// read from IO
             qDebug() << "Opening file: " << filename.toStdString().c_str();
 
             // FIXME: test for empty string
 
             //
-            magick.read(filename.toStdString());
+            originalImage.read(filename.toStdString());
         }
 
+        // originalImage contains original image and must
+        // not be changed (TODO: how to ensure this?)
 
 
         // --- create engine
@@ -118,10 +122,10 @@ namespace openPablo
         Engine *engine = EngineFactory::createEngine(engineName);
 
         engine->setSettings(pt);
-        engine->setMagickImage (magick);
+        engine->setMagickImage (originalImage);
 //	 	  engine->setLogging (...);
         engine->start();
-        magick = engine->getMagickImage ();
+        Image processedImage = engine->getMagickImage ();
 
         // cleanup
         delete engine;
@@ -147,18 +151,19 @@ namespace openPablo
                 str << width << "x" << height;
                 std::string resizeresult;
                 str >> resizeresult;
-                magick.resize(resizeresult);
+                Image sinkImage = processedImage;
+                sinkImage.resize(resizeresult);
 
 
                 // -- apply output ICC profile
 
                 // obtain icc parameters
                 QDir profileDir (QString::fromStdString(child.second.get<std::string>("ICC.Path")));
-                std::string profileName = child.second.get<std::string>("ICC.Path");
+                std::string profileName = child.second.get<std::string>("ICC.Output");
                 QString profileFullName = profileDir.filePath(QString::fromStdString(profileName));
 
 
-                // load file
+                // load ICC file
                 QFile iccfile(profileFullName);
 
                 QByteArray outputProfile;
@@ -174,27 +179,28 @@ namespace openPablo
                 }
 
 
-                //    PdfStreamedDocument document( "tests/tmp.pdf" );
-
-                magick.profile("ICC", Magick::Blob(outputProfile.constData(), outputProfile.size()));
+                sinkImage.profile("ICC", Magick::Blob(outputProfile.constData(), outputProfile.size()));
                 const Magick::Blob  targetICC (outputProfile.constData(), outputProfile.size());
-                magick.profile("ICC", targetICC);
-                magick.iccColorProfile(targetICC);
+                sinkImage.profile("ICC", targetICC);
+                sinkImage.iccColorProfile(targetICC);
 
+                qDebug() << "Applied ICC profile.\n";
 
                 // read output format
                 std::string outputFormat = child.second.get<std::string>("FileHandling.OutputFormat");
 
+                std::string compression;
                 // depending on format need some extra infos
                 if (outputFormat == "JPEG")
                 {
-                    std::string compression = child.second.get<std::string>("FileHandling.Compression");
+                	compression = child.second.get<std::string>("FileHandling.Compression");
                 }
 
                 // depending on format need some extra infos
+                std::string preserveOriginalLayer;
                 if (outputFormat == "PSD")
                 {
-                    std::string preserveOriginalLayer = child.second.get<std::string>("FileHandling.PreserveOriginalLayer");
+                    preserveOriginalLayer = child.second.get<std::string>("FileHandling.PreserveOriginalLayer");
                 }
 
 
@@ -202,55 +208,45 @@ namespace openPablo
 
 
 
+                // output blob that will be written to disk
+                Blob sinkBlob;
 
                 // determine if user wants to have second (original) layer (..)
+                if (preserveOriginalLayer == "True")
+                {
+                	// TODO: we need the original image, and we need to resize it as well
+                	// as convert it to the same ICC profile, for now just ignore.
 
-                magick.read(filename.toStdString());
+                    qDebug() << "Preserving original Layer.\n";
 
-                list<Image> layers;
+                	list<Image> layers;
 
-                // copy original image as layer
-                layers.push_back (magick);
+					// copy original image as layer
+					layers.push_back (originalImage);
+					layers.push_back (processedImage );
 
+					Image finalPSD;
+					std::string inputFile = filename.toStdString();
+					writeImages( layers.begin(), layers.end(), &sinkBlob, true );
+                }
+                else
+                {
+                	// just normal nonlayered output
+                    qDebug() << "Flat output.\n";
 
-                // -- create engine
-
-                // get engine name and ask factory to assemble it
-                //QString engineName (pt.get<std::string>("Engine").c_str());
-                QString engineName = "Magick";
-
-                Engine *engine = EngineFactory::createEngine(engineName);
-
-                engine->setSettings(pt);
-                engine->setMagickImage (magick);
-                //	 	  engine->setLogging (...);
-                engine->start();
-                magick = engine->getMagickImage ();
-
-                layers.push_back (magick);
-
-                // cleanup
-                delete engine;
-
-
-                Image finalPSD;
-                std::string inputFile = filename.toStdString();
-                writeImages( layers.begin(), layers.end(), "/tmp/" + inputFile, true );
-                //finalPSD.write(
-
+                    // save it in the correct output format, but in memory
+//?                    processedimage.magick( outputFormat );
+                	processedImage.write( &sinkBlob, outputFormat );
+                }
 
 
 
 
                 // -- apply Metadata
 
-                // save it in the correct output format, but in memory
-                Blob blob;
-                magick.magick( outputFormat );
-                magick.write( &blob );
 
                 // try to apply as much metadata as possible
-                Exiv2::Image::AutoPtr image = Exiv2::ImageFactory::open((const uint8_t*) blob.data(), (long) blob.length());
+                Exiv2::Image::AutoPtr image = Exiv2::ImageFactory::open((const uint8_t*) sinkBlob.data(), (long) sinkBlob.length());
 
                 image->readMetadata();
                 Exiv2::ExifData &exifData = image->exifData();
@@ -264,8 +260,8 @@ namespace openPablo
                 exifData["Exif.Photo.UserComment"] = "charset=\"Unicode\" An Unicode Exif comment added with Exiv2";
                 exifData["Exif.Image.Model"] = "Test 1";                     // AsciiValue
                 exifData["Exif.Image.SamplesPerPixel"] = uint16_t(162);      // UShortValue
-                exifData["Exif.Image.XResolution"] = int32_t(-2);            // LongValue
-                exifData["Exif.Image.YResolution"] = Exiv2::Rational(-2, 3); // RationalValue
+//                exifData["Exif.Image.XResolution"] = int32_t(-2);            // LongValue
+//                exifData["Exif.Image.YResolution"] = Exiv2::Rational(-2, 3); // RationalValue
 
 
                 // apply IPTC
@@ -283,12 +279,18 @@ namespace openPablo
                 Blob newBlob((const char*) myMemIo.mmap(false), myMemIo.size());
 
                 //	update image with updated metadata
-                magick.read(newBlob);
 
+                // need to read here a layered list as it could be PSD.
+
+                list<Image> layers;
+                readImages(&layers, sinkBlob);
+
+                std::cout << layers.size();
 
                 // create filename
-                QString outputFileName = QString::fromStdString(pt.get<std::string>("RenamePattern"));
+//                QString outputFileName = QString::fromStdString(pt.get<std::string>("RenamePattern"));
 
+                QString outputFileName = filename + "." + QString::fromStdString(outputFormat);
                 // cook up all the %x's
                 // ...
 
@@ -300,7 +302,16 @@ namespace openPablo
 
 
                 // save image
-                magick.write(outputFullName.toStdString());
+                qDebug() << "Format " << QString::fromStdString(outputFormat)<<"\n";
+
+                // need to distinguish between layered output or not
+                // TODO: write layered output only by default.
+				writeImages( layers.begin(), layers.end(), outputFullName.toStdString(), true );
+
+
+//                processedImage.magick(outputFormat);
+//                processedImage.write(outputFullName.toStdString());
+                qDebug() << "wrote to " << outputFullName;
             }
         }
         catch (const std::exception& ex)
