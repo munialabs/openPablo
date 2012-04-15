@@ -3,12 +3,14 @@
 # --- add subdirectories
 #
 
+  include_directories(tools)
+  add_subdirectory(tools)
   include_directories(engines)
   add_subdirectory(engines)
   include_directories(processors)
   add_subdirectory(processors)
 
-  set (openpablo_libs engines processors)
+  set (openpablo_libs tools engines processors)
   
 
 # --- Add files for openpablo main
@@ -79,7 +81,7 @@ ENDIF (${OPENPABLO_SHARED_LIBS})
 add_executable (openpablo main.cpp) # add config.h
 set(LINK_FLAGS "${LINK_FLAGS} -mwindows -mdebug -mconsole")
 set(EXTRA_LINK_LIBS ${RawTherapeeEngine_LIBRARY})
-target_link_libraries(openpablo ${openpablo_libs} ${LIBRAW_LIBRARIES} ${QT_LIBRARIES}  ${LibMagic_LIBRARY} ${LENSFUN_LIBRARIES} ${OpenCV_LIBS} ${LIBPODOFO_LIBRARY} ${ImageMagick_LIBRARIES} ${Boost_FILESYSTEM_LIBRARY} ${Boost_SYSTEM_LIBRARY} ${EXIV2_LIBRARIES})
+target_link_libraries(openpablo ${openpablo_libs} ${LOGOG_LIBRARY} ${LIBRAW_LIBRARIES} ${QT_LIBRARIES}  ${LibMagic_LIBRARY} ${LENSFUN_LIBRARIES} ${OpenCV_LIBS} ${LIBPODOFO_LIBRARY} ${ImageMagick_LIBRARIES} ${Boost_FILESYSTEM_LIBRARY} ${Boost_SYSTEM_LIBRARY} ${EXIV2_LIBRARIES})
 
 
 

@@ -30,6 +30,8 @@
 #include <boost/property_tree/ptree.hpp>
 #include <exiv2/exiv2.hpp>
 #include <magick/MagickCore.h>
+#include "logog/logog.hpp"
+
 
 #include <list>
 #include <string>
@@ -84,6 +86,7 @@ namespace openPablo
 
     }
 
+#define _INFO(x) { std::stringstream msg; msg << x; INFO(msg.str().c_str());}
 
 
     void ImageProcessor::start ()
@@ -101,7 +104,7 @@ namespace openPablo
         else
         {
             // read from IO
-            qDebug() << "Opening file: " << filename.toStdString().c_str();
+            _INFO("Opening file: " << filename.toStdString().c_str());
 
             // FIXME: test for empty string
 

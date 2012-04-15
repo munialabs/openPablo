@@ -26,6 +26,9 @@
 #include <highgui.h>
 
 
+#include "FileLogger.hpp"
+#include "HTMLLogger.hpp"
+
 #include "Processor.hpp"
 #include "ProcessorFactory.hpp"
 
@@ -35,7 +38,6 @@
 #include <QDataStream>
 #include <QTextStream>
 #include <QDebug>
-
 
 
 //#include "rtengine.h"
@@ -52,7 +54,7 @@
 
 //#include "lensfun.h"
 
-#include <iostream>
+#include "logog.hpp"
 #include <boost/property_tree/ptree.hpp>
 #include <boost/property_tree/string_path.hpp>
 #include <boost/property_tree/json_parser.hpp>
@@ -66,10 +68,8 @@
 
 
 using namespace std;
-
-
 using namespace openPablo;
-
+using namespace logog;
 
 
 
@@ -118,9 +118,16 @@ void testFile(QString _filename)
 
 int main ( int argc, char **argv )
 {
+    LOGOG_INITIALIZE();
 
+
+    int retValue = 0;
     try
     {
+        Cout out;
+        HTMLLogger htmlLogger;
+        FileLogger fileLogger;
+
         // some logging initialization
         //	qInstallMsgHandler(customMessageHandler);
 
@@ -135,11 +142,12 @@ int main ( int argc, char **argv )
         // for now: just test for 1 argument with the ticket.
 
         // FIXME: version number
-        std::cout << "\nopenPablo v0.1\n";
+
+        INFO("openPablo v0.1");
 
         if (argc != 2)
         {
-            std::cout << "\n  You must only specify one ticket!\n";
+            ERR("You must only specify one ticket!");
             return (-1);
         }
 
@@ -176,7 +184,10 @@ int main ( int argc, char **argv )
     catch( std::exception &error_ )
     {
         cout << "Caught exception: " << error_.what() << endl;
-        return 1;
+        retValue = 1;
     }
-    return 0;
+
+    LOGOG_SHUTDOWN();
+
+    return retValue;
 }
