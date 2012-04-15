@@ -95,12 +95,12 @@ namespace openPablo
         Magick::Image originalImage;
         if (imageBlob.length() > 0)
         {
-        	// read from blob
-        	originalImage.read(imageBlob);
+            // read from blob
+            originalImage.read(imageBlob);
         }
         else
         {
-        	// read from IO
+            // read from IO
             qDebug() << "Opening file: " << filename.toStdString().c_str();
 
             // FIXME: test for empty string
@@ -193,7 +193,7 @@ namespace openPablo
                 // depending on format need some extra infos
                 if (outputFormat == "JPEG")
                 {
-                	compression = child.second.get<std::string>("FileHandling.Compression");
+                    compression = child.second.get<std::string>("FileHandling.Compression");
                 }
 
                 // depending on format need some extra infos
@@ -214,32 +214,41 @@ namespace openPablo
                 // determine if user wants to have second (original) layer (..)
                 if (preserveOriginalLayer == "True")
                 {
-                	// TODO: we need the original image, and we need to resize it as well
-                	// as convert it to the same ICC profile, for now just ignore.
+                    // TODO: we need the original image, and we need to resize it as well
+                    // as convert it to the same ICC profile, for now just ignore.
 
                     qDebug() << "Preserving original Layer.\n";
 
-                	list<Image> layers;
+                    list<Image> layers;
+                    originalImage.magick("PSD");
+                    processedImage.magick("PSD");
 
-					// copy original image as layer
-					layers.push_back (originalImage);
-					layers.push_back (processedImage );
+                    // copy original image as layer
+                    layers.push_back (originalImage);
+                    layers.push_back (processedImage );
 
-					Image finalPSD;
-					std::string inputFile = filename.toStdString();
-					writeImages( layers.begin(), layers.end(), &sinkBlob, true );
+                    Image finalPSD;
+                    std::string inputFile = filename.toStdString();
+                    writeImages( layers.begin(), layers.end(), &sinkBlob, true );
+//					writeImages( layers.begin(), layers.end(), "/tmp/sinkBlob.psd", true );
+                    std::cout << "vorher: " << layers.size();
                 }
                 else
                 {
-                	// just normal nonlayered output
+                    // just normal nonlayered output
                     qDebug() << "Flat output.\n";
 
                     // save it in the correct output format, but in memory
 //?                    processedimage.magick( outputFormat );
-                	processedImage.write( &sinkBlob, outputFormat );
+                    processedImage.write( &sinkBlob, outputFormat );
                 }
 
 
+
+//                list<Image> layers2;
+                //              readImages(&layers2,  "/tmp/sinkBlob.psd");
+
+                //            std::cout << "from disk: " << layers2.size();
 
 
                 // -- apply Metadata
@@ -306,7 +315,7 @@ namespace openPablo
 
                 // need to distinguish between layered output or not
                 // TODO: write layered output only by default.
-				writeImages( layers.begin(), layers.end(), outputFullName.toStdString(), true );
+                writeImages( layers.begin(), layers.end(), outputFullName.toStdString(), true );
 
 
 //                processedImage.magick(outputFormat);
