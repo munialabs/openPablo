@@ -1,4 +1,11 @@
 
+include_directories (${EXTRA_INCDIR} ${GTHREAD_INCLUDE_DIRS} ${GOBJECT_INCLUDE_DIRS} ${GLIB2_INCLUDE_DIRS}
+    ${GLIBMM_INCLUDE_DIRS} ${IPTCDATA_INCLUDE_DIRS} ${LCMS_INCLUDE_DIRS}
+    ${GTKMM_INCLUDE_DIRS} ${GTK_INCLUDE_DIRS})
+link_directories (${EXTRA_LIBDIR} ${GTHREAD_LIBRARY_DIRS}
+    ${GOBJECT_LIBRARY_DIRS} ${GLIB2_LIBRARY_DIRS} ${GLIBMM_LIBRARY_DIRS}
+    ${IPTCDATA_LIBRARY_DIRS} ${LCMS_LIBRARY_DIRS})
+
 
 # --- add subdirectories
 #
@@ -12,6 +19,29 @@
 
   set (openpablo_libs tools engines processors)
   
+
+#RT
+# check for libraries
+# 	      find_package(PkgConfig)
+# 	      pkg_check_modules (GTK     REQUIRED gtk+-2.0>=2.12)
+# 	      pkg_check_modules (GLIB2   REQUIRED glib-2.0>=2.16)
+# 	      pkg_check_modules (GLIBMM  REQUIRED glibmm-2.4>=2.16)
+# 	      pkg_check_modules (GTKMM   REQUIRED gtkmm-2.4>=2.12)
+# 	      pkg_check_modules (GIO     REQUIRED gio-2.0>=2.16)
+# 	      pkg_check_modules (GIOMM   REQUIRED giomm-2.4>=2.12)
+# 	      pkg_check_modules (GTHREAD REQUIRED gthread-2.0>=2.16)
+# 	      pkg_check_modules (GOBJECT REQUIRED gobject-2.0>=2.16)
+# 	      pkg_check_modules (SIGC    REQUIRED sigc++-2.0)
+
+# include_directories(${GTKMM_INCLUDE_DIRS} )
+#   link_directories (${EXTRA_LIBDIR} ${GLIB2_LIBRARY_DIRS} ${GLIBMM_LIBRARY_DIRS}
+#         ${GTK_LIBRARY_DIRS} ${GTKMM_LIBRARY_DIRS} ${GIO_LIBRARY_DIRS} ${GIOMM_LIBRARY_DIRS} ${IPTCDATA_LIBRARY_DIRS} ${LCMS_LIBRARY_DIRS} ${GTHREAD_LIBRARY_DIRS} ${GOBJECT_LIBRARY_DIRS})
+# message(INFO "########################")
+# message(INFO ${GLIBMM_INCLUDE_DIRS})
+# message(INFO "########################")
+
+#RT
+
 
 # --- Add files for openpablo main
 #
@@ -79,9 +109,27 @@ ENDIF (${OPENPABLO_SHARED_LIBS})
 #
 
 add_executable (openpablo main.cpp) # add config.h
+
 set(LINK_FLAGS "${LINK_FLAGS} -mwindows -mdebug -mconsole")
 set(EXTRA_LINK_LIBS ${RawTherapeeEngine_LIBRARY})
-target_link_libraries(openpablo ${openpablo_libs} ${LOGOG_LIBRARY} ${LIBRAW_LIBRARIES} ${QT_LIBRARIES}  ${LibMagic_LIBRARY} ${LENSFUN_LIBRARIES} ${OpenCV_LIBS} ${LIBPODOFO_LIBRARY} ${ImageMagick_LIBRARIES} ${Boost_FILESYSTEM_LIBRARY} ${Boost_SYSTEM_LIBRARY} ${EXIV2_LIBRARIES})
+
+
+
+ include_directories (${EXTRA_INCDIR} ${GLIB2_INCLUDE_DIRS} ${GLIBMM_INCLUDE_DIRS}
+        ${GTK_INCLUDE_DIRS} ${GTKMM_INCLUDE_DIRS} ${GIO_INCLUDE_DIRS} ${GIOMM_INCLUDE_DIRS} ${IPTCDATA_INCLUDE_DIRS} ${LCMS_INCLUDE_DIRS} ${GTHREAD_INCLUDE_DIRS} ${GOBJECT_INCLUDE_DIRS} )
+    link_directories (${EXTRA_LIBDIR} ${GLIB2_LIBRARY_DIRS} ${GLIBMM_LIBRARY_DIRS}
+        ${GTK_LIBRARY_DIRS} ${GTKMM_LIBRARY_DIRS} ${GIO_LIBRARY_DIRS} ${GIOMM_LIBRARY_DIRS} ${IPTCDATA_LIBRARY_DIRS} ${LCMS_LIBRARY_DIRS} ${GTHREAD_LIBRARY_DIRS} ${GOBJECT_LIBRARY_DIRS})
+
+
+ include_directories (${GTHREAD_INCLUDE_DIRS} ${GOBJECT_INCLUDE_DIRS} ${GLIB2_INCLUDE_DIRS}
+     ${GLIBMM_INCLUDE_DIRS} ${IPTCDATA_INCLUDE_DIRS} ${LCMS_INCLUDE_DIRS}
+     ${GTKMM_INCLUDE_DIRS} ${GTK_INCLUDE_DIRS})
+
+
+target_link_libraries(openpablo ${EXTRA_LINK_LIBS}  ${EXTRA_LIBDIR} ${openpablo_libs} 
+  ${LOGOG_LIBRARY} ${LIBRAW_LIBRARIES} ${QT_LIBRARIES}  ${LibMagic_LIBRARY} 
+  ${LENSFUN_LIBRARIES} ${OpenCV_LIBS} 
+  ${LIBPODOFO_LIBRARY} ${ImageMagick_LIBRARIES} ${Boost_FILESYSTEM_LIBRARY} ${Boost_SYSTEM_LIBRARY} ${EXIV2_LIBRARIES})
 
 
 

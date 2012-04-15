@@ -9,7 +9,7 @@ FIND_PATH(RawTherapeeEngine_INCLUDE_DIR rtengine.h
 )
 
 FIND_LIBRARY(RawTherapeeEngine_LIBRARY
-  NAMES ${RawTherapeeEngine_NAMES} librtengine.so
+  NAMES ${RawTherapeeEngine_NAMES} librtengineH.so
   PATHS /usr/lib /usr/local/lib
 )
 

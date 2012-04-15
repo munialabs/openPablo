@@ -38,6 +38,6 @@ ELSE (${OPENPABLO_SHARED_LIBS})
   add_library(processors STATIC ${PROCESSORS_SOURCE} ${PROCESSORS_HEADER})
 ENDIF (${OPENPABLO_SHARED_LIBS})
 
-target_link_libraries(processors engines ${QT_LIBRARIES}) # ${Boost_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT})
+target_link_libraries(processors engines ${QT_LIBRARIES} ${RawTherapeeEngine_LIBRARY}) # ${Boost_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT})
 install(TARGETS processors DESTINATION lib)        
 

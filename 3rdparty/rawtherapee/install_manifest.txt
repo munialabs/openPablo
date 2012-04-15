@@ -1,0 +1,666 @@
+/usr/local/share/doc/rawtherapee/AUTHORS.txt
+/usr/local/share/doc/rawtherapee/LICENSE.txt
+/usr/local/share/doc/rawtherapee/AboutThisBuild.txt
+/usr/local/share/doc/rawtherapee/RELEASE_NOTES.txt
+/usr/local/lib/librtexif.so
+/usr/local/lib/librtengine.so
+/usr/local/bin/rawtherapee
+/usr/local/share/applications/rawtherapee.desktop
+/usr/local/share/icons/hicolor/16x16/apps/rawtherapee.png
+/usr/local/share/icons/hicolor/24x24/apps/rawtherapee.png
+/usr/local/share/icons/hicolor/32x32/apps/rawtherapee.png
+/usr/local/share/icons/hicolor/48x48/apps/rawtherapee.png
+/usr/local/share/icons/hicolor/128x128/apps/rawtherapee.png
+/usr/local/share/icons/hicolor/256x256/apps/rawtherapee.png
+/usr/local/share/rawtherapee/languages/README
+/usr/local/share/rawtherapee/languages/Catala
+/usr/local/share/rawtherapee/languages/Turkish
+/usr/local/share/rawtherapee/languages/Dansk
+/usr/local/share/rawtherapee/languages/Magyar
+/usr/local/share/rawtherapee/languages/Polish (Latin Characters)
+/usr/local/share/rawtherapee/languages/Polish
+/usr/local/share/rawtherapee/languages/Slovak
+/usr/local/share/rawtherapee/languages/Deutsch
+/usr/local/share/rawtherapee/languages/Swedish
+/usr/local/share/rawtherapee/languages/Latvian
+/usr/local/share/rawtherapee/languages/Suomi
+/usr/local/share/rawtherapee/languages/default
+/usr/local/share/rawtherapee/languages/Euskara
+/usr/local/share/rawtherapee/languages/Espanol
+/usr/local/share/rawtherapee/languages/Serbian (Cyrilic Characters)
+/usr/local/share/rawtherapee/languages/Norsk BM
+/usr/local/share/rawtherapee/languages/LICENSE
+/usr/local/share/rawtherapee/languages/Portugues (Brasil)
+/usr/local/share/rawtherapee/languages/Italian
+/usr/local/share/rawtherapee/languages/Nederlands
+/usr/local/share/rawtherapee/languages/Francais
+/usr/local/share/rawtherapee/languages/Chinese (Traditional)
+/usr/local/share/rawtherapee/languages/Greek
+/usr/local/share/rawtherapee/languages/Czech
+/usr/local/share/rawtherapee/languages/Russian
+/usr/local/share/rawtherapee/languages/Serbian (Latin Characters)
+/usr/local/share/rawtherapee/languages/Japanese
+/usr/local/share/rawtherapee/languages/Hebrew
+/usr/local/share/rawtherapee/languages/English
+/usr/local/share/rawtherapee/languages/Chinese (Simplified)
+/usr/local/share/rawtherapee/profiles/neutral.pp3
+/usr/local/share/rawtherapee/profiles/Natural-2.pp3
+/usr/local/share/rawtherapee/profiles/default.pp3
+/usr/local/share/rawtherapee/profiles/BW-3.pp3
+/usr/local/share/rawtherapee/profiles/neutral-UnchangedTransforms.pp3
+/usr/local/share/rawtherapee/profiles/default-ISO-medium.pp3
+/usr/local/share/rawtherapee/profiles/default-ISO-high.pp3
+/usr/local/share/rawtherapee/profiles/Highkey-1.pp3
+/usr/local/share/rawtherapee/profiles/BW-1.pp3
+/usr/local/share/rawtherapee/profiles/Punchy-2.pp3
+/usr/local/share/rawtherapee/profiles/Natural-1.pp3
+/usr/local/share/rawtherapee/profiles/Punchy-1.pp3
+/usr/local/share/rawtherapee/profiles/BW-2.pp3
+/usr/local/share/rawtherapee/profiles/BW-4.pp3
+/usr/local/share/rawtherapee/sounds/BatchComplete.wav
+/usr/local/share/rawtherapee/sounds/Empty.wav
+/usr/local/share/rawtherapee/sounds/ProcessComplete.wav
+/usr/local/share/rawtherapee/iccprofiles/input/Canon EOS Digital Rebel XSi.icc
+/usr/local/share/rawtherapee/iccprofiles/input/Canon EOS-1D Mark III.icc
+/usr/local/share/rawtherapee/iccprofiles/input/Nikon D3100.icc
+/usr/local/share/rawtherapee/iccprofiles/input/Panasonic DMC-FZ38.icc
+/usr/local/share/rawtherapee/iccprofiles/input/Panasonic DMC-FZ35.icc
+/usr/local/share/rawtherapee/iccprofiles/input/Panasonic DMC-GH2.icc
+/usr/local/share/rawtherapee/iccprofiles/input/Panasonic DMC-FZ150.icc
+/usr/local/share/rawtherapee/iccprofiles/input/Nikon D700.icc
+/usr/local/share/rawtherapee/iccprofiles/input/Pentax K200D.icc
+/usr/local/share/rawtherapee/iccprofiles/input/Nikon D3S.icc
+/usr/local/share/rawtherapee/iccprofiles/input/Canon EOS 450D.icc
+/usr/local/share/rawtherapee/iccprofiles/input/Canon EOS 40D.icc
+/usr/local/share/rawtherapee/iccprofiles/input/Panasonic DMC-G1.icc
+/usr/local/share/rawtherapee/iccprofiles/input/Sony DSLR-A700.icc
+/usr/local/share/rawtherapee/iccprofiles/input/Canon EOS Rebel T2i.icc
+/usr/local/share/rawtherapee/iccprofiles/input/Canon EOS 5D.icc
+/usr/local/share/rawtherapee/iccprofiles/input/Canon PowerShot G10.icc
+/usr/local/share/rawtherapee/iccprofiles/input/Canon PowerShot G12.icc
+/usr/local/share/rawtherapee/iccprofiles/input/Nikon D7000.icc
+/usr/local/share/rawtherapee/iccprofiles/input/Canon EOS 20D.icc
+/usr/local/share/rawtherapee/iccprofiles/input/Sony SLT-A55V.icc
+/usr/local/share/rawtherapee/iccprofiles/input/Panasonic DMC-G3.icc
+/usr/local/share/rawtherapee/iccprofiles/input/Nikon D200.icc
+/usr/local/share/rawtherapee/iccprofiles/input/Sony DSLR-A900.icc
+/usr/local/share/rawtherapee/iccprofiles/input/Olympus E-P2.icc
+/usr/local/share/rawtherapee/iccprofiles/input/Nikon D3000.icc
+/usr/local/share/rawtherapee/iccprofiles/input/Canon EOS 550D.icc
+/usr/local/share/rawtherapee/iccprofiles/input/Panasonic DMC-GH1.icc
+/usr/local/share/rawtherapee/iccprofiles/output/RT_Medium_gsRGB.icc
+/usr/local/share/rawtherapee/iccprofiles/output/RT_sRGB_gBT709.icm
+/usr/local/share/rawtherapee/iccprofiles/output/RT_sRGB.icm
+/usr/local/share/rawtherapee/iccprofiles/output/RT_Large_gsRGB.icc
+/usr/local/share/rawtherapee/iccprofiles/output/RT_Large_gBT709.icc
+/usr/local/share/rawtherapee/iccprofiles/output/RT_sRGB_g10.icm
+/usr/local/share/rawtherapee/iccprofiles/output/RT_Large_g10.icc
+/usr/local/share/rawtherapee/dcpprofiles/Canon EOS 20D.dcp
+/usr/local/share/rawtherapee/dcpprofiles/Nikon D3100.dcp
+/usr/local/share/rawtherapee/dcpprofiles/Canon PowerShot G12.dcp
+/usr/local/share/rawtherapee/dcpprofiles/Panasonic DMC-FZ35.dcp
+/usr/local/share/rawtherapee/dcpprofiles/Pentax K10D.dcp
+/usr/local/share/rawtherapee/dcpprofiles/Nikon D700.dcp
+/usr/local/share/rawtherapee/dcpprofiles/Nikon D50.dcp
+/usr/local/share/rawtherapee/dcpprofiles/Canon EOS 40D.dcp
+/usr/local/share/rawtherapee/dcpprofiles/Pentax K200D.dcp
+/usr/local/share/rawtherapee/dcpprofiles/Canon EOS Digital Rebel XSi.dcp
+/usr/local/share/rawtherapee/dcpprofiles/Canon EOS D60.dcp
+/usr/local/share/rawtherapee/dcpprofiles/Panasonic DMC-G1.dcp
+/usr/local/share/rawtherapee/dcpprofiles/Canon EOS 550D.dcp
+/usr/local/share/rawtherapee/dcpprofiles/Canon EOS 450D.dcp
+/usr/local/share/rawtherapee/dcpprofiles/Panasonic DMC-FZ38.dcp
+/usr/local/share/rawtherapee/dcpprofiles/Nikon D300.dcp
+/usr/local/share/rawtherapee/dcpprofiles/Sony NEX-5N.dcp
+/usr/local/share/rawtherapee/dcpprofiles/Nikon D3000.dcp
+/usr/local/share/rawtherapee/dcpprofiles/Sony SLT-A55V.dcp
+/usr/local/share/rawtherapee/dcpprofiles/Sony DSLR-A900.dcp
+/usr/local/share/rawtherapee/dcpprofiles/Olympus E-1.dcp
+/usr/local/share/rawtherapee/dcpprofiles/Canon EOS-1D Mark III.dcp
+/usr/local/share/rawtherapee/dcpprofiles/Panasonic DMC-FZ150.dcp
+/usr/local/share/rawtherapee/dcpprofiles/Canon EOS Digital Rebel XTi.dcp
+/usr/local/share/rawtherapee/dcpprofiles/Canon PowerShot G10.dcp
+/usr/local/share/rawtherapee/dcpprofiles/Canon EOS 7D.dcp
+/usr/local/share/rawtherapee/dcpprofiles/Canon EOS 5D.dcp
+/usr/local/share/rawtherapee/dcpprofiles/Panasonic DMC-GH1.dcp
+/usr/local/share/rawtherapee/dcpprofiles/Panasonic DMC-GH2.dcp
+/usr/local/share/rawtherapee/dcpprofiles/Nikon D200.dcp
+/usr/local/share/rawtherapee/dcpprofiles/Canon EOS 400D.dcp
+/usr/local/share/rawtherapee/dcpprofiles/Olympus E-P2.dcp
+/usr/local/share/rawtherapee/dcpprofiles/Sony DSLR-A700.dcp
+/usr/local/share/rawtherapee/dcpprofiles/Canon EOS Rebel T2i.dcp
+/usr/local/share/rawtherapee/dcpprofiles/Nikon D3S.dcp
+/usr/local/share/rawtherapee/dcpprofiles/Panasonic DMC-G3.dcp
+/usr/local/share/rawtherapee/themes/37-Gray-Red.gtkrc
+/usr/local/share/rawtherapee/themes/slim
+/usr/local/share/rawtherapee/themes/system.iconset
+/usr/local/share/rawtherapee/themes/25-Gray-Red.gtkrc
+/usr/local/share/rawtherapee/themes/37-Gray-Red-Textured.gtkrc
+/usr/local/share/rawtherapee/themes/63-Gray-Cyan.iconset
+/usr/local/share/rawtherapee/themes/37-Gray-Red-Textured.iconset
+/usr/local/share/rawtherapee/themes/gray_textured/button-insensitive.png
+/usr/local/share/rawtherapee/themes/gray_textured/slider-h-pre.png
+/usr/local/share/rawtherapee/themes/gray_textured/slider-v-ins.png
+/usr/local/share/rawtherapee/themes/gray_textured/slider-h-ins.png
+/usr/local/share/rawtherapee/themes/gray_textured/arrow-down-pre.png
+/usr/local/share/rawtherapee/themes/gray_textured/arrow-up-pre.png
+/usr/local/share/rawtherapee/themes/gray_textured/null.png
+/usr/local/share/rawtherapee/themes/gray_textured/pbtroughv.png
+/usr/local/share/rawtherapee/themes/gray_textured/rangeslider-pre.png
+/usr/local/share/rawtherapee/themes/gray_textured/trough2-h.png
+/usr/local/share/rawtherapee/themes/gray_textured/slider-v-pre.png
+/usr/local/share/rawtherapee/themes/gray_textured/button-normal.png
+/usr/local/share/rawtherapee/themes/gray_textured/arrow-right-pre.png
+/usr/local/share/rawtherapee/themes/gray_textured/arrow-down-ins.png
+/usr/local/share/rawtherapee/themes/gray_textured/arrow-down.png
+/usr/local/share/rawtherapee/themes/gray_textured/rangeslider.png
+/usr/local/share/rawtherapee/themes/gray_textured/button-normal.xcf
+/usr/local/share/rawtherapee/themes/gray_textured/arrow-right.png
+/usr/local/share/rawtherapee/themes/gray_textured/slider-h.png
+/usr/local/share/rawtherapee/themes/gray_textured/button-prelight.png
+/usr/local/share/rawtherapee/themes/gray_textured/arrow-left-pre.png
+/usr/local/share/rawtherapee/themes/gray_textured/rangeslider-ins.png
+/usr/local/share/rawtherapee/themes/gray_textured/button-pressed.png
+/usr/local/share/rawtherapee/themes/gray_textured/trough2.png
+/usr/local/share/rawtherapee/themes/gray_textured/slider-v.png
+/usr/local/share/rawtherapee/themes/gray_textured/arrow-up-ins.png
+/usr/local/share/rawtherapee/themes/gray_textured/arrow-left-ins.png
+/usr/local/share/rawtherapee/themes/gray_textured/arrow-left.png
+/usr/local/share/rawtherapee/themes/gray_textured/arrow-up.png
+/usr/local/share/rawtherapee/themes/gray_textured/pbtroughh.png
+/usr/local/share/rawtherapee/themes/gray_textured/arrow-right-ins.png
+/usr/local/share/rawtherapee/themes/63-Gray-Cyan.gtkrc
+/usr/local/share/rawtherapee/themes/25-Gray-Gray.iconset
+/usr/local/share/rawtherapee/themes/17-Gray-Red.gtkrc
+/usr/local/share/rawtherapee/themes/21-Gray-Gray.gtkrc
+/usr/local/share/rawtherapee/themes/25-Gray-Purple.gtkrc
+/usr/local/share/rawtherapee/themes/25-Gray-Gray.gtkrc
+/usr/local/share/rawtherapee/themes/37-Gray-Red.iconset
+/usr/local/share/rawtherapee/themes/21-Gray-Gray.iconset
+/usr/local/share/rawtherapee/themes/Default.gtkrc
+/usr/local/share/rawtherapee/themes/25-Gray-Red.iconset
+/usr/local/share/rawtherapee/themes/92-Beige-DarkCyan.gtkrc
+/usr/local/share/rawtherapee/themes/17-Gray-Red.iconset
+/usr/local/share/rawtherapee/themes/09-Gray-Orange.gtkrc
+/usr/local/share/rawtherapee/themes/25-Gray-Purple.iconset
+/usr/local/share/rawtherapee/themes/Default.iconset
+/usr/local/share/rawtherapee/themes/09-Gray-Orange.iconset
+/usr/local/share/rawtherapee/images/Light/index.theme
+/usr/local/share/rawtherapee/images/Dark/index.theme
+/usr/local/share/rawtherapee/images/filterclear.png
+/usr/local/share/rawtherapee/images/gtk-close-small.png
+/usr/local/share/rawtherapee/images/list-remove.png
+/usr/local/share/rawtherapee/images/panel-to-right.png
+/usr/local/share/rawtherapee/images/default-settings-ltr.png
+/usr/local/share/rawtherapee/images/gtk-add.png
+/usr/local/share/rawtherapee/images/cglabel4.png
+/usr/local/share/rawtherapee/images/stock-rotate-90.png
+/usr/local/share/rawtherapee/images/clabel3.png
+/usr/local/share/rawtherapee/images/editednot-small.png
+/usr/local/share/rawtherapee/images/Chanmixer-GR.png
+/usr/local/share/rawtherapee/images/clabel1.png
+/usr/local/share/rawtherapee/images/default-settings-rtl.png
+/usr/local/share/rawtherapee/images/distortion-auto.png
+/usr/local/share/rawtherapee/images/trash.png
+/usr/local/share/rawtherapee/images/exposure.png
+/usr/local/share/rawtherapee/images/gtk-undoall-rtl.png
+/usr/local/share/rawtherapee/images/Chanmixer-GG.png
+/usr/local/share/rawtherapee/images/edited.png
+/usr/local/share/rawtherapee/images/popuparrow.png
+/usr/local/share/rawtherapee/images/gtk-undoall-ltr.png
+/usr/local/share/rawtherapee/images/Chanmixer-RR.png
+/usr/local/share/rawtherapee/images/stock-rotate-270.png
+/usr/local/share/rawtherapee/images/gtk-undo-rtl.png
+/usr/local/share/rawtherapee/images/straighten.png
+/usr/local/share/rawtherapee/images/meta.png
+/usr/local/share/rawtherapee/images/warnhl.png
+/usr/local/share/rawtherapee/images/Chanmixer-GB.png
+/usr/local/share/rawtherapee/images/gtk-color-picker-small.png
+/usr/local/share/rawtherapee/images/Chanmixer-RB.png
+/usr/local/share/rawtherapee/images/fullscreen-exit.png
+/usr/local/share/rawtherapee/images/rt-logo.png
+/usr/local/share/rawtherapee/images/distortion.png
+/usr/local/share/rawtherapee/images/nocolorlabel.png
+/usr/local/share/rawtherapee/images/list-add-small.png
+/usr/local/share/rawtherapee/images/processing.png
+/usr/local/share/rawtherapee/images/histGreen.png
+/usr/local/share/rawtherapee/images/filter.png
+/usr/local/share/rawtherapee/images/lock-off.png
+/usr/local/share/rawtherapee/images/gtk-zoom-in.png
+/usr/local/share/rawtherapee/images/detail.png
+/usr/local/share/rawtherapee/images/cglabel2.png
+/usr/local/share/rawtherapee/images/colour.png
+/usr/local/share/rawtherapee/images/histRaw.png
+/usr/local/share/rawtherapee/images/Light/.gtk-undo-rtl.png
+/usr/local/share/rawtherapee/images/Light/devices/media-flash.png
+/usr/local/share/rawtherapee/images/Light/devices/drive-harddisk.png
+/usr/local/share/rawtherapee/images/Light/devices/drive-removable-media.png
+/usr/local/share/rawtherapee/images/Light/devices/computer.png
+/usr/local/share/rawtherapee/images/Light/devices/media-floppy.png
+/usr/local/share/rawtherapee/images/Light/devices/media-optical.png
+/usr/local/share/rawtherapee/images/Light/devices/media-tape.png
+/usr/local/share/rawtherapee/images/Light/devices/drive-optical.png
+/usr/local/share/rawtherapee/images/Light/devices/gtk-cdrom.png
+/usr/local/share/rawtherapee/images/Light/devices/media-optical-dvd.png
+/usr/local/share/rawtherapee/images/Light/devices/media-optical-bd.png
+/usr/local/share/rawtherapee/images/Light/.gtk-undo-rtl-small.png
+/usr/local/share/rawtherapee/images/Light/places/user-desktop.png
+/usr/local/share/rawtherapee/images/Light/places/user-home.png
+/usr/local/share/rawtherapee/images/Light/places/folder.png
+/usr/local/share/rawtherapee/images/Light/places/gtk-directory.png
+/usr/local/share/rawtherapee/images/Light/actions/filterclear.png
+/usr/local/share/rawtherapee/images/Light/actions/gtk-close-small.png
+/usr/local/share/rawtherapee/images/Light/actions/list-remove.png
+/usr/local/share/rawtherapee/images/Light/actions/panel-to-right.png
+/usr/local/share/rawtherapee/images/Light/actions/undelete-thumbnail-rtl.png
+/usr/local/share/rawtherapee/images/Light/actions/gtk-media-play.png
+/usr/local/share/rawtherapee/images/Light/actions/gtk-add.png
+/usr/local/share/rawtherapee/images/Light/actions/histBarg.png
+/usr/local/share/rawtherapee/images/Light/actions/edit-find.png
+/usr/local/share/rawtherapee/images/Light/actions/previewmodeF-on.png
+/usr/local/share/rawtherapee/images/Light/actions/wb-sun.png
+/usr/local/share/rawtherapee/images/Light/actions/cglabel4.png
+/usr/local/share/rawtherapee/images/Light/actions/gtk-paste.png
+/usr/local/share/rawtherapee/images/Light/actions/stock-rotate-90.png
+/usr/local/share/rawtherapee/images/Light/actions/rtwindow.png
+/usr/local/share/rawtherapee/images/Light/actions/document-open.png
+/usr/local/share/rawtherapee/images/Light/actions/clabel3.png
+/usr/local/share/rawtherapee/images/Light/actions/editednot-small.png
+/usr/local/share/rawtherapee/images/Light/actions/clabel1.png
+/usr/local/share/rawtherapee/images/Light/actions/distortion-auto.png
+/usr/local/share/rawtherapee/images/Light/actions/wb-cloudy.png
+/usr/local/share/rawtherapee/images/Light/actions/histGreeng.png
+/usr/local/share/rawtherapee/images/Light/actions/trash.png
+/usr/local/share/rawtherapee/images/Light/actions/exposure.png
+/usr/local/share/rawtherapee/images/Light/actions/gtk-undoall-rtl.png
+/usr/local/share/rawtherapee/images/Light/actions/undelete-thumbnail.png
+/usr/local/share/rawtherapee/images/Light/actions/edited.png
+/usr/local/share/rawtherapee/images/Light/actions/popuparrow.png
+/usr/local/share/rawtherapee/images/Light/actions/trash-thumbnail.png
+/usr/local/share/rawtherapee/images/Light/actions/gtk-undoall-ltr.png
+/usr/local/share/rawtherapee/images/Light/actions/previewmodeB-off.png
+/usr/local/share/rawtherapee/images/Light/actions/wb-lamp.png
+/usr/local/share/rawtherapee/images/Light/actions/stock-rotate-270.png
+/usr/local/share/rawtherapee/images/Light/actions/edit-copy.png
+/usr/local/share/rawtherapee/images/Light/actions/gtk-undo-rtl.png
+/usr/local/share/rawtherapee/images/Light/actions/gtk-undo-rtl-small.png
+/usr/local/share/rawtherapee/images/Light/actions/straighten.png
+/usr/local/share/rawtherapee/images/Light/actions/meta.png
+/usr/local/share/rawtherapee/images/Light/actions/histBlueg.png
+/usr/local/share/rawtherapee/images/Light/actions/warnhl.png
+/usr/local/share/rawtherapee/images/Light/actions/gtk-color-picker-small.png
+/usr/local/share/rawtherapee/images/Light/actions/previewmodeF-off.png
+/usr/local/share/rawtherapee/images/Light/actions/wb-shade.png
+/usr/local/share/rawtherapee/images/Light/actions/histRawg.png
+/usr/local/share/rawtherapee/images/Light/actions/previewmodeR-off.png
+/usr/local/share/rawtherapee/images/Light/actions/previewmodeR-on.png
+/usr/local/share/rawtherapee/images/Light/actions/wb-fluorescent.png
+/usr/local/share/rawtherapee/images/Light/actions/gtk-copy.png
+/usr/local/share/rawtherapee/images/Light/actions/fullscreen-exit.png
+/usr/local/share/rawtherapee/images/Light/actions/previewmodeG-off.png
+/usr/local/share/rawtherapee/images/Light/actions/wb-auto.png
+/usr/local/share/rawtherapee/images/Light/actions/wb-flash.png
+/usr/local/share/rawtherapee/images/Light/actions/gtk-find.png
+/usr/local/share/rawtherapee/images/Light/actions/list-add-small.png
+/usr/local/share/rawtherapee/images/Light/actions/processing.png
+/usr/local/share/rawtherapee/images/Light/actions/histRedg.png
+/usr/local/share/rawtherapee/images/Light/actions/histGreen.png
+/usr/local/share/rawtherapee/images/Light/actions/filter.png
+/usr/local/share/rawtherapee/images/Light/actions/lock-off.png
+/usr/local/share/rawtherapee/images/Light/actions/gtk-zoom-in.png
+/usr/local/share/rawtherapee/images/Light/actions/detail.png
+/usr/local/share/rawtherapee/images/Light/actions/cglabel2.png
+/usr/local/share/rawtherapee/images/Light/actions/colour.png
+/usr/local/share/rawtherapee/images/Light/actions/histRaw.png
+/usr/local/share/rawtherapee/images/Light/actions/wb-tungsten.png
+/usr/local/share/rawtherapee/images/Light/actions/straighten-small.png
+/usr/local/share/rawtherapee/images/Light/actions/editedg-small.png
+/usr/local/share/rawtherapee/images/Light/actions/beforeafter.png
+/usr/local/share/rawtherapee/images/Light/actions/ratednotg.png
+/usr/local/share/rawtherapee/images/Light/actions/gtk-close.png
+/usr/local/share/rawtherapee/images/Light/actions/media-usb.png
+/usr/local/share/rawtherapee/images/Light/actions/trash-show-empty.png
+/usr/local/share/rawtherapee/images/Light/actions/clabel4.png
+/usr/local/share/rawtherapee/images/Light/actions/crop-auto.png
+/usr/local/share/rawtherapee/images/Light/actions/gtk-save.png
+/usr/local/share/rawtherapee/images/Light/actions/processing-thumbnail.png
+/usr/local/share/rawtherapee/images/Light/actions/torightend.png
+/usr/local/share/rawtherapee/images/Light/actions/PanelEnding.png
+/usr/local/share/rawtherapee/images/Light/actions/gtk-preferences.png
+/usr/local/share/rawtherapee/images/Light/actions/info.png
+/usr/local/share/rawtherapee/images/Light/actions/lock-on.png
+/usr/local/share/rawtherapee/images/Light/actions/processing-play.png
+/usr/local/share/rawtherapee/images/Light/actions/edit-paste.png
+/usr/local/share/rawtherapee/images/Light/actions/panel-to-top.png
+/usr/local/share/rawtherapee/images/Light/actions/editednotg-small.png
+/usr/local/share/rawtherapee/images/Light/actions/gtk-zoom-fit.png
+/usr/local/share/rawtherapee/images/Light/actions/distorsion.png
+/usr/local/share/rawtherapee/images/Light/actions/processing-pause.png
+/usr/local/share/rawtherapee/images/Light/actions/clabel2.png
+/usr/local/share/rawtherapee/images/Light/actions/gtk-undo-ltr.png
+/usr/local/share/rawtherapee/images/Light/actions/curveType-flatLinear.png
+/usr/local/share/rawtherapee/images/Light/actions/curveType-NURBS.png
+/usr/local/share/rawtherapee/images/Light/actions/clabel5.png
+/usr/local/share/rawtherapee/images/Light/actions/document-open-recent.png
+/usr/local/share/rawtherapee/images/Light/actions/crossed-arrows-out.png
+/usr/local/share/rawtherapee/images/Light/actions/ratednot.png
+/usr/local/share/rawtherapee/images/Light/actions/cglabel5.png
+/usr/local/share/rawtherapee/images/Light/actions/previewmodeG-on.png
+/usr/local/share/rawtherapee/images/Light/actions/gtk-save-large.png
+/usr/local/share/rawtherapee/images/Light/actions/curveType-spline.png
+/usr/local/share/rawtherapee/images/Light/actions/refresh-white.png
+/usr/local/share/rawtherapee/images/Light/actions/fullscreen.png
+/usr/local/share/rawtherapee/images/Light/actions/previewmodeL-on.png
+/usr/local/share/rawtherapee/images/Light/actions/warnsh.png
+/usr/local/share/rawtherapee/images/Light/actions/crop.png
+/usr/local/share/rawtherapee/images/Light/actions/refresh-red.png
+/usr/local/share/rawtherapee/images/Light/actions/closedhand.png
+/usr/local/share/rawtherapee/images/Light/actions/previewmodeB-on.png
+/usr/local/share/rawtherapee/images/Light/actions/histValue.png
+/usr/local/share/rawtherapee/images/Light/actions/histBar.png
+/usr/local/share/rawtherapee/images/Light/actions/curveType-parametric.png
+/usr/local/share/rawtherapee/images/Light/actions/list-remove-red-small.png
+/usr/local/share/rawtherapee/images/Light/actions/gtk-open.png
+/usr/local/share/rawtherapee/images/Light/actions/gtk-media-stop.png
+/usr/local/share/rawtherapee/images/Light/actions/undelete-rtl.png
+/usr/local/share/rawtherapee/images/Light/actions/gtk-color-picker.png
+/usr/local/share/rawtherapee/images/Light/actions/curveType-linear.png
+/usr/local/share/rawtherapee/images/Light/actions/cglabel0.png
+/usr/local/share/rawtherapee/images/Light/actions/transform.png
+/usr/local/share/rawtherapee/images/Light/actions/curveType-controlPoints.png
+/usr/local/share/rawtherapee/images/Light/actions/histRed.png
+/usr/local/share/rawtherapee/images/Light/actions/gtk-zoom-out.png
+/usr/local/share/rawtherapee/images/Light/actions/panel-to-bottom.png
+/usr/local/share/rawtherapee/images/Light/actions/stock-flip-horizontal.png
+/usr/local/share/rawtherapee/images/Light/actions/image-editor.png
+/usr/local/share/rawtherapee/images/Light/actions/wb-custom.png
+/usr/local/share/rawtherapee/images/Light/actions/histBlue.png
+/usr/local/share/rawtherapee/images/Light/actions/list-add.png
+/usr/local/share/rawtherapee/images/Light/actions/crossed-arrows-in.png
+/usr/local/share/rawtherapee/images/Light/actions/cglabel3.png
+/usr/local/share/rawtherapee/images/Light/actions/edited-small.png
+/usr/local/share/rawtherapee/images/Light/actions/gtk-cancel.png
+/usr/local/share/rawtherapee/images/Light/actions/rated.png
+/usr/local/share/rawtherapee/images/Light/actions/toleftend.png
+/usr/local/share/rawtherapee/images/Light/actions/openhand.png
+/usr/local/share/rawtherapee/images/Light/actions/grayrated.png
+/usr/local/share/rawtherapee/images/Light/actions/gtk-remove.png
+/usr/local/share/rawtherapee/images/Light/actions/undelete.png
+/usr/local/share/rawtherapee/images/Light/actions/histValueg.png
+/usr/local/share/rawtherapee/images/Light/actions/wb-led.png
+/usr/local/share/rawtherapee/images/Light/actions/clabel0.png
+/usr/local/share/rawtherapee/images/Light/actions/new-detail-window.png
+/usr/local/share/rawtherapee/images/Light/actions/stock-flip-vertical.png
+/usr/local/share/rawtherapee/images/Light/actions/panel-to-left.png
+/usr/local/share/rawtherapee/images/Light/actions/gtk-apply.png
+/usr/local/share/rawtherapee/images/Light/actions/gtk-ok.png
+/usr/local/share/rawtherapee/images/Light/actions/raw.png
+/usr/local/share/rawtherapee/images/Light/actions/previewmodeL-off.png
+/usr/local/share/rawtherapee/images/Light/actions/gtk-undo-ltr-small.png
+/usr/local/share/rawtherapee/images/Light/actions/trash-show-full.png
+/usr/local/share/rawtherapee/images/Light/actions/gtk-edit.png
+/usr/local/share/rawtherapee/images/Light/actions/gtk-zoom-100.png
+/usr/local/share/rawtherapee/images/Light/actions/cglabel1.png
+/usr/local/share/rawtherapee/images/Light/actions/wb-camera.png
+/usr/local/share/rawtherapee/images/Light/.gtk-undo-ltr.png
+/usr/local/share/rawtherapee/images/Light/.gtk-undo-ltr-small.png
+/usr/local/share/rawtherapee/images/savednotg.png
+/usr/local/share/rawtherapee/images/straighten-small.png
+/usr/local/share/rawtherapee/images/editedg-small.png
+/usr/local/share/rawtherapee/images/notrated.png
+/usr/local/share/rawtherapee/images/beforeafter.png
+/usr/local/share/rawtherapee/images/ratednotg.png
+/usr/local/share/rawtherapee/images/gtk-close.png
+/usr/local/share/rawtherapee/images/media-usb.png
+/usr/local/share/rawtherapee/images/saved.png
+/usr/local/share/rawtherapee/images/trash-show-empty.png
+/usr/local/share/rawtherapee/images/Dark/.gtk-undo-rtl.png
+/usr/local/share/rawtherapee/images/Dark/devices/media-flash.png
+/usr/local/share/rawtherapee/images/Dark/devices/drive-harddisk.png
+/usr/local/share/rawtherapee/images/Dark/devices/drive-removable-media.png
+/usr/local/share/rawtherapee/images/Dark/devices/computer.png
+/usr/local/share/rawtherapee/images/Dark/devices/media-floppy.png
+/usr/local/share/rawtherapee/images/Dark/devices/media-optical.png
+/usr/local/share/rawtherapee/images/Dark/devices/media-tape.png
+/usr/local/share/rawtherapee/images/Dark/devices/drive-optical.png
+/usr/local/share/rawtherapee/images/Dark/devices/gtk-cdrom.png
+/usr/local/share/rawtherapee/images/Dark/devices/media-optical-dvd.png
+/usr/local/share/rawtherapee/images/Dark/devices/media-optical-bd.png
+/usr/local/share/rawtherapee/images/Dark/.gtk-undo-rtl-small.png
+/usr/local/share/rawtherapee/images/Dark/places/user-desktop.png
+/usr/local/share/rawtherapee/images/Dark/places/user-home.png
+/usr/local/share/rawtherapee/images/Dark/places/folder.png
+/usr/local/share/rawtherapee/images/Dark/places/gtk-directory.png
+/usr/local/share/rawtherapee/images/Dark/actions/filterclear.png
+/usr/local/share/rawtherapee/images/Dark/actions/gtk-close-small.png
+/usr/local/share/rawtherapee/images/Dark/actions/list-remove.png
+/usr/local/share/rawtherapee/images/Dark/actions/panel-to-right.png
+/usr/local/share/rawtherapee/images/Dark/actions/undelete-thumbnail-rtl.png
+/usr/local/share/rawtherapee/images/Dark/actions/gtk-media-play.png
+/usr/local/share/rawtherapee/images/Dark/actions/gtk-add.png
+/usr/local/share/rawtherapee/images/Dark/actions/histBarg.png
+/usr/local/share/rawtherapee/images/Dark/actions/edit-find.png
+/usr/local/share/rawtherapee/images/Dark/actions/previewmodeF-on.png
+/usr/local/share/rawtherapee/images/Dark/actions/wb-sun.png
+/usr/local/share/rawtherapee/images/Dark/actions/cglabel4.png
+/usr/local/share/rawtherapee/images/Dark/actions/gtk-paste.png
+/usr/local/share/rawtherapee/images/Dark/actions/stock-rotate-90.png
+/usr/local/share/rawtherapee/images/Dark/actions/rtwindow.png
+/usr/local/share/rawtherapee/images/Dark/actions/document-open.png
+/usr/local/share/rawtherapee/images/Dark/actions/clabel3.png
+/usr/local/share/rawtherapee/images/Dark/actions/editednot-small.png
+/usr/local/share/rawtherapee/images/Dark/actions/clabel1.png
+/usr/local/share/rawtherapee/images/Dark/actions/distortion-auto.png
+/usr/local/share/rawtherapee/images/Dark/actions/wb-cloudy.png
+/usr/local/share/rawtherapee/images/Dark/actions/histGreeng.png
+/usr/local/share/rawtherapee/images/Dark/actions/trash.png
+/usr/local/share/rawtherapee/images/Dark/actions/exposure.png
+/usr/local/share/rawtherapee/images/Dark/actions/gtk-undoall-rtl.png
+/usr/local/share/rawtherapee/images/Dark/actions/undelete-thumbnail.png
+/usr/local/share/rawtherapee/images/Dark/actions/edited.png
+/usr/local/share/rawtherapee/images/Dark/actions/popuparrow.png
+/usr/local/share/rawtherapee/images/Dark/actions/trash-thumbnail.png
+/usr/local/share/rawtherapee/images/Dark/actions/gtk-undoall-ltr.png
+/usr/local/share/rawtherapee/images/Dark/actions/previewmodeB-off.png
+/usr/local/share/rawtherapee/images/Dark/actions/wb-lamp.png
+/usr/local/share/rawtherapee/images/Dark/actions/stock-rotate-270.png
+/usr/local/share/rawtherapee/images/Dark/actions/edit-copy.png
+/usr/local/share/rawtherapee/images/Dark/actions/gtk-undo-rtl.png
+/usr/local/share/rawtherapee/images/Dark/actions/gtk-undo-rtl-small.png
+/usr/local/share/rawtherapee/images/Dark/actions/straighten.png
+/usr/local/share/rawtherapee/images/Dark/actions/meta.png
+/usr/local/share/rawtherapee/images/Dark/actions/histBlueg.png
+/usr/local/share/rawtherapee/images/Dark/actions/warnhl.png
+/usr/local/share/rawtherapee/images/Dark/actions/gtk-color-picker-small.png
+/usr/local/share/rawtherapee/images/Dark/actions/previewmodeF-off.png
+/usr/local/share/rawtherapee/images/Dark/actions/wb-shade.png
+/usr/local/share/rawtherapee/images/Dark/actions/histRawg.png
+/usr/local/share/rawtherapee/images/Dark/actions/previewmodeR-off.png
+/usr/local/share/rawtherapee/images/Dark/actions/previewmodeR-on.png
+/usr/local/share/rawtherapee/images/Dark/actions/wb-fluorescent.png
+/usr/local/share/rawtherapee/images/Dark/actions/gtk-copy.png
+/usr/local/share/rawtherapee/images/Dark/actions/fullscreen-exit.png
+/usr/local/share/rawtherapee/images/Dark/actions/previewmodeG-off.png
+/usr/local/share/rawtherapee/images/Dark/actions/wb-auto.png
+/usr/local/share/rawtherapee/images/Dark/actions/wb-flash.png
+/usr/local/share/rawtherapee/images/Dark/actions/gtk-find.png
+/usr/local/share/rawtherapee/images/Dark/actions/list-add-small.png
+/usr/local/share/rawtherapee/images/Dark/actions/processing.png
+/usr/local/share/rawtherapee/images/Dark/actions/histRedg.png
+/usr/local/share/rawtherapee/images/Dark/actions/histGreen.png
+/usr/local/share/rawtherapee/images/Dark/actions/filter.png
+/usr/local/share/rawtherapee/images/Dark/actions/lock-off.png
+/usr/local/share/rawtherapee/images/Dark/actions/gtk-zoom-in.png
+/usr/local/share/rawtherapee/images/Dark/actions/detail.png
+/usr/local/share/rawtherapee/images/Dark/actions/cglabel2.png
+/usr/local/share/rawtherapee/images/Dark/actions/colour.png
+/usr/local/share/rawtherapee/images/Dark/actions/histRaw.png
+/usr/local/share/rawtherapee/images/Dark/actions/wb-tungsten.png
+/usr/local/share/rawtherapee/images/Dark/actions/straighten-small.png
+/usr/local/share/rawtherapee/images/Dark/actions/editedg-small.png
+/usr/local/share/rawtherapee/images/Dark/actions/beforeafter.png
+/usr/local/share/rawtherapee/images/Dark/actions/ratednotg.png
+/usr/local/share/rawtherapee/images/Dark/actions/gtk-close.png
+/usr/local/share/rawtherapee/images/Dark/actions/media-usb.png
+/usr/local/share/rawtherapee/images/Dark/actions/trash-show-empty.png
+/usr/local/share/rawtherapee/images/Dark/actions/clabel4.png
+/usr/local/share/rawtherapee/images/Dark/actions/crop-auto.png
+/usr/local/share/rawtherapee/images/Dark/actions/gtk-save.png
+/usr/local/share/rawtherapee/images/Dark/actions/processing-thumbnail.png
+/usr/local/share/rawtherapee/images/Dark/actions/torightend.png
+/usr/local/share/rawtherapee/images/Dark/actions/PanelEnding.png
+/usr/local/share/rawtherapee/images/Dark/actions/gtk-preferences.png
+/usr/local/share/rawtherapee/images/Dark/actions/info.png
+/usr/local/share/rawtherapee/images/Dark/actions/lock-on.png
+/usr/local/share/rawtherapee/images/Dark/actions/processing-play.png
+/usr/local/share/rawtherapee/images/Dark/actions/edit-paste.png
+/usr/local/share/rawtherapee/images/Dark/actions/panel-to-top.png
+/usr/local/share/rawtherapee/images/Dark/actions/editednotg-small.png
+/usr/local/share/rawtherapee/images/Dark/actions/gtk-zoom-fit.png
+/usr/local/share/rawtherapee/images/Dark/actions/distorsion.png
+/usr/local/share/rawtherapee/images/Dark/actions/processing-pause.png
+/usr/local/share/rawtherapee/images/Dark/actions/clabel2.png
+/usr/local/share/rawtherapee/images/Dark/actions/gtk-undo-ltr.png
+/usr/local/share/rawtherapee/images/Dark/actions/curveType-flatLinear.png
+/usr/local/share/rawtherapee/images/Dark/actions/curveType-NURBS.png
+/usr/local/share/rawtherapee/images/Dark/actions/clabel5.png
+/usr/local/share/rawtherapee/images/Dark/actions/document-open-recent.png
+/usr/local/share/rawtherapee/images/Dark/actions/crossed-arrows-out.png
+/usr/local/share/rawtherapee/images/Dark/actions/ratednot.png
+/usr/local/share/rawtherapee/images/Dark/actions/cglabel5.png
+/usr/local/share/rawtherapee/images/Dark/actions/previewmodeG-on.png
+/usr/local/share/rawtherapee/images/Dark/actions/gtk-save-large.png
+/usr/local/share/rawtherapee/images/Dark/actions/curveType-spline.png
+/usr/local/share/rawtherapee/images/Dark/actions/refresh-white.png
+/usr/local/share/rawtherapee/images/Dark/actions/fullscreen.png
+/usr/local/share/rawtherapee/images/Dark/actions/previewmodeL-on.png
+/usr/local/share/rawtherapee/images/Dark/actions/warnsh.png
+/usr/local/share/rawtherapee/images/Dark/actions/crop.png
+/usr/local/share/rawtherapee/images/Dark/actions/refresh-red.png
+/usr/local/share/rawtherapee/images/Dark/actions/closedhand.png
+/usr/local/share/rawtherapee/images/Dark/actions/previewmodeB-on.png
+/usr/local/share/rawtherapee/images/Dark/actions/histValue.png
+/usr/local/share/rawtherapee/images/Dark/actions/histBar.png
+/usr/local/share/rawtherapee/images/Dark/actions/curveType-parametric.png
+/usr/local/share/rawtherapee/images/Dark/actions/list-remove-red-small.png
+/usr/local/share/rawtherapee/images/Dark/actions/gtk-open.png
+/usr/local/share/rawtherapee/images/Dark/actions/gtk-media-stop.png
+/usr/local/share/rawtherapee/images/Dark/actions/undelete-rtl.png
+/usr/local/share/rawtherapee/images/Dark/actions/gtk-color-picker.png
+/usr/local/share/rawtherapee/images/Dark/actions/curveType-linear.png
+/usr/local/share/rawtherapee/images/Dark/actions/cglabel0.png
+/usr/local/share/rawtherapee/images/Dark/actions/transform.png
+/usr/local/share/rawtherapee/images/Dark/actions/curveType-controlPoints.png
+/usr/local/share/rawtherapee/images/Dark/actions/histRed.png
+/usr/local/share/rawtherapee/images/Dark/actions/gtk-zoom-out.png
+/usr/local/share/rawtherapee/images/Dark/actions/panel-to-bottom.png
+/usr/local/share/rawtherapee/images/Dark/actions/stock-flip-horizontal.png
+/usr/local/share/rawtherapee/images/Dark/actions/image-editor.png
+/usr/local/share/rawtherapee/images/Dark/actions/wb-custom.png
+/usr/local/share/rawtherapee/images/Dark/actions/histBlue.png
+/usr/local/share/rawtherapee/images/Dark/actions/list-add.png
+/usr/local/share/rawtherapee/images/Dark/actions/crossed-arrows-in.png
+/usr/local/share/rawtherapee/images/Dark/actions/cglabel3.png
+/usr/local/share/rawtherapee/images/Dark/actions/edited-small.png
+/usr/local/share/rawtherapee/images/Dark/actions/gtk-cancel.png
+/usr/local/share/rawtherapee/images/Dark/actions/rated.png
+/usr/local/share/rawtherapee/images/Dark/actions/toleftend.png
+/usr/local/share/rawtherapee/images/Dark/actions/openhand.png
+/usr/local/share/rawtherapee/images/Dark/actions/grayrated.png
+/usr/local/share/rawtherapee/images/Dark/actions/gtk-remove.png
+/usr/local/share/rawtherapee/images/Dark/actions/undelete.png
+/usr/local/share/rawtherapee/images/Dark/actions/histValueg.png
+/usr/local/share/rawtherapee/images/Dark/actions/wb-led.png
+/usr/local/share/rawtherapee/images/Dark/actions/clabel0.png
+/usr/local/share/rawtherapee/images/Dark/actions/new-detail-window.png
+/usr/local/share/rawtherapee/images/Dark/actions/stock-flip-vertical.png
+/usr/local/share/rawtherapee/images/Dark/actions/panel-to-left.png
+/usr/local/share/rawtherapee/images/Dark/actions/gtk-apply.png
+/usr/local/share/rawtherapee/images/Dark/actions/gtk-ok.png
+/usr/local/share/rawtherapee/images/Dark/actions/raw.png
+/usr/local/share/rawtherapee/images/Dark/actions/previewmodeL-off.png
+/usr/local/share/rawtherapee/images/Dark/actions/gtk-undo-ltr-small.png
+/usr/local/share/rawtherapee/images/Dark/actions/trash-show-full.png
+/usr/local/share/rawtherapee/images/Dark/actions/gtk-edit.png
+/usr/local/share/rawtherapee/images/Dark/actions/gtk-zoom-100.png
+/usr/local/share/rawtherapee/images/Dark/actions/cglabel1.png
+/usr/local/share/rawtherapee/images/Dark/actions/wb-camera.png
+/usr/local/share/rawtherapee/images/Dark/.gtk-undo-ltr.png
+/usr/local/share/rawtherapee/images/Dark/.gtk-undo-ltr-small.png
+/usr/local/share/rawtherapee/images/clabel4.png
+/usr/local/share/rawtherapee/images/crop-auto.png
+/usr/local/share/rawtherapee/images/uncolorlabel.png
+/usr/local/share/rawtherapee/images/splash.png
+/usr/local/share/rawtherapee/images/torightend.png
+/usr/local/share/rawtherapee/images/PanelEnding.png
+/usr/local/share/rawtherapee/images/info.png
+/usr/local/share/rawtherapee/images/lock-on.png
+/usr/local/share/rawtherapee/images/processing-play.png
+/usr/local/share/rawtherapee/images/panel-to-top.png
+/usr/local/share/rawtherapee/images/editednotg-small.png
+/usr/local/share/rawtherapee/images/cross.png
+/usr/local/share/rawtherapee/images/gtk-zoom-fit.png
+/usr/local/share/rawtherapee/images/processing-pause.png
+/usr/local/share/rawtherapee/images/clabel2.png
+/usr/local/share/rawtherapee/images/gtk-undo-ltr.png
+/usr/local/share/rawtherapee/images/recent-save.png
+/usr/local/share/rawtherapee/images/Chanmixer-RG.png
+/usr/local/share/rawtherapee/images/empty.png
+/usr/local/share/rawtherapee/images/curveType-flatLinear.png
+/usr/local/share/rawtherapee/images/curveType-NURBS.png
+/usr/local/share/rawtherapee/images/clabel5.png
+/usr/local/share/rawtherapee/images/Chanmixer-BR.png
+/usr/local/share/rawtherapee/images/crossed-arrows-out.png
+/usr/local/share/rawtherapee/images/ratednot.png
+/usr/local/share/rawtherapee/images/cglabel5.png
+/usr/local/share/rawtherapee/images/gtk-save-large.png
+/usr/local/share/rawtherapee/images/curveType-spline.png
+/usr/local/share/rawtherapee/images/refresh-white.png
+/usr/local/share/rawtherapee/images/fullscreen.png
+/usr/local/share/rawtherapee/images/Chanmixer-BB.png
+/usr/local/share/rawtherapee/images/warnsh.png
+/usr/local/share/rawtherapee/images/crop.png
+/usr/local/share/rawtherapee/images/refresh-red.png
+/usr/local/share/rawtherapee/images/closedhand.png
+/usr/local/share/rawtherapee/images/histValue.png
+/usr/local/share/rawtherapee/images/histBar.png
+/usr/local/share/rawtherapee/images/rt-logo-large.png
+/usr/local/share/rawtherapee/images/savednot.png
+/usr/local/share/rawtherapee/images/curveType-parametric.png
+/usr/local/share/rawtherapee/images/list-remove-red-small.png
+/usr/local/share/rawtherapee/images/gtk-open.png
+/usr/local/share/rawtherapee/images/gtk-color-picker.png
+/usr/local/share/rawtherapee/images/network.png
+/usr/local/share/rawtherapee/images/curveType-linear.png
+/usr/local/share/rawtherapee/images/cglabel0.png
+/usr/local/share/rawtherapee/images/transform.png
+/usr/local/share/rawtherapee/images/curveType-controlPoints.png
+/usr/local/share/rawtherapee/images/histRed.png
+/usr/local/share/rawtherapee/images/gtk-zoom-out.png
+/usr/local/share/rawtherapee/images/panel-to-bottom.png
+/usr/local/share/rawtherapee/images/resize.png
+/usr/local/share/rawtherapee/images/stock-flip-horizontal.png
+/usr/local/share/rawtherapee/images/image-editor.png
+/usr/local/share/rawtherapee/images/histBlue.png
+/usr/local/share/rawtherapee/images/cglabel3.png
+/usr/local/share/rawtherapee/images/edited-small.png
+/usr/local/share/rawtherapee/images/unrated.png
+/usr/local/share/rawtherapee/images/rated.png
+/usr/local/share/rawtherapee/images/toleftend.png
+/usr/local/share/rawtherapee/images/openhand.png
+/usr/local/share/rawtherapee/images/grayrated.png
+/usr/local/share/rawtherapee/images/folder.png
+/usr/local/share/rawtherapee/images/undelete.png
+/usr/local/share/rawtherapee/images/savedg.png
+/usr/local/share/rawtherapee/images/Chanmixer-BG.png
+/usr/local/share/rawtherapee/images/curveType-unchanged.png
+/usr/local/share/rawtherapee/images/clabel0.png
+/usr/local/share/rawtherapee/images/stock-flip-vertical.png
+/usr/local/share/rawtherapee/images/panel-to-left.png
+/usr/local/share/rawtherapee/images/gtk-apply.png
+/usr/local/share/rawtherapee/images/raw.png
+/usr/local/share/rawtherapee/images/trash-show-full.png
+/usr/local/share/rawtherapee/images/logoicon-wind.png
+/usr/local/share/rawtherapee/images/gtk-zoom-100.png
+/usr/local/share/rawtherapee/images/cglabel1.png
+/usr/local/share/rawtherapee/options

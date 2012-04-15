@@ -74,7 +74,24 @@
 	find_package(OpenCV REQUIRED)
 	find_package(Qt COMPONENTS QtOpenGL QtXml REQUIRED)
 	find_package(Qt4 4.7 REQUIRED QtCore QtGui QtXml)
-#	find_package(RawTherapeeEngine REQUIRED)
+	find_package(RawTherapeeEngine REQUIRED)
+
+
+# --- RAWTHERAPEE
+
+	      # check for libraries
+	      find_package(PkgConfig)
+	      pkg_check_modules (GTK     REQUIRED gtk+-2.0>=2.12)
+	      pkg_check_modules (GLIB2   REQUIRED glib-2.0>=2.16)
+	      pkg_check_modules (GLIBMM  REQUIRED glibmm-2.4>=2.16)
+	      pkg_check_modules (GTKMM   REQUIRED gtkmm-2.4>=2.12)
+	      pkg_check_modules (GIO     REQUIRED gio-2.0>=2.16)
+	      pkg_check_modules (GIOMM   REQUIRED giomm-2.4>=2.12)
+	      pkg_check_modules (GTHREAD REQUIRED gthread-2.0>=2.16)
+	      pkg_check_modules (GOBJECT REQUIRED gobject-2.0>=2.16)
+	      pkg_check_modules (SIGC    REQUIRED sigc++-2.0)
+
+#----
 
 
 
@@ -101,7 +118,7 @@
 	include_directories(${EXIV2_INCLUDE_DIR})
 	include_directories(${LENSFUN_INCLUDE_DIR})
 	include_directories(${LibMagic_INCLUDE_DIR})
-#	include_directories (${RawTherapeeEngine_INCLUDE_DIR})
+#	include_directories(${RawTherapeeEngine_INCLUDE_DIR})
 	include_directories(${LOGOG_INCLUDE_DIR})
 	include_directories(${CMAKE_SOURCE_DIR}/src)
 	include_directories(${CMAKE_BINARY_DIR}/src)

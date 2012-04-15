@@ -1,0 +1,14 @@
+Branch: default
+Version: 4.0.8.6
+Changeset: 952a99e79816
+Compiler: GCC 4.6
+Processor: undefined
+System: Linux
+Bit depth: 64 bits
+Gtkmm: V2.24.2
+Build type: Debug
+Build flags:  
+Link flags:   
+OpenMP support: ON
+MMAP support: ON
+
