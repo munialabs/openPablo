@@ -122,23 +122,23 @@
     "MetaData": [
         {
             "id": "exif1",
-            "type": "EXIF",
-            "addtags": [
+            "Type": "EXIF",
+            "AddTags": 
                 {
-                    "Vendor": "2012 ProcessedwithOpenPablo"
+                    "Model": "2012 ProcessedwithOpenPablo",
+                    "XResolution": 2013
                 }
-            ],
-            "removetag": [
-                [
+            ,
+            "RemoveTags": [
                     "Vendor",
-                    "Date"
-                ]
+                    "Date",
+                    "Time"
             ]
         },
         {
             "id": "iptc1",
-            "type": "IPTC",
-            "addtags": [
+            "Type": "IPTC",
+            "AddTags": [
                 {
                     "Caption": "MyNewspaperImages03-2012"
                 },
@@ -149,7 +149,7 @@
                     "Country": "Germany"
                 }
             ],
-            "removetags": [
+            "RemoveTags": [
                 "ProvinceState"
             ]
         }

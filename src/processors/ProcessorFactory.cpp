@@ -36,8 +36,8 @@
  *
  */
 
-        	#include "rtengine.h"
-        	#include "processingjob.h"
+#include "rtengine.h"
+#include "processingjob.h"
 
 
 #include <string.h>
@@ -74,14 +74,17 @@ using boost::format;
 
 
 
-        	class PListener : public rtengine::ProgressListener {
+class PListener : public rtengine::ProgressListener
+{
 
-        	    public:
-        	        void setProgressStr (Glib::ustring str) {
-        	        }
-        	        void setProgress (double p) {
-        	        }
-        	};
+    public:
+        void setProgressStr (Glib::ustring str)
+        {
+        }
+        void setProgress (double p)
+        {
+        }
+};
 
 
 namespace openPablo
@@ -145,54 +148,55 @@ namespace openPablo
         // Open the file and read the metadata
         if (iProcessor.open_file(imageFileName.toStdString().c_str()) == LIBRAW_SUCCESS)
         {
-	///--------------------------------- try RawTherapee
+            ///--------------------------------- try RawTherapee
 
 
 
-        	    Glib::thread_init ();
+            Glib::thread_init ();
 
-        	    // create and fill settings
-        	    rtengine::Settings* s = rtengine::Settings::create ();
-        	    s->iccDirectory = "";
-        	    s->colorimetricIntent = 1;
-        	    s->monitorProfile = "";
-        	    // init rtengine
-        	    rtengine::init (s, ".");
-        	    // the settings can be modified later through the "s" pointer without calling any api function
+            // create and fill settings
+            rtengine::Settings* s = rtengine::Settings::create ();
+            s->iccDirectory = "";
+            s->colorimetricIntent = 1;
+            s->monitorProfile = "";
+            // init rtengine
+            rtengine::init (s, ".");
+            // the settings can be modified later through the "s" pointer without calling any api function
 
-        	    // Create a listener object. Any class is appropriate that inherits from rtengine::ProgressListener
-        	    PListener pl;
+            // Create a listener object. Any class is appropriate that inherits from rtengine::ProgressListener
+            PListener pl;
 
-        	    // Load the image given in the first command line parameter
-        	    rtengine::InitialImage* ii;
-        	    int errorC;
-        	    ii = rtengine::InitialImage::load (imageFileName.toStdString().c_str(), true, &errorC, &pl);
-        	    if (!ii)
-        	        ii = rtengine::InitialImage::load (imageFileName.toStdString().c_str(), false, &errorC, &pl);
-        	    if (!ii) {
-        	        std::cout << "Input file not supported." << std::endl;
-        	        exit(2);
-        	    }
+            // Load the image given in the first command line parameter
+            rtengine::InitialImage* ii;
+            int errorC;
+            ii = rtengine::InitialImage::load (imageFileName.toStdString().c_str(), true, &errorC, &pl);
+            if (!ii)
+                ii = rtengine::InitialImage::load (imageFileName.toStdString().c_str(), false, &errorC, &pl);
+            if (!ii)
+            {
+                std::cout << "Input file not supported." << std::endl;
+                exit(2);
+            }
 
-        	    // create an instance of ProcParams structure that holds the image processing settings. You find the memory map in a separate file and the non-basic types like strings and vectors can be manipulated through helper functions
-        	    rtengine::procparams::ProcParams params;
-        	    params.load ("/home/drunkeneye/testprofile.rt");
+            // create an instance of ProcParams structure that holds the image processing settings. You find the memory map in a separate file and the non-basic types like strings and vectors can be manipulated through helper functions
+            rtengine::procparams::ProcParams params;
+            params.load ("/home/drunkeneye/testprofile.rt");
 
-        	/* First, simplest scenario. Develope image and save it in a file */
-        	    // create a processing job with the loaded image and the current processing parameters
-        	    rtengine::ProcessingJob* job = rtengine::ProcessingJob::create (ii, params);
-        	    // process image. The error is given back in errorcode.
-        	    rtengine::IImage16* res = rtengine::processImage (job, errorC, &pl);
-        	    // save image to disk
-        	    res->saveToFile ("/tmp/RT.jpg");
-        	    // through "res" you can access width/height and pixel data, too
+            /* First, simplest scenario. Develope image and save it in a file */
+            // create a processing job with the loaded image and the current processing parameters
+            rtengine::ProcessingJob* job = rtengine::ProcessingJob::create (ii, params);
+            // process image. The error is given back in errorcode.
+            rtengine::IImage16* res = rtengine::processImage (job, errorC, &pl);
+            // save image to disk
+            res->saveToFile ("/tmp/RT.jpg");
+            // through "res" you can access width/height and pixel data, too
 
 
-			// create JPG Processor
-			ImageProcessor *imageP = new ImageProcessor();
+            // create JPG Processor
+            ImageProcessor *imageP = new ImageProcessor();
 
-			// FIXME: still set filename for now for ooutput reasons.
-			imageP ->setFilename(imageFileName);
+            // FIXME: still set filename for now for ooutput reasons.
+            imageP ->setFilename(imageFileName);
 //			imageProcessor -> setBLOB (ppmBuffer, ppmBufferSize);
 
 
@@ -200,7 +204,7 @@ namespace openPablo
             iProcessor.recycle();
 
 
-        	return imageP;
+            return imageP;
 ///---------------------------------
 
 

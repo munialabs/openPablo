@@ -126,7 +126,7 @@ char const* info_compiler = "INFO" ":" "compiler[" COMPILER_ID "]";
 
 #elif defined(__HAIKU) || defined(__HAIKU__) || defined(_HAIKU)
 # define PLATFORM_ID "Haiku"
-/* Haiku also defines __BEOS__ so we must 
+/* Haiku also defines __BEOS__ so we must
    put it prior to the check for __BEOS__
 */
 
@@ -181,7 +181,7 @@ char const* info_compiler = "INFO" ":" "compiler[" COMPILER_ID "]";
 #  define ARCHITECTURE_ID "IA64"
 
 # elif defined(_M_X64) || defined(_M_AMD64)
-#  define ARCHITECTURE_ID "x64" 
+#  define ARCHITECTURE_ID "x64"
 
 # elif defined(_M_IX86)
 #  define ARCHITECTURE_ID "X86"
@@ -207,9 +207,9 @@ char const* info_arch = "INFO" ":" "arch[" ARCHITECTURE_ID "]";
 
 int main(int argc, char* argv[])
 {
-  int require = 0;
-  require += info_compiler[argc];
-  require += info_platform[argc];
-  (void)argv;
-  return require;
+    int require = 0;
+    require += info_compiler[argc];
+    require += info_platform[argc];
+    (void)argv;
+    return require;
 }

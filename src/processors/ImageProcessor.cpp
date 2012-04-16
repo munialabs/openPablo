@@ -247,16 +247,6 @@ namespace openPablo
                 }
 
 
-
-//                list<Image> layers2;
-                //              readImages(&layers2,  "/tmp/sinkBlob.psd");
-
-                //            std::cout << "from disk: " << layers2.size();
-
-
-                // -- apply Metadata
-
-
                 // try to apply as much metadata as possible
                 Exiv2::Image::AutoPtr image = Exiv2::ImageFactory::open((const uint8_t*) sinkBlob.data(), (long) sinkBlob.length());
 
@@ -268,22 +258,126 @@ namespace openPablo
                     // create new exif data or is exif in format not possible?
                 }
 
-                // set exif as requested by user
-                exifData["Exif.Photo.UserComment"] = "charset=\"Unicode\" An Unicode Exif comment added with Exiv2";
-                exifData["Exif.Image.Model"] = "Test 1";                     // AsciiValue
-                exifData["Exif.Image.SamplesPerPixel"] = uint16_t(162);      // UShortValue
-//                exifData["Exif.Image.XResolution"] = int32_t(-2);            // LongValue
-//                exifData["Exif.Image.YResolution"] = Exiv2::Rational(-2, 3); // RationalValue
 
 
-                // apply IPTC
-                Exiv2::IptcData &iptcData = image -> iptcData();
+                // -- apply Metadata
 
-                iptcData["Iptc.Application2.Headline"] = "openPablo v0.1";
-                iptcData["Iptc.Application2.Keywords"] = "Yet another keyword";
-                iptcData["Iptc.Application2.DateCreated"] = "2004-8-3";
-                iptcData["Iptc.Application2.Urgency"] = uint16_t(1);
+                try
+                {
+                    BOOST_FOREACH(const ptree::value_type& metadataChild, pt.get_child("MetaData"))
+                    {
+                        std::cout << "Found Exif Data in Settings.";
+//                  	// check type
+                        if (metadataChild.second.get<std::string>("Type") == "EXIF")
+                        {
+                            std::cout << "Removing tags now:\n";
+//
+                            // get all removetags
+                            BOOST_FOREACH(const ptree::value_type& exifChild, metadataChild.second.get_child("RemoveTags"))
+                            {
+                                // exifChild
+                                std::string updateStr= exifChild.second.get<std::string>(exifChild.first);
+                                std::cout << "Removing from Exif Data:" << updateStr << "\n";
+                                try
+                                {
+                                    Exiv2::ExifKey key = Exiv2::ExifKey("Exif.Image." + exifChild.first);
+                                    std::cout << "Fin loop\n";
+                                    Exiv2::ExifData::iterator pos = exifData.findKey(key);
+                                    if (pos != exifData.end())
+                                    {
+                                        exifData.erase(pos);
+                                    }
+                                }
+                                catch (...)
+                                {
+                                    std::cout << "Cannot find key, cannot remove.\n";
+                                }
+                            }
 
+                            std::cout << "XX";
+
+                            // get all addtags
+                            BOOST_FOREACH(const ptree::value_type& exifChild, metadataChild.second.get_child("AddTags"))
+                            {
+
+                                // "Image", "Photo" are available.
+//                            	const Exiv2::GroupInfo* gp = Exiv2::ExifTags::groupList();
+//                            	for (int r=0; r < 166; r++)
+//                            	{
+//                            		std::cout << gp[r].groupName_ << "\n";
+//                            	}
+
+//                    			const Exiv2::TagInfo* tg = Exiv2::ExifTags::tagList("Image");
+//								for (int r=0; r < 566; r++)
+//								{
+//									std::cout << tg[r].typeId_ << " " << tg[r].name_ << "\n";
+//									if (tg[r].name_ == "(UnknownIfdTag)")
+//										break;
+//								}
+
+                                std::cout << "Looping over addtags:";
+                                // exifChild
+                                std::cout << "Adding tag " << exifChild.first << " with value ";
+                                std::cout << exifChild.second.data() << " to Exif Data.\n";
+
+                                try
+                                {
+                                    // need to determine type for exifdata first
+                                    exifData["Exif.Image."+exifChild.first] = exifChild.second.data();
+                                }
+                                catch (...)
+                                {
+                                    std::cout << "Cannot add key\n";
+                                }
+
+                                std::cout << "Fin loop\n";
+                            }
+
+
+                        }
+
+                        if (metadataChild.second.get<std::string>("Type") == "IPTC")
+                        {
+                            //
+                        }
+                    }
+
+                }
+                catch(...)
+                {
+                    // assume its some boost error
+                    std::cout << "ERROR METADATA.\n";
+                }
+
+                std::cout << "FIN METADATA.\n";
+                /*
+                                // try to apply as much metadata as possible
+                                Exiv2::Image::AutoPtr image = Exiv2::ImageFactory::open((const uint8_t*) sinkBlob.data(), (long) sinkBlob.length());
+
+                                image->readMetadata();
+                                Exiv2::ExifData &exifData = image->exifData();
+
+                                if (exifData.empty())
+                                {
+                                    // create new exif data or is exif in format not possible?
+                                }
+
+                                // set exif as requested by user
+                                exifData["Exif.Photo.UserComment"] = "charset=\"Unicode\" An Unicode Exif comment added with Exiv2";
+                                exifData["Exif.Image.Model"] = "Test 1";                     // AsciiValue
+                                exifData["Exif.Image.SamplesPerPixel"] = uint16_t(162);      // UShortValue
+                //                exifData["Exif.Image.XResolution"] = int32_t(-2);            // LongValue
+                //                exifData["Exif.Image.YResolution"] = Exiv2::Rational(-2, 3); // RationalValue
+
+
+                                // apply IPTC
+                                Exiv2::IptcData &iptcData = image -> iptcData();
+
+                                iptcData["Iptc.Application2.Headline"] = "openPablo v0.1";
+                                iptcData["Iptc.Application2.Keywords"] = "Yet another keyword";
+                                iptcData["Iptc.Application2.DateCreated"] = "2004-8-3";
+                                iptcData["Iptc.Application2.Urgency"] = uint16_t(1);
+                */
 
                 // write data back to blob
                 image->writeMetadata();
@@ -295,7 +389,7 @@ namespace openPablo
                 // need to read here a layered list as it could be PSD.
 
                 list<Image> layers;
-                readImages(&layers, sinkBlob);
+                readImages(&layers, newBlob);
 
                 std::cout << layers.size();
 
